@@ -1,4 +1,4 @@
-name: Mirror Project # mirror to '2hoch1/dmw-project'
+name: Mirror Project
 
 on:
   push:
@@ -9,17 +9,20 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    env:
+      MIRROR_TOKEN: ${{ secrets.MIRROR_TOKEN }}
+      PROJECT_OWNER: ${{ secrets.PROJECT_OWNER }}
+      PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
+    
     steps:
-        # Step 1: Checkout the source repository
       - name: Checkout source repo
-        uses: actions/checkout@v4 # Auf v4 aktualisieren
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Vollständige History fetchen
+          fetch-depth: 0
 
-        # Step 2: Push to the mirror repository
       - name: Push to mirror repo
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git remote add mirror https://${{ secrets.MIRROR_TOKEN }}@github.com/2hoch1/dmw-project.git
+          git remote add mirror https://${{ env.MIRROR_TOKEN }}@github.com/${{ env.PROJECT_OWNER }}/${{ env.PROJECT_NAME }}.git
           git push --mirror mirror

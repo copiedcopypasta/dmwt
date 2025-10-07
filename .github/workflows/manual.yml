@@ -1,0 +1,16 @@
+name: Debug Mirror
+on: [workflow_dispatch]
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Secrets
+        run: |
+          echo "PROJECT_OWNER: ${{ secrets.PROJECT_OWNER }}"
+          echo "PROJECT_NAME: ${{ secrets.PROJECT_NAME }}"
+          echo "Token exists: ${{ secrets.MIRROR_TOKEN != '' }}"
+          
+      - name: Test Git Access
+        run: |
+          git ls-remote https://${{ secrets.MIRROR_TOKEN }}@github.com/${{ secrets.PROJECT_OWNER }}/${{ secrets.PROJECT_NAME }}.git

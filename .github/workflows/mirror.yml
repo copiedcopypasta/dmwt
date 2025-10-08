@@ -20,4 +20,4 @@ jobs:
       - name: Mirror to User Repo
         run: |
           git fetch -p origin
-          git push --mirror mirror
+          git push --mirror

@@ -20,4 +20,4 @@ jobs:
       - name: Mirror to User Repo
         run: |
           git fetch -p origin
-          git push --mirror https://${{ secrets.MIRROR_TOKEN }}@github.com/${{ secrets.PROJECT_OWNER }}/${{ secrets.PROJECT_NAME }}.git
+          git push --mirror mirror

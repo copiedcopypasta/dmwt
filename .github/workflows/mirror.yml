@@ -11,10 +11,13 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          
-      - name: Mirror to target
+
+      - name: Set up Git
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git remote add mirror https://${{ secrets.MIRROR_TOKEN }}@github.com/${{ secrets.PROJECT_OWNER }}/${{ secrets.PROJECT_NAME }}.git
-          git push --mirror mirror
+
+      - name: Mirror to User Repo
+        run: |
+          git fetch -p origin
+          git push --mirror https://${{ secrets.MIRROR_TOKEN }}@github.com/${{ secrets.PROJECT_OWNER }}/${{ secrets.PROJECT_NAME }}.git

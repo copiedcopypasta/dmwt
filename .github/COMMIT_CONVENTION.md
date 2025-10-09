@@ -2,44 +2,88 @@
 
 > This is adapted from [Angular&#39;s commit convention](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular).
 
-#### TL;DR:
+### TL;DR:
 
 Messages must be matched by the following regex:
 
 ```js
-/^(revert: )?(feat|fix|docs|style|refactor|perf|test|build|ci|chore|types)(\(.+\))?!?: .{1,72}/;
+/^(revert: )?(chore|build|ci|ui|api|docs|feat|fix|perf|refactor|revert|style|test|types)(\(.+\))?!?: .{1,72}/;
 ```
 
-#### Examples
+### Examples
 
-Appears under "Features" header, `GuildMember` subheader:
-
+**Feature hinzufügen (API-Modul):**
 ```
-feat(GuildMember): add 'tag' method
-```
-
-Appears under "Bug Fixes" header, `Guild` subheader, with a link to issue #28:
-
-```
-fix(Guild): handle events correctly
-
-close #28
+feat(api): add user authentication
 ```
 
-Appears under "Performance Improvements" header, and under "Breaking Changes" with the breaking change explanation:
-
+**Bugfix im UI:**
 ```
-perf(core): improve patching by removing 'bar' option
-
-BREAKING CHANGE: The 'bar' option has been removed.
+fix(ui): correct button alignment
 ```
 
-The following commit and commit `667ecc1` do not appear in the changelog if they are under the same release. If not, the revert commit appears under the "Reverts" header.
-
+**Dokumentation aktualisieren:**
 ```
-revert: feat(Managers): add Managers
+docs: update README with setup instructions
+```
+
+**Performance-Verbesserung im Core:**
+```
+perf(core): optimize database queries
+
+BREAKING CHANGE: query format has changed
+```
+
+**Refactoring im TypeScript-Bereich:**
+```
+refactor(types): simplify user type definitions
+```
+
+**Test hinzufügen:**
+```
+test(api): add tests for login endpoint
+```
+
+**Build-Konfiguration ändern:**
+```
+build: update webpack config
+```
+
+**CI-Workflow anpassen:**
+```
+ci: add code coverage step
+```
+
+**Chore (Routine-Aufgabe):**
+```
+chore: update dependencies
+```
+
+**Style-Anpassung:**
+```
+style(ui): format header component
+```
+
+**Revert eines Commits:**
+```
+revert: feat(api): add user authentication
 
 This reverts commit 667ecc1654a317a13331b17617d973392f415f02.
+```
+
+**Typen aktualisieren:**
+```
+types: update user interface
+```
+
+**API-Scope Beispiel:**
+```
+api(user): add endpoint for user profile
+```
+
+**UI-Scope Beispiel:**
+```
+ui(header): fix logo alignment
 ```
 
 ### Full Message Format

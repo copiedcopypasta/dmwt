@@ -18,8 +18,6 @@ jobs:
         uses: actions/labeler@v5
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
-          configuration-path: .github/labeler.yml
-          dot: true
           sync-labels: true
 
   validate-title:

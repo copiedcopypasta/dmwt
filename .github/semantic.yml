@@ -1,0 +1,15 @@
+types:
+  - chore
+  - build
+  - ci
+  - ui
+  - api
+  - docs
+  - feat
+  - fix
+  - perf
+  - refactor
+  - revert
+  - style
+  - test
+  - types

@@ -7,18 +7,20 @@ on:
       - edited
       - reopened
       - synchronize
-
+      
+permissions:
+  contents: read
+  pull-requests: write
+  
 jobs:
   label:
     name: Label
     if: github.event.action != 'edited'
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-
       - name: Label pull request
         uses: actions/labeler@v5
         with:

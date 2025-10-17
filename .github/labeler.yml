@@ -3,12 +3,6 @@ api:
       - any-glob-to-any-file:
           - src/api/*
           - src/api/**/*
-docs:
-  - changed-files:
-      - any-glob-to-any-file:
-          - docs/*
-          - docs/**/*
-          - README.md
 ui:
   - changed-files:
       - any-glob-to-any-file:
@@ -18,7 +12,7 @@ ui:
           - src/components/**/*
           - src/app/*
           - src/app/pages/**/*
-deps:
+dependencies:
   - changed-files:
       - any-glob-to-any-file:
           - package.json
@@ -58,3 +52,22 @@ security:
           - security/**/*
           - .github/security/*
           - .github/security/**/*
+chore:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*.md'
+          - scripts/*
+          - build/*
+discussion:
+  - changed-files:
+      - any-glob-to-any-file:
+          - discussions/*
+typings:
+  - changed-files:
+      - any-glob-to-any-file:
+          - src/**/*.d.ts
+utility:
+  - changed-files:
+      - any-glob-to-any-file:
+          - src/utils/*
+          - src/helpers/*

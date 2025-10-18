@@ -81,7 +81,7 @@ export default function Home() {
           </section>
           <section>
             <p>Switch:</p>
-            <Components.Switch />
+            <Components.Switch /> <Components.Switch checked={true} />
           </section>
         </section>
 

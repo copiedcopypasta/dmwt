@@ -1,5 +1,5 @@
 import React, { JSX } from 'react';
-import { GalleryProps } from '../media/Gallery';
+//import { GalleryProps } from '../media/Gallery';
 
 interface Header {
   title: string | undefined;
@@ -10,7 +10,7 @@ interface Header {
 interface Content {
   imageUrl: string | undefined;
   imageAltText?: string | undefined;
-  imageGallery?: GalleryProps | undefined;
+  imageGallery?: /*GalleryProps*/ undefined;
 }
 
 interface Body {

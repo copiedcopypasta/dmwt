@@ -28,9 +28,9 @@ interface CardProps {
   header: Header | undefined;
   body: Body | undefined;
   footer?: Footer | undefined;
-  color?: string | number | undefined;
-  foreintColor?: string | number | undefined;
-  backgroundColor?: string | number | undefined;
+  color?: string | undefined;
+  foreintColor?: string | undefined;
+  backgroundColor?: string | undefined;
 }
 
 export default function Card({
@@ -48,7 +48,7 @@ export default function Card({
       <div
         className="flex max-w-[500px] flex-col overflow-hidden rounded-md border border-[#2b2d31] shadow-sm"
         style={{
-          borderLeft: `4px solid ${color}`,
+          borderLeft: borderLeftColor,
           backgroundColor: backgroundColor,
         }}
       >

@@ -27,6 +27,7 @@ export { default as Button } from './ui/input/Button';
 export { default as Inputfield } from './ui/input/Inputfield';
 export { default as Slider } from './ui/input/Slider';
 export { default as Switch } from './ui/input/Switch';
+
 /* UI-Media Components */
 export { default as Avatar } from './ui/media/Avatar';
 export { default as Carousel } from './ui/media/Carousel';

@@ -17,7 +17,7 @@ export default function Home() {
 
           <section>
             <p>Badge:</p>
-            <Components.Badge />
+            <Components.Badge text={"Extrem"} /> <Components.Badge text={"coole"} color='red' /> <Components.Badge text={"Badges"} color='green' />
           </section>
 
           <section>

@@ -32,31 +32,6 @@ export default function Home() {
         </section>
 
         <h2 className="sticky top-0 z-10 -translate-x-[200px] transform pb-4 text-2xl font-semibold">
-          Layout Components:
-        </h2>
-        <section>
-          <section>
-            <p>Footer:</p>
-            <Components.Footer />
-          </section>
-
-          <section>
-            <p>Header:</p>
-            <Components.Header />
-          </section>
-
-          <section>
-            <p>Navbar:</p>
-            <Components.Navbar />
-          </section>
-
-          <section>
-            <p>Sidebar:</p>
-            <Components.Sidebar />
-          </section>
-        </section>
-
-        <h2 className="sticky top-0 z-10 -translate-x-[200px] transform pb-4 text-2xl font-semibold">
           UI-Content Components:
         </h2>
         <section>

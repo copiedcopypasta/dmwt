@@ -62,7 +62,14 @@ export default function Home() {
         <section>
           <section>
             <p>Card:</p>
-            <Components.Card />
+            <Components.Card
+              header={{
+                title: 'Sample Card',
+              }}
+              body={{
+                description: 'This is a sample card description.',
+              }}
+            />
           </section>
 
           <section>

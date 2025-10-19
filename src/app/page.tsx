@@ -27,7 +27,7 @@ export default function Home() {
 
           <section>
             <p>Toast:</p>
-            <Components.Toast />
+            <Components.Toast text="Toast text"/>
           </section>
         </section>
 
@@ -54,7 +54,7 @@ export default function Home() {
 
           <section>
             <p>Textarea:</p>
-            <Components.Textarea />
+            <Components.Textarea text="text" label="label"/>
           </section>
 
           <section>
@@ -69,7 +69,7 @@ export default function Home() {
         <section>
           <section>
             <p>Button:</p>
-            <Components.Button />
+            <Components.Button color="blue" description="Beschreibung" link=""/>
           </section>
           <section>
             <p>Inputfield:</p>
@@ -102,8 +102,8 @@ export default function Home() {
             <Components.Gallery />
           </section>
           <section>
-            <p>Rating:</p>
-            <Components.Rating />
+            <p>Rating: needs icon</p>
+            {/*<Components.Rating />*/}
           </section>
         </section>
       </main>

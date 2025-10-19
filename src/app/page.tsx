@@ -18,17 +18,17 @@ export default function Home() {
             <p>Alert:</p>
             <Components.Alert
               type="success"
-              children="hier hat was funktioniert"
+              message="hier hat was funktioniert"
             />
             <Components.Alert
               type="error"
-              children="hier ist was falsch geloffen"
+              message="hier ist was falsch geloffen"
             />
             <Components.Alert
               type="warning"
-              children="achtung, das könnte ein problem geben"
+              message="achtung, das könnte ein problem geben"
             />
-            <Components.Alert type="info" children="ich bin eine information" />
+            <Components.Alert type="info" message="ich bin eine information" />
           </section>
 
           <section>

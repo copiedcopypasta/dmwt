@@ -18,7 +18,7 @@ export default function Home() {
 
           <section>
             <p>Badge:</p>
-            <Components.Badge />
+            <Components.Badge text={"Extrem"} /> <Components.Badge text={"coole"} color='red' /> <Components.Badge text={"Badges"} color='green' />
           </section>
 
           <section>
@@ -28,7 +28,7 @@ export default function Home() {
 
           <section>
             <p>Toast:</p>
-            <Components.Toast />
+            <Components.Toast text="Toast text"/>
           </section>
         </section>
 
@@ -55,12 +55,14 @@ export default function Home() {
 
           <section>
             <p>Textarea:</p>
-            <Components.Textarea />
+            <Components.Textarea text="text" label="label"/>
           </section>
 
           <section>
             <p>Tooltip:</p>
-            <Components.Tooltip />
+            <Components.Tooltip text='Hello World'>
+              Hover me!
+            </Components.Tooltip>
           </section>
         </section>
 
@@ -70,7 +72,7 @@ export default function Home() {
         <section>
           <section>
             <p>Button:</p>
-            <Components.Button />
+            <Components.Button color="blue" description="Beschreibung" link=""/>
           </section>
           <section>
             <p>Inputfield:</p>
@@ -82,7 +84,7 @@ export default function Home() {
           </section>
           <section>
             <p>Switch:</p>
-            <Components.Switch />
+            <Components.Switch /> <Components.Switch checked={true} />
           </section>
         </section>
 
@@ -103,8 +105,8 @@ export default function Home() {
             <Components.Gallery />
           </section>
           <section>
-            <p>Rating:</p>
-            <Components.Rating />
+            <p>Rating: needs icon</p>
+            {/*<Components.Rating />*/}
           </section>
         </section>
       </main>

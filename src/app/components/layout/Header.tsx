@@ -1,10 +1,18 @@
-// Todo: Remove this comment, if you add props to the Interface
+// header component for the application layout
 
 import React, { JSX } from 'react';
 
 /* eslint-disable-next-line @typescript-eslint/no-empty-object-type */
-interface HeaderProps {}
+interface HeaderProps {
+  title?: string;
+  children?: React.ReactNode;
+}
 
-export default function Header({}: HeaderProps): JSX.Element {
-  return <></>;
+export default function Header({ title, children }: HeaderProps): JSX.Element {
+  return (
+    <header className="flex items-center justify-between bg-gray-800 p-4 text-white">
+      <h1 className="text-xl font-bold">{title}</h1>
+      <nav>{children}</nav>
+    </header>
+  );
 }

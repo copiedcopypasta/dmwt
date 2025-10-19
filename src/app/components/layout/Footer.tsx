@@ -1,5 +1,3 @@
-// Todo: Remove this comment, if you add props to the Interface
-
 import React, { JSX } from 'react';
 
 export interface FooterLink{

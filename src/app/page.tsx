@@ -1,6 +1,9 @@
+'use client';
 import * as Components from './components/index';
+import React, { useState } from 'react';
 
 export default function Home() {
+  const [inputValue, setInputValue] = useState('');
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-center p-24">
@@ -12,12 +15,26 @@ export default function Home() {
         <section>
           <section>
             <p>Alert:</p>
-            <Components.Alert />
+            <Components.Alert
+              type="success"
+              children="hier hat was funktioniert"
+            />
+            <Components.Alert
+              type="error"
+              children="hier ist was falsch geloffen"
+            />
+            <Components.Alert
+              type="warning"
+              children="achtung, das könnte ein problem geben"
+            />
+            <Components.Alert type="info" children="ich bin eine information" />
           </section>
 
           <section>
             <p>Badge:</p>
-            <Components.Badge text={"Extrem"} /> <Components.Badge text={"coole"} color='red' /> <Components.Badge text={"Badges"} color='green' />
+            <Components.Badge text={'Extrem'} />{' '}
+            <Components.Badge text={'coole'} color="red" />{' '}
+            <Components.Badge text={'Badges'} color="green" />
           </section>
 
           <section>
@@ -27,7 +44,7 @@ export default function Home() {
 
           <section>
             <p>Toast:</p>
-            <Components.Toast text="Toast text"/>
+            <Components.Toast text="Toast text" />
           </section>
         </section>
 
@@ -49,17 +66,20 @@ export default function Home() {
 
           <section>
             <p>List:</p>
-            <Components.List />
+            <Components.List
+              items={['Apfel', 'Banane', 'Birne']}
+              renderItem={(item) => <span>{item}</span>}
+            />
           </section>
 
           <section>
             <p>Textarea:</p>
-            <Components.Textarea text="text" label="label"/>
+            <Components.Textarea text="text" label="label" />
           </section>
 
           <section>
             <p>Tooltip:</p>
-            <Components.Tooltip text='Hello World'>
+            <Components.Tooltip text="Hello World">
               Hover me!
             </Components.Tooltip>
           </section>
@@ -71,11 +91,20 @@ export default function Home() {
         <section>
           <section>
             <p>Button:</p>
-            <Components.Button color="blue" description="Beschreibung" link=""/>
+            <Components.Button
+              color="blue"
+              description="Beschreibung"
+              link=""
+            />
           </section>
           <section>
             <p>Inputfield:</p>
-            <Components.Inputfield />
+            <Components.Inputfield
+              label="Example Inputfield"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              placeholder="hier kann man reinschreiben"
+            />
           </section>
           <section>
             <p>Slider:</p>
@@ -93,7 +122,12 @@ export default function Home() {
         <section>
           <section>
             <p>Avatar:</p>
-            <Components.Avatar />
+            <Components.Avatar
+              src="https://cdn.pixabay.com/photo/2021/12/17/19/15/pet-6877246_1280.jpg"
+              alt="Profilbild einer Katze"
+              size={50}
+              fallback="K"
+            />
           </section>
           <section>
             <p>Carousel:</p>

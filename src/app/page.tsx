@@ -6,6 +6,7 @@ export default function Home() {
   const [inputValue, setInputValue] = useState('');
   return (
     <>
+      <Components.Sidebar />
       <main className="flex min-h-screen flex-col items-center justify-center p-24">
         <h1 className="pb-8 text-4xl font-bold">Component Tests:</h1>
 

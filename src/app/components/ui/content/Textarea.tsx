@@ -1,10 +1,27 @@
-// Todo: Remove this comment, if you add props to the Interface
-
 import React, { JSX } from 'react';
 
 /* eslint-disable-next-line @typescript-eslint/no-empty-object-type */
-interface TextareaProps {}
+interface TextareaProps {
+  text: string;
+  label?: string;
+}
 
-export default function Textarea({}: TextareaProps): JSX.Element {
-  return <></>;
+export default function Textarea({ text, label}: TextareaProps): JSX.Element {
+  return (
+  <div className="flex flex-col space-y-2">
+    {/*Optinal label*/}
+    {label && (
+      <label className="">
+        {label}
+      </label>
+    )}
+
+    {/*Textarea*/}
+    <textarea
+    value={text}
+    readOnly
+    className="w-full min-h-[100px] cursor-default focus:outline-none"
+    />
+  </div>
+  );
 }

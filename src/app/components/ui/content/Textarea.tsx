@@ -8,20 +8,20 @@ interface TextareaProps {
 
 export default function Textarea({ text, label}: TextareaProps): JSX.Element {
   return (
-  <div className="flex flex-col space-y-2">
-    {/*Optinal label*/}
-    {label && (
-      <label className="">
-        {label}
-      </label>
-    )}
+    <div className="flex flex-col space-y-2">
+      {/*Optinal label*/}
+      {label && (
+        <label className="">
+          {label}
+        </label>
+      )}
 
-    {/*Textarea*/}
-    <textarea
-    value={text}
-    readOnly
-    className="w-full min-h-[100px] cursor-default focus:outline-none"
-    />
-  </div>
+      {/*Textarea*/}
+      <textarea
+        value={text}
+        readOnly
+        className="w-full min-h-[100px] cursor-default focus:outline-none"
+      />
+    </div>
   );
 }

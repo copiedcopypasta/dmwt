@@ -59,7 +59,9 @@ export default function Home() {
 
           <section>
             <p>Tooltip:</p>
-            <Components.Tooltip />
+            <Components.Tooltip text='Hello World'>
+              Hover me!
+            </Components.Tooltip>
           </section>
         </section>
 

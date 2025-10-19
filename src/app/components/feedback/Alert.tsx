@@ -1,12 +1,10 @@
-// Todo: Remove this comment, if you add props to the Interface
-
 import React, { JSX, ReactNode } from 'react';
 
 type AlertType = 'success' | 'error' | 'warning' | 'info';
 /* eslint-disable-next-line @typescript-eslint/no-empty-object-type */
 interface AlertProps {
   type?: AlertType;
-  children: ReactNode;
+  message: ReactNode;
 }
 
 const alertStyles: Record<AlertType, string> = {
@@ -16,10 +14,10 @@ const alertStyles: Record<AlertType, string> = {
   info: 'bg-blue-100 border-blue-400 text-blue-700',
 };
 
-export default function Alert({ type, children }: AlertProps): JSX.Element {
+export default function Alert({ type, message }: AlertProps): JSX.Element {
   return (
     <div className={`rounded p-3 ${alertStyles[type || 'info']} border`}>
-      {children}
+      {message}
     </div>
   );
 }

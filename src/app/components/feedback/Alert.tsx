@@ -4,7 +4,7 @@ type AlertType = 'success' | 'error' | 'warning' | 'info';
 /* eslint-disable-next-line @typescript-eslint/no-empty-object-type */
 interface AlertProps {
   type?: AlertType;
-  message: ReactNode;
+  message: string | undefined;
 }
 
 const alertStyles: Record<AlertType, string> = {

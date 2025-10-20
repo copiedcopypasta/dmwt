@@ -45,5 +45,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           merge_method: squash
-          # Only merge when all checks pass
+          # Only merge when all required and optional status checks pass ('all_success')
           merge_when: 'all_success'

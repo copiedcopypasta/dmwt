@@ -4,6 +4,7 @@
 // - Ignores configured filenames
 // - Generates `index.ts` using `index.template.ts` if present, otherwise uses a fallback template
 
+/* eslint-disable @typescript-eslint/no-require-imports */
 const fs = require('fs');
 const path = require('path');
 
@@ -80,15 +81,7 @@ function collectComponentFiles(dir, rootDir) {
   return results;
 }
 
-function deriveExportPath(relPath) {
-  // Strip filename, keep folder path relative to components root
-  const parsed = path.posix.parse(relPath);
-  const dir = parsed.dir; // posix
-  // If the component file is directly inside a folder named like the component, prefer folder import
-  // Otherwise import the file directly without extension
-  const importPath = dir ? `./${dir}` : `./${parsed.name}`;
-  return importPath;
-}
+// (deriveExportPath removed — not used)
 
 // Execution
 ensureDir(path.dirname(OUTPUT_FILE));

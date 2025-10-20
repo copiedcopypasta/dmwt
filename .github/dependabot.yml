@@ -2,15 +2,28 @@ version: 2
 updates:
   - package-ecosystem: 'npm'
     directory: '/'
+    # Run weekly to reduce noise; adjust to 'daily' if you want faster updates
     schedule:
-      interval: 'daily'
-    open-pull-requests-limit: 8
-    separate-pull-requests: false
+      interval: 'weekly'
+      # optional: time: "04:00"
+    # Limit open PRs from Dependabot
+    open-pull-requests-limit: 5
+    # Create separate PRs per dependency to make review easier
+    separate-pull-requests: true
+    # Only propose updates for direct dependencies declared in package.json
     allow:
-      - dependency-name: '*'
+      - dependency-type: 'direct'
+    # Keep some large framework updates out of automatic PRs if you prefer
     ignore:
       - dependency-name: 'react'
       - dependency-name: 'react-dom'
+    # Add labels so workflows can detect dependabot PRs
+    labels:
+      - 'dependencies'
+      - 'dependabot'
+    # Prefix for commit messages
     commit-message:
       prefix: 'deps'
-    versioning-strategy: auto
+    versioning-strategy: 'auto'
+    # Target branch for PRs
+    target-branch: 'main'

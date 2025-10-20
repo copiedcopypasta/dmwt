@@ -2,7 +2,7 @@
 /* Feedback Components */
 export { default as Alert } from './feedback/Alert';
 export { default as Badge } from './feedback/Badge';
-export { default as Progressbar } from './feedback/Progressbar';
+export { default as ProgressBar } from './feedback/ProgressBar';
 export { default as Toast } from './feedback/Toast';
 
 /* Layout Components */

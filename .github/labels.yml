@@ -4,6 +4,8 @@
   color: ffbeb7
 - name: dependencies
   color: 276bd1
+- name: dependabot
+  color: 0366d6
 - name: tests
   color: f06dff
 - name: infra

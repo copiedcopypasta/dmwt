@@ -1,6 +1,5 @@
-import React, { JSX } from 'react';
+import React from 'react';
 
-/* eslint-disable-next-line @typescript-eslint/no-empty-object-type */
 interface ButtonProps {
   color?: 'red' | 'green' | 'blue';
   description: string;
@@ -11,20 +10,17 @@ export default function Button({
   color,
   description,
   link,
-}: ButtonProps): JSX.Element {
+}: ButtonProps): React.ReactElement {
   const colorClasses: Record<string, string> = {
     red: 'bg-red-600 hover:bg-red-700 text-white',
     green: 'bg-green-600 hover:bg-green-700 text-white',
     blue: 'bg-blue-600 hover:bg-blue-700 text-white',
   };
 
+  const classes = `${color ? colorClasses[color] : 'bg-gray-600 text-white'} inline-block rounded-xl px-6 py-3 shadow-sm`;
+
   return (
-    <a
-      href={link}
-      className={
-        '${colorClasses[color]} inline-block rounded-xl px-6 py-3 shadow-sm'
-      }
-    >
+    <a href={link} className={classes}>
       {description}
     </a>
   );

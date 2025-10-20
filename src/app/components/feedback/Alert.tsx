@@ -1,7 +1,7 @@
-import React, { JSX, ReactNode } from 'react';
+import React from 'react';
 
 type AlertType = 'success' | 'error' | 'warning' | 'info';
-/* eslint-disable-next-line @typescript-eslint/no-empty-object-type */
+
 interface AlertProps {
   type?: AlertType;
   message: string | undefined;
@@ -14,7 +14,10 @@ const alertStyles: Record<AlertType, string> = {
   info: 'bg-blue-100 border-blue-400 text-blue-700',
 };
 
-export default function Alert({ type, message }: AlertProps): JSX.Element {
+export default function Alert({
+  type,
+  message,
+}: AlertProps): React.ReactElement {
   return (
     <div className={`rounded p-3 ${alertStyles[type || 'info']} border`}>
       {message}

@@ -1,6 +1,5 @@
 import React, { JSX } from 'react';
 
-/* eslint-disable-next-line @typescript-eslint/no-empty-object-type */
 interface TextareaProps {
   text: string;
   label?: string;

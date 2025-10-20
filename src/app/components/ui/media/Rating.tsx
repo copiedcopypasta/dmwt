@@ -1,16 +1,19 @@
 // Todo: Add defaultIcon
 
-import React, { JSX } from 'react';
+import React from 'react';
 
-/* eslint-disable-next-line @typescript-eslint/no-empty-object-type */
 interface RatingProps {
   value: number;
   max: number;
   icon?: React.ReactNode;
 }
 
-export default function Rating({ value, max, icon }: RatingProps): JSX.Element {
-  const defaultIcon = <svg></svg>;
+export default function Rating({
+  value,
+  max,
+  icon,
+}: RatingProps): React.ReactElement {
+  const defaultIcon = <svg />;
 
   const RatingIcon = icon || defaultIcon;
 
@@ -19,7 +22,7 @@ export default function Rating({ value, max, icon }: RatingProps): JSX.Element {
       {Array.from({ length: max }, (_, i) => (
         <span
           key={i}
-          className={'${i < value ? "" : "text-gray-300"} flex-shrink-0'}
+          className={`${i < value ? '' : 'text-gray-300'} flex-shrink-0`}
         >
           {RatingIcon}
         </span>

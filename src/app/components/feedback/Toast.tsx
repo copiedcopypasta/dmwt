@@ -1,6 +1,5 @@
 import React, { JSX } from 'react';
 
-/* eslint-disable-next-line @typescript-eslint/no-empty-object-type */
 interface ToastProps {
   icon?: React.ReactNode;
   text: string;

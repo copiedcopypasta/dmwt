@@ -5,7 +5,6 @@ export interface FooterLink {
   href: string;
 }
 
-/* eslint-disable-next-line @typescript-eslint/no-empty-object-type */
 interface FooterProps {
   links: FooterLink[];
   copyright: string;

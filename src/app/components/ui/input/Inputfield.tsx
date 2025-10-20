@@ -2,7 +2,6 @@
 
 import React, { ChangeEvent } from 'react';
 
-/* eslint-disable-next-line @typescript-eslint/no-empty-object-type */
 interface InputfieldProps {
   label: string;
   value: string;

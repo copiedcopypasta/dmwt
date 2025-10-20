@@ -1,0 +1,55 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to create release for (if not provided, uses github.ref)'
+        required: false
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Determine tag
+        id: tag
+        run: |
+          if [ -n "${{ github.event.inputs.tag }}" ]; then
+            echo "tag=${{ github.event.inputs.tag }}" >> $GITHUB_OUTPUT
+          else
+            # When triggered by tag push, ref looks like refs/tags/v1.2.3
+            ref=${GITHUB_REF#refs/tags/}
+            echo "tag=$ref" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Fetch draft release body (if any)
+        id: fetch_draft
+        uses: actions/github-script@v7
+        env:
+          TAG: ${{ steps.tag.outputs.tag }}
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const releases = await github.rest.repos.listReleases({ owner: context.repo.owner, repo: context.repo.repo });
+            const draft = releases.data.find(r => r.draft && r.tag_name === process.env.TAG);
+            const body = draft ? (draft.body || '') : '';
+            fs.writeFileSync('release-body.md', body, 'utf8');
+            return body;
+
+      - name: Create GitHub release (from draft if present)
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.tag.outputs.tag }}
+          body_path: release-body.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

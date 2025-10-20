@@ -1,6 +1,6 @@
 import React, { JSX } from 'react';
 
-export interface FooterLink{
+export interface FooterLink {
   label: string;
   href: string;
 }
@@ -12,22 +12,21 @@ interface FooterProps {
   barrierefreiheit: string;
 }
 
-export default function Footer({ links, copyright, barrierefreiheit}: FooterProps): JSX.Element {
+export default function Footer({
+  links,
+  copyright,
+  barrierefreiheit,
+}: FooterProps): JSX.Element {
   return (
-    <footer className="py-6 mt-8">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-
+    <footer className="mt-8 py-6">
+      <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 md:flex-row">
         {/*Links*/}
         <nav className="flex flex-wrap justify-center gap-4">
-          {links.map((link) =>(
-            <a
-              key={link.href}
-              href={link.href}
-              className="hover:text-white"
-            >
-            {link.label}
-          </a>
-        ))}
+          {links.map((link) => (
+            <a key={link.href} href={link.href} className="hover:text-white">
+              {link.label}
+            </a>
+          ))}
         </nav>
 
         {/*Barrierefreiheit*/}
@@ -38,9 +37,7 @@ export default function Footer({ links, copyright, barrierefreiheit}: FooterProp
         </div>
 
         {/*Copyright*/}
-        <div className="text-center md:text-right">
-          {copyright}
-        </div>
+        <div className="text-center md:text-right">{copyright}</div>
       </div>
     </footer>
   );

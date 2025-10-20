@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { JSX } from 'react';
 
 interface TooltipProps {
@@ -6,14 +6,11 @@ interface TooltipProps {
   children: React.ReactNode;
 }
 
-export default function Tooltip({ 
-  text, 
-  children
-}: TooltipProps): JSX.Element {
+export default function Tooltip({ text, children }: TooltipProps): JSX.Element {
   const [isVisible, setVisible] = React.useState(false);
   return (
     <>
-      <div 
+      <div
         className="relative inline-block"
         onMouseEnter={() => setVisible(true)}
         onMouseLeave={() => setVisible(false)}
@@ -26,5 +23,5 @@ export default function Tooltip({
         )}
       </div>
     </>
-    );
+  );
 }

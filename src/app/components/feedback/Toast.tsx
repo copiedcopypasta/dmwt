@@ -6,15 +6,11 @@ interface ToastProps {
   text: string;
 }
 
-export default function Toast({ icon, text}: ToastProps): JSX.Element {
+export default function Toast({ icon, text }: ToastProps): JSX.Element {
   return (
-    <div className="flex itmes- center gap-3 px-4 rounded-2x1 shadow-sm">
+    <div className="itmes- center rounded-2x1 flex gap-3 px-4 shadow-sm">
       {/*Icon*/}
-      {icon && (
-        <div className="">
-          {icon}
-        </div>
-      )}
+      {icon && <div className="">{icon}</div>}
 
       {/*Text*/}
       <p className="">{text}</p>

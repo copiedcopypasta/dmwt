@@ -21,7 +21,11 @@
     "lint": "eslint",
     "tsc-check": "tsc --noEmit",
     "commitlint": "commitlint",
-    "prepare": "is-ci || husky install"
+    "prepare": "is-ci || husky install",
+    "release:patch": "git-cz || npm version patch -m \"chore(release): %s [skip ci]\" && git push --follow-tags",
+    "release:minor": "git-cz || npm version minor -m \"chore(release): %s [skip ci]\" && git push --follow-tags",
+    "release:major": "git-cz || npm version major -m \"chore(release): %s [skip ci]\" && git push --follow-tags",
+    "release:github": "echo 'Use GitHub Actions to create the Release when tags are pushed'"
   },
   "dependencies": {
     "next": "15.5.4",

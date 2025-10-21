@@ -20,12 +20,21 @@ const rules = {
   ignoreFiles: ['base.tsx', 'index.ts'],
 };
 
+const comment = `/**
+ * Auto-generated index file for component exports.
+ * This file exports all components, organized by their categories.
+ * This file is auto-generated, do not edit manually.
+ */`;
+
 module.exports = {
   // Paths used by the generator
   paths,
 
   // Scanning / filtering rules
   rules,
+
+  // Custom header comment for the generated index file
+  comment,
 
   // Backwards-compatible top-level keys (optional convenience)
   components_directory: paths.components,

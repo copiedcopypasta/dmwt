@@ -22,7 +22,7 @@
     "tsc-check": "tsc --noEmit",
     "commitlint": "commitlint",
     "ceg": "npm run generate:components",
-    "generate:components": "node ./scripts/CEG.cjs",
+    "generate:components": "npx -y ts-node ./scripts/CEG.ts",
     "prepare": "is-ci || husky install"
   },
   "dependencies": {

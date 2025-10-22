@@ -1,27 +1,31 @@
 import React from 'react';
 
 interface ButtonProps {
-  color?: 'red' | 'green' | 'blue';
-  description: string;
-  link: string;
+  color?: string | undefined;
+  link?: string | undefined;
+  text: string | undefined;
+  onClick?: () => void;
 }
 
 export default function Button({
   color,
-  description,
+  text,
   link,
+  onClick,
 }: ButtonProps): React.ReactElement {
-  const colorClasses: Record<string, string> = {
-    red: 'bg-red-600 hover:bg-red-700 text-white',
-    green: 'bg-green-600 hover:bg-green-700 text-white',
-    blue: 'bg-blue-600 hover:bg-blue-700 text-white',
-  };
+  const classes = `${color ? `bg-${color}-600 hover:bg-${color}-700 text-white` : 'bg-gray-600 text-white'} inline-block rounded-md px-5 py-2 shadow-sm`;
 
-  const classes = `${color ? colorClasses[color] : 'bg-gray-600 text-white'} inline-block rounded-xl px-6 py-3 shadow-sm`;
+  if (link) {
+    return (
+      <a href={link} className={classes}>
+        {text}
+      </a>
+    );
+  }
 
   return (
-    <a href={link} className={classes}>
-      {description}
-    </a>
+    <button onClick={onClick} className={classes}>
+      {text}
+    </button>
   );
 }

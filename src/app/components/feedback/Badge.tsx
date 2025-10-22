@@ -13,6 +13,17 @@ const badgeColors = {
   gray: 'border-gray-400 bg-gray-600/40 text-gray-400',
 };
 
+/**
+ * Badge
+ *
+ * A small badge/status indicator with an optional color.
+ *
+ * Props:
+ * @param {string | undefined} text - Text to display inside the badge.
+ * @param {'red'|'green'|'yellow'|'blue'|'gray'} [color='gray'] - Color choice for the badge (uses predefined utility classes).
+ *
+ * Return: ReactElement
+ */
 export default function Badge({
   text,
   color = 'gray',

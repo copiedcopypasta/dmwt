@@ -7,6 +7,19 @@ interface AvatarProps {
   fallback?: string;
 }
 
+/**
+ * Avatar
+ *
+ * Round avatar element that displays either an image or a fallback text.
+ *
+ * Props:
+ * @param {string | undefined} src - Optional image URL for the avatar.
+ * @param {string | undefined} alt - Alt text for the image.
+ * @param {number | undefined} size - Size (width/height) of the avatar in pixels (default: 40).
+ * @param {string | undefined} fallback - Fallback text shown when no image is provided.
+ *
+ * Return: ReactElement
+ */
 export default function Avatar({
   src,
   alt = '',

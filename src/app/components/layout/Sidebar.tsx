@@ -30,6 +30,16 @@ const sections: Section[] = [
   },
 ];
 
+/**
+ * Sidebar
+ *
+ * Sidebar with multiple sections and selectable items.
+ * Sections are currently defined internally.
+ *
+ * Props: none
+ *
+ * Return: ReactElement
+ */
 export default function Sidebar(): ReactElement {
   const [openSections, setOpenSections] = useState<string[]>([
     'Getting started',
@@ -59,7 +69,7 @@ export default function Sidebar(): ReactElement {
             >
               {section.title}
               <span className="text-xs">
-                {openSections.includes(section.title) ? '▾' : '▸'}
+                {openSections.includes(section.title) ? '\u25be' : '\u25b8'}
               </span>
             </button>
 
@@ -88,7 +98,7 @@ export default function Sidebar(): ReactElement {
       <div className="border-t border-neutral-800 p-3 text-xs text-gray-500">
         <div className="flex items-center justify-between">
           <span>System</span>
-          <span>🌙</span>
+          <span>\ud83c\udf19</span>
         </div>
       </div>
     </aside>

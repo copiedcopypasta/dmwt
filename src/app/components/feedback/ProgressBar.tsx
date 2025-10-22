@@ -5,6 +5,17 @@ interface ProgressBarProps {
   text?: string | null | undefined;
 }
 
+/**
+ * ProgressBar
+ *
+ * Displays a visual progress indicator with optional text.
+ *
+ * Props:
+ * @param {number | undefined} value - Progress value in percent (0-100). When `100`, the fill is slightly set beyond 100% to visually indicate completion.
+ * @param {string | null | undefined} text - Optional text. When `null`, no text is shown. When `undefined`, the `value` followed by '%' is shown (if `value` exists).
+ *
+ * Return: ReactElement
+ */
 export default function ProgressBar({
   value,
   text,

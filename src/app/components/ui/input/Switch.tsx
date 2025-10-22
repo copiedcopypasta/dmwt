@@ -7,6 +7,17 @@ interface SwitchProps {
   onChange?: (checked: boolean) => void;
 }
 
+/**
+ * Switch
+ *
+ * A toggle switch that holds a boolean state and triggers an `onChange` callback.
+ *
+ * Props:
+ * @param {boolean | undefined} checked - Initial state of the switch (default: false).
+ * @param {(checked: boolean) => void | undefined} onChange - Callback invoked on toggle with the new state.
+ *
+ * Return: ReactElement
+ */
 export default function Switch({
   checked = false,
   onChange,

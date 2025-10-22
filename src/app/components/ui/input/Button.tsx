@@ -7,6 +7,19 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
+/**
+ * Button
+ *
+ * A simple button component that renders either a <button> or an <a> link depending on `link`.
+ *
+ * Props:
+ * @param {string | undefined} color - Optional color key (interpolated into Tailwind classes).
+ * @param {string | undefined} link - Optional: if set, renders an anchor element with this href.
+ * @param {string | undefined} text - Button/link text.
+ * @param {() => void | undefined} onClick - Click handler for the button element (ignored for links).
+ *
+ * Return: ReactElement
+ */
 export default function Button({
   color,
   text,

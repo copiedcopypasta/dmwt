@@ -13,6 +13,18 @@ interface FooterProps {
   barrierefreiheit: string;
 }
 
+/**
+ * Footer
+ *
+ * Page footer with a list of links, an accessibility link, and copyright text.
+ *
+ * Props:
+ * @param {FooterLink[]} links - Array of links with label and href.
+ * @param {string} copyright - Copyright text.
+ * @param {string} barrierefreiheit - Text/label for the accessibility link.
+ *
+ * Return: ReactElement
+ */
 export default function Footer({
   links,
   copyright,

@@ -7,6 +7,19 @@ interface BannerProps {
   message: string | undefined;
 }
 
+/**
+ * Banner
+ *
+ * Displays a short banner message at the top or bottom of the page.
+ * Includes an optional background color and a close button.
+ *
+ * Props:
+ * @param {'top'|'bottom'} position - Banner position (top or bottom).
+ * @param {string | undefined} color - Optional CSS color for the background.
+ * @param {string | undefined} message - The message to display. If not provided, the component renders nothing.
+ *
+ * Return: ReactElement
+ */
 export default function Banner({
   position,
   message,

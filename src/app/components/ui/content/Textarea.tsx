@@ -5,6 +5,17 @@ interface TextareaProps {
   label?: string;
 }
 
+/**
+ * Textarea
+ *
+ * A read-only textarea component with an optional label.
+ *
+ * Props:
+ * @param {string} text - The text displayed in the textarea.
+ * @param {string | undefined} label - Optional label displayed above the textarea.
+ *
+ * Return: ReactElement
+ */
 export default function Textarea({ text, label }: TextareaProps): ReactElement {
   return (
     <div className="flex flex-col space-y-2">

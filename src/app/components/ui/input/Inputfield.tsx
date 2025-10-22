@@ -8,6 +8,20 @@ interface InputfieldProps {
   error?: string;
 }
 
+/**
+ * Inputfield
+ *
+ * Labeled text input field with error display.
+ *
+ * Props:
+ * @param {string} label - Label for the input field.
+ * @param {string} value - Current value of the input field.
+ * @param {(e: ChangeEvent<HTMLInputElement>) => void} onChange - Change handler.
+ * @param {string | undefined} placeholder - Optional placeholder.
+ * @param {string | undefined} error - Optional error text displayed below the field.
+ *
+ * Return: ReactElement
+ */
 export default function Inputfield({
   label,
   value,

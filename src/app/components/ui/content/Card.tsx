@@ -32,6 +32,21 @@ interface CardProps {
   backgroundColor?: string;
 }
 
+/**
+ * Card
+ *
+ * General card component with optional header, body and footer.
+ * Supports thumbnail, description, images and footer links.
+ *
+ * Props:
+ * @param {Header | undefined} header - Optional header containing title, link and thumbnail.
+ * @param {Body | undefined} body - Optional body containing description and content (images/gallery).
+ * @param {Footer | undefined} footer - Optional footer with text/link/icon.
+ * @param {string | undefined} color - Optional: border color (applied as inline style on the left).
+ * @param {string | undefined} backgroundColor - Optional: background color of the card.
+ *
+ * Return: ReactElement
+ */
 export default function Card({
   header,
   body,

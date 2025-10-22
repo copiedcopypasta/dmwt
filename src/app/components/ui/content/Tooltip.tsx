@@ -7,6 +7,17 @@ interface TooltipProps {
   children: React.ReactNode;
 }
 
+/**
+ * Tooltip
+ *
+ * A simple tooltip wrapper component that shows text on hover.
+ *
+ * Props:
+ * @param {string | undefined} text - The tooltip text shown on hover.
+ * @param {React.ReactNode} children - The element that triggers the hover effect.
+ *
+ * Return: ReactElement
+ */
 export default function Tooltip({
   text,
   children,

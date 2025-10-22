@@ -7,6 +7,19 @@ interface ListProps<T> {
   renderItem?: (item: T, index: number) => ReactElement;
 }
 
+/**
+ * List
+ *
+ * Generic list component that renders an array of items. A `renderItem` callback
+ * can be used to control how each element is rendered.
+ *
+ * Props:
+ * @template T
+ * @param {T[] | undefined} items - Optional array of items. Default: []
+ * @param {(item: T, index: number) => ReactElement | undefined} renderItem - Callback to render a list item.
+ *
+ * Return: ReactElement
+ */
 export default function List<T>({
   items = [],
   renderItem,

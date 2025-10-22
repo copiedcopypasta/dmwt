@@ -64,7 +64,7 @@ export default function Sidebar(): ReactElement {
             </button>
 
             {openSections.includes(section.title) && (
-              <div className="mt-1 ml-4 space-y-1">
+              <div className="ms-4 mt-1 space-y-1">
                 {section.items.map((item) => (
                   <button
                     key={item}

@@ -16,8 +16,15 @@ export default function Switch({
   const toggle = () => {
     const newState = !isOn;
     setIsOn(newState);
-    onChange?.(newState);
+    if (onChange) {
+      onChange(newState);
+    }
   };
+
+  React.useEffect(() => {
+    setIsOn(checked);
+  }, [checked]);
+
   return (
     <>
       <button

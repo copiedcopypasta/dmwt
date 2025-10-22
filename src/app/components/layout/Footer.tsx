@@ -18,7 +18,7 @@ export default function Footer({
 }: FooterProps): JSX.Element {
   return (
     <footer className="mt-8 py-6">
-      <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 md:flex-row">
+      <div className="container mx-auto flex flex-col items-center gap-4 px-4 md:flex-row md:justify-center">
         {/*Links*/}
         <nav className="flex flex-wrap justify-center gap-4">
           {links.map((link) => (
@@ -36,7 +36,7 @@ export default function Footer({
         </div>
 
         {/*Copyright*/}
-        <div className="text-center md:text-right">{copyright}</div>
+        <div className="text-center">{copyright}</div>
       </div>
     </footer>
   );

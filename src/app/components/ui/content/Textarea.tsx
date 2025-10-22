@@ -8,7 +8,7 @@ interface TextareaProps {
 export default function Textarea({ text, label }: TextareaProps): JSX.Element {
   return (
     <div className="flex flex-col space-y-2">
-      {/*Optinal label*/}
+      {/*Optional label*/}
       {label && <label className="">{label}</label>}
 
       {/*Textarea*/}

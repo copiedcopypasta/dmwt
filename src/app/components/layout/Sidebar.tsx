@@ -43,7 +43,7 @@ export default function Sidebar(): JSX.Element {
   };
 
   return (
-    <aside className="flex h-screen w-64 flex-col border-r border-neutral-800 bg-neutral-900 text-gray-200">
+    <aside className="fixed flex h-screen w-64 flex-col border-r border-neutral-800 bg-neutral-900 text-gray-200">
       {/* Header */}
       <div className="border-b border-neutral-800 p-4 text-lg font-semibold">
         react-docgen

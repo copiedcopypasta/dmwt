@@ -9,9 +9,13 @@ interface HeaderProps {
 
 export default function Header({ title, children }: HeaderProps): JSX.Element {
   return (
-    <header className="flex items-center justify-between bg-gray-800 p-4 text-white">
-      <h1 className="text-xl font-bold">{title}</h1>
-      <nav>{children}</nav>
+    <header className="relative bg-gray-800 p-4 text-white">
+      <h1 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform text-center text-xl font-bold">
+        {title}
+      </h1>
+      <nav className="absolute top-1/2 right-4 -translate-y-1/2 transform">
+        {children}
+      </nav>
     </header>
   );
 }

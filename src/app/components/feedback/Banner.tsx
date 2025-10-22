@@ -28,7 +28,7 @@ export default function Banner({
       <div
         style={
           {
-            ['--banner-color' as any]: color ?? 'transparent',
+            ['--banner-color' as string]: color ?? 'transparent',
           } as React.CSSProperties
         }
         className={`fixed inset-x-0 ${wrapperPositionClass} pointer-events-none z-50 flex justify-center`}

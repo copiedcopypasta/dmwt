@@ -1,4 +1,4 @@
-// Todo: Remove this comment, if you add props to the Interface
+'use client';
 
 import React, { ReactElement } from 'react';
 

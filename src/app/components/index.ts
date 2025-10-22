@@ -5,8 +5,8 @@
  */
 
 /* feedback Components */
-export { default as Alert } from './feedback/Alert';
 export { default as Badge } from './feedback/Badge';
+export { default as Banner } from './feedback/Banner';
 export { default as ProgressBar } from './feedback/ProgressBar';
 export { default as Toast } from './feedback/Toast';
 

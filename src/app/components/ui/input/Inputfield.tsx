@@ -1,6 +1,4 @@
-// Todo: Remove this comment, if you add props to the Interface
-
-import React, { ChangeEvent } from 'react';
+import React, { ReactElement, ChangeEvent } from 'react';
 
 interface InputfieldProps {
   label: string;
@@ -16,7 +14,7 @@ export default function Inputfield({
   onChange,
   placeholder,
   error,
-}: InputfieldProps): React.ReactElement {
+}: InputfieldProps): ReactElement {
   return (
     <div>
       <label className="mb-1 block font-medium">{label}</label>

@@ -1,6 +1,6 @@
 // Todo: Add defaultIcon
 
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 interface RatingProps {
   value: number;
@@ -12,7 +12,7 @@ export default function Rating({
   value,
   max,
   icon,
-}: RatingProps): React.ReactElement {
+}: RatingProps): ReactElement {
   const defaultIcon = <svg />;
 
   const RatingIcon = icon || defaultIcon;

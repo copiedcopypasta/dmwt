@@ -1,6 +1,4 @@
-// Todo: Create Component
-
-import React, { JSX } from 'react';
+import React, { ReactElement } from 'react';
 
 interface ProgressBarProps {
   value: number | undefined;
@@ -10,7 +8,7 @@ interface ProgressBarProps {
 export default function ProgressBar({
   value,
   text,
-}: ProgressBarProps): JSX.Element {
+}: ProgressBarProps): ReactElement {
   /* Display text logic:
    * 1. If text is null, display nothing
    * 2. If text is defined, display text

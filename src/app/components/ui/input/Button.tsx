@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 interface ButtonProps {
   color?: string | undefined;
@@ -12,7 +12,7 @@ export default function Button({
   text,
   link,
   onClick,
-}: ButtonProps): React.ReactElement {
+}: ButtonProps): ReactElement {
   const classes = `${color ? `bg-${color}-600 hover:bg-${color}-700 text-white` : 'bg-gray-600 text-white'} inline-block rounded-md px-5 py-2 shadow-sm`;
 
   if (link) {

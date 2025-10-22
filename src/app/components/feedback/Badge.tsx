@@ -1,4 +1,4 @@
-import React, { JSX } from 'react';
+import React, { ReactElement } from 'react';
 
 interface BadgeProps {
   text: string | undefined;
@@ -16,7 +16,7 @@ const badgeColors = {
 export default function Badge({
   text,
   color = 'gray',
-}: BadgeProps): JSX.Element {
+}: BadgeProps): ReactElement {
   const colorClasses = badgeColors[color];
 
   return (

@@ -1,5 +1,6 @@
 'use client';
-import React, { JSX } from 'react';
+
+import React, { ReactElement } from 'react';
 
 interface SwitchProps {
   checked?: boolean | undefined;
@@ -9,7 +10,7 @@ interface SwitchProps {
 export default function Switch({
   checked = false,
   onChange,
-}: SwitchProps): JSX.Element {
+}: SwitchProps): ReactElement {
   const [isOn, setIsOn] = React.useState(checked);
 
   const toggle = () => {

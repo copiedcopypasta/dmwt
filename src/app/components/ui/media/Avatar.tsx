@@ -1,4 +1,4 @@
-import React, { JSX } from 'react';
+import React, { ReactElement } from 'react';
 
 interface AvatarProps {
   src?: string;
@@ -12,7 +12,7 @@ export default function Avatar({
   alt = '',
   size = 40,
   fallback = '?',
-}: AvatarProps): JSX.Element {
+}: AvatarProps): ReactElement {
   return (
     <div
       className="flex items-center justify-center overflow-hidden rounded-full bg-gray-300"

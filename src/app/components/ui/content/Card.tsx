@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 //import { GalleryProps } from '../media/Gallery';
 
 interface Header {
@@ -38,7 +38,7 @@ export default function Card({
   footer,
   color,
   backgroundColor,
-}: CardProps): React.ReactElement {
+}: CardProps): ReactElement {
   const borderLeftColor = color ? `4px solid ${color}` : undefined;
 
   return (

@@ -1,16 +1,16 @@
 // list component for displaying a list of items
 
-import React, { JSX } from 'react';
+import React, { ReactElement } from 'react';
 
 interface ListProps<T> {
   items?: T[];
-  renderItem?: (item: T, index: number) => JSX.Element;
+  renderItem?: (item: T, index: number) => ReactElement;
 }
 
 export default function List<T>({
   items = [],
   renderItem,
-}: ListProps<T>): JSX.Element {
+}: ListProps<T>): ReactElement {
   return (
     <ul className="divide-y divide-gray-200">
       {items.map((item, index) => (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import Button from '../ui/input/Button';
 
 interface BannerProps {
@@ -11,7 +11,7 @@ export default function Banner({
   position,
   message,
   color,
-}: BannerProps): React.ReactElement {
+}: BannerProps): ReactElement {
   const [isVisible, setIsVisible] = React.useState(true);
   const handleClose = () => setIsVisible(false);
   // Banner should be responsive; width handled via CSS (Tailwind classes)

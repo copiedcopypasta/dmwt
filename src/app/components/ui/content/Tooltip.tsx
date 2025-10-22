@@ -1,12 +1,16 @@
 'use client';
-import React, { JSX } from 'react';
+
+import React, { ReactElement } from 'react';
 
 interface TooltipProps {
   text: string | undefined;
   children: React.ReactNode;
 }
 
-export default function Tooltip({ text, children }: TooltipProps): JSX.Element {
+export default function Tooltip({
+  text,
+  children,
+}: TooltipProps): ReactElement {
   const [isVisible, setVisible] = React.useState(false);
   return (
     <>

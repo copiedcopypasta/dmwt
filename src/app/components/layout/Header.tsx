@@ -1,13 +1,13 @@
-// header component for the application layout
+'use client';
 
-import React, { JSX } from 'react';
+import React, { ReactElement } from 'react';
 
 interface HeaderProps {
   title?: string;
   children?: React.ReactNode;
 }
 
-export default function Header({ title, children }: HeaderProps): JSX.Element {
+export default function Header({ title, children }: HeaderProps): ReactElement {
   return (
     <header className="relative bg-gray-800 p-4 text-white">
       <h1 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform text-center text-xl font-bold">

@@ -1,11 +1,11 @@
-import React, { JSX } from 'react';
+import React, { ReactElement } from 'react';
 
 interface TextareaProps {
   text: string;
   label?: string;
 }
 
-export default function Textarea({ text, label }: TextareaProps): JSX.Element {
+export default function Textarea({ text, label }: TextareaProps): ReactElement {
   return (
     <div className="flex flex-col space-y-2">
       {/*Optional label*/}

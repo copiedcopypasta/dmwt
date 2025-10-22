@@ -1,6 +1,6 @@
 'use client';
 
-import React, { JSX, useState } from 'react';
+import React, { ReactElement, useState } from 'react';
 
 interface Section {
   title: string;
@@ -30,7 +30,7 @@ const sections: Section[] = [
   },
 ];
 
-export default function Sidebar(): JSX.Element {
+export default function Sidebar(): ReactElement {
   const [openSections, setOpenSections] = useState<string[]>([
     'Getting started',
   ]);

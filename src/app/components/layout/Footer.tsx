@@ -1,4 +1,6 @@
-import React, { JSX } from 'react';
+'use client';
+
+import React, { ReactElement } from 'react';
 
 export interface FooterLink {
   label: string;
@@ -15,7 +17,7 @@ export default function Footer({
   links,
   copyright,
   barrierefreiheit,
-}: FooterProps): JSX.Element {
+}: FooterProps): ReactElement {
   return (
     <footer className="mt-8 py-6">
       <div className="container mx-auto flex flex-col items-center gap-4 px-4 md:flex-row md:justify-center">

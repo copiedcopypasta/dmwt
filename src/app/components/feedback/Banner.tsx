@@ -1,26 +1,45 @@
 import React from 'react';
-
-type BannerType = 'success' | 'error' | 'warning' | 'info';
+import Button from '../ui/input/Button';
 
 interface BannerProps {
-  type?: BannerType;
+  position: 'top' | 'bottom';
+  color?: string | undefined;
   message: string | undefined;
 }
 
-const bannerStyles: Record<BannerType, string> = {
-  success: 'bg-green-100 border-green-400 text-green-700',
-  error: 'bg-red-100 border-red-400 text-red-700',
-  warning: 'bg-yellow-100 border-yellow-400 text-yellow-700',
-  info: 'bg-blue-100 border-blue-400 text-blue-700',
-};
-
 export default function Banner({
-  type,
+  position,
   message,
+  color,
 }: BannerProps): React.ReactElement {
+  const [isVisible, setIsVisible] = React.useState(true);
+  const handleClose = () => setIsVisible(false);
+  // Banner should be responsive; width handled via CSS (Tailwind classes)
+
+  if (!isVisible || !message) {
+    return <></>;
+  }
+
+  // position wrapper: fixed at top or bottom, full-width container with centered content
+  const wrapperPositionClass = position === 'bottom' ? 'bottom-4' : 'top-4';
+
   return (
-    <div className={`rounded p-3 ${bannerStyles[type || 'info']} border`}>
-      {message}
-    </div>
+    <>
+      <div
+        style={
+          {
+            ['--banner-color' as any]: color ?? 'transparent',
+          } as React.CSSProperties
+        }
+        className={`fixed inset-x-0 ${wrapperPositionClass} pointer-events-none z-50 flex justify-center`}
+      >
+        <div
+          className={`pointer-events-auto mx-auto flex w-4/6 max-w-4xl flex-col items-center gap-2 rounded border bg-[var(--banner-color)]/100 p-3`}
+        >
+          <div className="text-center">{message}</div>
+          <Button text="Close" onClick={handleClose} color="" />
+        </div>
+      </div>
+    </>
   );
 }

@@ -93,7 +93,7 @@ export default function Card({
             />
           )}
 
-          {/* Wenn du später eine Gallery-Komponente hast */}
+          {/* Gallery Component */}
           {/* {body.content?.imageGallery && <Gallery {...body.content.imageGallery} />} */}
         </div>
       )}

@@ -23,6 +23,5 @@ updates:
     # Prefix for commit messages
     commit-message:
       prefix: 'deps'
-    versioning-strategy: 'auto'
     # Target branch for PRs
     target-branch: 'main'

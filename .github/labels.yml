@@ -38,6 +38,8 @@
   color: ffccd7
 - name: review requested
   color: aed5fc
+- name: merge ready
+  color: 80c042
 - name: interactions
   color: 80c042
 - name: invalid

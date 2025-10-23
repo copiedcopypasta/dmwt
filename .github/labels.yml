@@ -48,3 +48,5 @@
   color: 80c042
 - name: wontfix
   color: ffffff
+- name: build
+  color: 80c042

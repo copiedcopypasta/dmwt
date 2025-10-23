@@ -22,8 +22,6 @@
   color: ffffff
 - name: blocked
   color: fc1423
-- name: discussion
-  color: b6b1f9
 - name: duplicate
   color: cfd3d7
 - name: error handling

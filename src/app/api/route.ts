@@ -1,28 +1,9 @@
 import { NextResponse } from 'next/server';
-import { PrismaClient } from '../../../lib/generated/prisma-client';
-
-const prisma = new PrismaClient();
-
-async function getUsers() {
-  // create seed users but don't fail on duplicates
-  await prisma.user.createMany({
-    data: [
-      { email: 'alice@example.com', name: 'Alice' },
-      { email: 'bob@example.com', name: 'Bob' },
-      { email: 'charlie@example.com', name: 'Charlie' },
-      { email: 'diana@example.com', name: 'Diana' },
-      { email: 'edward@example.com', name: 'Edward' },
-    ],
-    skipDuplicates: true,
-  });
-
-  // return current users
-  return prisma.user.findMany();
-}
+import prisma from '../../../lib/prisma';
 
 export async function GET() {
   try {
-    const users = await getUsers();
+    const users = await prisma.user.findMany();
     return NextResponse.json(users);
   } catch (err) {
     console.error('API /api error:', err);

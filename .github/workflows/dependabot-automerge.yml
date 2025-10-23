@@ -24,13 +24,19 @@ jobs:
             NEW=$(echo "$PAIR" | awk '{print $4}')
             OMAJOR=$(echo $OLD | cut -d. -f1)
             OMINOR=$(echo $OLD | cut -d. -f2)
+            OPATCH=$(echo $OLD | cut -d. -f3)
             NMAJOR=$(echo $NEW | cut -d. -f1)
             NMINOR=$(echo $NEW | cut -d. -f2)
+            NPATCH=$(echo $NEW | cut -d. -f3)
             if [ "$NMAJOR" -ne "$OMAJOR" ]; then
               echo "author=skip" >> $GITHUB_OUTPUT
               exit 0
             fi
-            if [ "$NMINOR" -le "$OMINOR" ]; then
+            if [ "$NMINOR" -lt "$OMINOR" ]; then
+              echo "author=skip" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+            if [ "$NMINOR" -eq "$OMINOR" ] && [ "$NPATCH" -le "$OPATCH" ]; then
               echo "author=skip" >> $GITHUB_OUTPUT
               exit 0
             fi

@@ -9,7 +9,6 @@ updates:
     # Limit open PRs from Dependabot
     open-pull-requests-limit: 5
     # Create separate PRs per dependency to make review easier
-    separate-pull-requests: true
     # Only propose updates for direct dependencies declared in package.json
     allow:
       - dependency-type: 'direct'

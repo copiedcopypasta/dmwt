@@ -24,7 +24,7 @@
     "commitlint": "commitlint",
     "ceg": "npm run generate:components",
     "generate:components": "npx -y ts-node ./scripts/CEG.ts",
-    "postinstall": "prisma generate --no-engine",
+    "postinstall": "is-ci || prisma generate --no-engine",
     "prepare": "is-ci || husky install"
   },
   "dependencies": {

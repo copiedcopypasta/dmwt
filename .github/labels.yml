@@ -36,7 +36,7 @@
   color: '008672'
 - name: in progress
   color: ffccd7
-- name: in review
+- name: review requested
   color: aed5fc
 - name: interactions
   color: 80c042

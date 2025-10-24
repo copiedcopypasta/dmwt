@@ -22,8 +22,6 @@
   color: ffffff
 - name: blocked
   color: fc1423
-- name: discussion
-  color: b6b1f9
 - name: duplicate
   color: cfd3d7
 - name: error handling
@@ -36,17 +34,19 @@
   color: '008672'
 - name: in progress
   color: ffccd7
-- name: in review
+- name: review requested
   color: aed5fc
+- name: merge ready
+  color: 80c042
 - name: interactions
   color: 80c042
 - name: invalid
   color: e4e669
-- name: threads
-  color: 80c042
 - name: typings
   color: 80c042
 - name: utility
   color: 80c042
 - name: wontfix
   color: ffffff
+- name: build
+  color: 0075ca

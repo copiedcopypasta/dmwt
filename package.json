@@ -18,8 +18,7 @@
   ],
   "type": "module",
   "scripts": {
-    "build": "next build || npm run build:turbo",
-    "build:turbo": "next build --turbopack",
+    "build": "next build",
     "ceg": "npm run generate:components",
     "commitlint": "commitlint",
     "dev": "npm run ceg && npm run lint && next dev",

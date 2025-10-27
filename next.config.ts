@@ -16,52 +16,6 @@ for (const envPath of envPaths) {
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  typescript: {
-    ignoreBuildErrors: false,
-  },
-  eslint: {
-    ignoreDuringBuilds: false,
-  },
-  webpack(config, { isServer }) {
-    config.snapshot = { ...config.snapshot, managedPaths: [] };
-
-    if (!isServer) {
-      const prismaClientPath = path.resolve(
-        __dirname,
-        'src',
-        'app',
-        'generated',
-        'prisma',
-      );
-
-      const browserShim = path.resolve(
-        __dirname,
-        'src',
-        'app',
-        'generated',
-        'prisma-client-browser.js',
-      );
-
-      config.resolve = config.resolve || {};
-      config.resolve.alias = {
-        ...(config.resolve.alias || {}),
-        [prismaClientPath]: browserShim,
-      };
-    }
-
-    return config;
-  },
-  turbopack: {
-    resolveAlias: {
-      '@': './src',
-    },
-    rules: {
-      '*.svg': {
-        loaders: ['@svgr/webpack'],
-        as: '*.ts',
-      },
-    },
-  },
 };
 
 export default nextConfig;

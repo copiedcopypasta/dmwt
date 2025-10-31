@@ -1,6 +1,7 @@
 'use client';
 
 import React, { ReactElement } from 'react';
+import Link from 'next/link'
 
 // Todo: Remove this comment, if you add props to the Interface
 /* eslint-disable-next-line @typescript-eslint/no-empty-object-type */
@@ -35,17 +36,17 @@ export default function Navbar({
         
         {/* Site Name/Brand */}
         <div className="text-xl font-bold">
-          <a href="/" className="hover:text-gray-300">
+          <Link href="/" className="hover:text-gray-300">
             {siteName}
-          </a>
+          </Link>
         </div>
 
         {/* Links */}
         <nav className="flex flex-wrap justify-center gap-4">
           {links.map((link) => (
-            <a key={link.href} href={link.href} className="hover:text-gray-300">
+            <Link key={link.href} href={link.href} className="hover:text-gray-300">
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>

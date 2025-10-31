@@ -3,8 +3,8 @@ name: Release
 on:
   push:
     tags:
-      - '[0-9]+.[0-9]+.[0-9]+'
-      - '[0-9]+.[0-9]+.[0-9]+-*'
+      - '*.*.*'
+      - '*.*.*-*'
 
 jobs:
   release:
@@ -35,7 +35,7 @@ jobs:
         id: prev_tag
         run: |
           git fetch --tags
-          PREV_TAG=$(git tag --sort=-creatordate | grep -E '^[0-9]+\.[0-9]+\.[0-9]+' | grep -v "${GITHUB_REF_NAME}" | head -n 1)
+          PREV_TAG=$(git tag --sort=-creatordate | grep -E '^[0-9]+\.[0-9]+\.[0-9]+(-.+)?$' | grep -v "${GITHUB_REF_NAME}" | head -n 1)
           echo "prev_tag=$PREV_TAG" >> $GITHUB_OUTPUT
 
       - name: Generate changelog

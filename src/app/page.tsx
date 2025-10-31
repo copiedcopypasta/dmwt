@@ -15,7 +15,13 @@ export default function Home() {
 
       <div className="app-grid min-h-screen p-6">
         <nav className="app-col app-col-full">
-          <Components.Navbar />
+          <Components.Navbar 
+          siteName="Wizard of OS"
+          links={[
+            { label: 'Quiz', href: '/quiz' },
+            { label: 'Feedback', href: '/feedback' },
+          ]}
+          />
         </nav>
 
         <header className="app-col app-col-full">

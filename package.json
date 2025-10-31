@@ -25,6 +25,7 @@
     "generate:components": "npx -y ts-node ./scripts/CEG.ts",
     "postinstall": "prisma generate --no-engine",
     "lint": "eslint",
+    "migrate": "npx -y ts-node ./scripts/migrate.ts",
     "prepare": "is-ci || husky install",
     "start": "next start",
     "tsc-check": "tsc --noEmit"

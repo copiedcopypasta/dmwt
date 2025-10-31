@@ -22,10 +22,10 @@
     "ceg": "npm run generate:components",
     "commitlint": "commitlint",
     "dev": "npm run ceg && npm run lint && next dev",
-    "generate:components": "npx -y ts-node ./scripts/CEG.ts",
+    "generate:components": "npx -y tsx ./scripts/CEG.ts",
+    "generate:migration": "npx -y tsx ./scripts/Prisma_Migrate.ts",
     "postinstall": "prisma generate --no-engine",
     "lint": "eslint",
-    "migrate": "npx -y ts-node ./scripts/Prisma_Migrate.ts",
     "prepare": "is-ci || husky install",
     "start": "next start",
     "tsc-check": "tsc --noEmit"

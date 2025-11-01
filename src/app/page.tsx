@@ -99,14 +99,14 @@ export default function Home() {
                 <Components.Inputfield
                   label="Singleline"
                   defaultValue={''}
-                  placeholder="Beispieltext"
+                  placeholder="Example Singleline Text"
                   fullWidth
                 />
 
                 <Components.Inputfield
                   label="Multiline"
                   defaultValue={''}
-                  placeholder="Mehrzeiliger Beispieltex"
+                  placeholder="Example Multiline Text"
                   fullWidth
                   multiline
                   rows={4}

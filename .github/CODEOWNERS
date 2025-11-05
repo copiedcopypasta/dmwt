@@ -1,4 +1,4 @@
 # CODEOWNERS file
-# Assign the copiedcopypasta organization as code owner for all files.
+# Assign the primary repository contributor as code owner for all files.
 
-* @copiedcopypasta/owners
+* @pallepalinski

@@ -12,7 +12,7 @@ export { default as Toast } from './feedback/Toast';
 
 /* layout Components */
 export { default as Footer } from './layout/Footer';
-export { default as Header } from './layout/Header';
+export { default as Hero } from './layout/Hero';
 export { default as Navbar } from './layout/Navbar';
 export { default as Sidebar } from './layout/Sidebar';
 
@@ -25,6 +25,7 @@ export { default as Tooltip } from './ui/content/Tooltip';
 /* ui input Components */
 export { default as Button } from './ui/input/Button';
 export { default as Inputfield } from './ui/input/Inputfield';
+export { default as Searchbar } from './ui/input/Searchbar';
 export { default as Slider } from './ui/input/Slider';
 export { default as Switch } from './ui/input/Switch';
 

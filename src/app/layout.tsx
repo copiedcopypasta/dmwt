@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Title of the Website',
-  description: 'Description of the Website',
+  title: 'Wizard of OS',
+  description: 'This is the Website for the WoOS project.',
 };
 
 export default function RootLayout({

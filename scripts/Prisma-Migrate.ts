@@ -57,7 +57,7 @@ async function main() {
 
     console.log('\n✅ Migration completed successfully!');
   } catch (error) {
-    console.error('\n❌ Migration failed!');
+    console.error('\n❌ Migration failed!\n' + error);
     process.exit(1);
   }
 }

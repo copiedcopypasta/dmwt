@@ -1,0 +1,82 @@
+/* =====================================================
+   GLOBALS – Next.js + Tailwind + Dein Token-System
+===================================================== */
+
+/* Dein Design-System */
+@import './components.css';
+@import './theme.css';
+
+/* =====================================================
+   Layout Grid (modern, CSS Grid)
+===================================================== */
+
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'navbar'
+    'header'
+    'main'
+    'footer';
+  gap: 1.5rem;
+  background: var(--color-default-background);
+  color: var(--color-default-font);
+}
+
+/* Mobile First */
+.navbar,
+main {
+  margin-block-end: 20px;
+}
+
+aside {
+  display: none;
+}
+
+/* =====================================================
+   Responsive Layout (>= 768px)
+===================================================== */
+
+@media (min-width: 768px) {
+  body {
+    grid-template-columns: 2fr 10fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      'header header'
+      'sidebar main'
+      'footer footer';
+  }
+
+  aside {
+    display: block;
+  }
+
+  .navbar {
+    display: none;
+  }
+}
+
+/* =====================================================
+   Grid Area Mapping
+===================================================== */
+
+header {
+  grid-area: header;
+}
+
+.navbar {
+  grid-area: navbar;
+  inline-size: 100%;
+}
+
+aside {
+  grid-area: sidebar;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+}

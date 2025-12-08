@@ -2,6 +2,9 @@ datasource db {
   provider = "postgresql"
 }
 
+generator client {
+  provider = "prisma-client-js"
+}
 
 model User {
   id    Int     @id @default(autoincrement())
@@ -20,6 +23,6 @@ model Post {
 }
 
 model Feedback {
-  id        Int     @id @default(autoincrement())
-  content   String
+  id      Int    @id @default(autoincrement())
+  content String
 }

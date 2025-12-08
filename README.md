@@ -29,8 +29,7 @@
 
 This project helps you make more sustainable tech decisions: reduce unnecessary device purchases, choose and compare energy‑efficient operating systems, and adopt development practices that make software run faster while using less power.
 
-> [!IMPORTANT]
-> **This project was created as part of a university course.**
+> [!IMPORTANT] > **This project was created as part of a university course.**
 
 ## Links
 

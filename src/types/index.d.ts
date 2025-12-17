@@ -6,6 +6,16 @@ export type NextPageWithLayout = NextPage & {
   getLayout?: () => ReactNode;
 };
 
+export interface Links {
+  label: string;
+  href: string;
+}
+
+export interface Sozials {
+  href: string;
+  altText: string;
+}
+
 export type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };

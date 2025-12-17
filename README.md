@@ -3,8 +3,8 @@
 <div align="center">
     <p>
         <a href="https://github.com/copiedcopypasta/dmwt">
-            <img src="src/assets/logo.svg" title="dmwt" alt="dmwt logo" width="50" />
-            <img src="src/assets/banner.svg" title="dmwt" alt="dmwt logo" width="300" />
+            <img src="public/Logo.png" title="dmwt" alt="woOS logo" width="80" />
+            <img src="public/Banner.png" title="dmwt" alt="WoOS Banner" width="500" />
         </a>
     </p>
     <p>

@@ -8,13 +8,15 @@
     "utils": "@/lib/utils"
   },
   "iconLibrary": "lucide",
-  "registries": {},
+  "registries": {
+    "@basecn": "https://basecn.dev/r/{name}.json"
+  },
   "rsc": true,
   "style": "new-york",
   "tailwind": {
     "baseColor": "neutral",
-    "config": "postcss.config.ts",
-    "css": "src/styles/globals.css",
+    "config": "",
+    "css": "src/styles/theme.css",
     "cssVariables": true,
     "prefix": ""
   },

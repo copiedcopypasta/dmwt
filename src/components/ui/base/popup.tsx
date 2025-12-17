@@ -1,7 +1,7 @@
 'use client';
 
 import React, { ReactElement } from 'react';
-import Button from '../input/Button';
+import { Button } from '@/components/ui/button';
 
 interface BannerProps {
   position: 'top' | 'bottom';
@@ -52,7 +52,7 @@ export default function Banner({
           className={`pointer-events-auto mx-auto flex w-4/6 max-w-4xl flex-col items-center gap-2 rounded border bg-[var(--banner-color)]/100 p-3`}
         >
           <div className='text-center'>{message}</div>
-          <Button text='Close' onClick={handleClose} color='' />
+          <Button onClick={handleClose} />
         </div>
       </div>
     </>

@@ -1,11 +1,7 @@
-'use client';
-
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { motion } from 'framer-motion';
 import { SearchX, ArrowLeft, Home } from 'lucide-react';
 import ErrorLayout from '@/layouts/ErrorLayout';
-import { FlipButton } from '@/components/ui/shadcn-io/flip-button';
+import NotFoundActions from '@/components/NotFoundActions/NotFoundActions';
 
 const NOT_FOUND_CONFIG = {
   title: 'Seite nicht gefunden',
@@ -18,22 +14,12 @@ const NOT_FOUND_CONFIG = {
 } as const;
 
 export default function NotFound() {
-  const router = useRouter();
-
   return (
     <ErrorLayout>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, ease: 'easeOut' }}
-        className='flex flex-col items-center gap-4 text-center'
-      >
-        <motion.div
-          animate={{ y: [-3, 3, -3] }}
-          transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-        >
+      <div className='flex flex-col items-center gap-4 text-center'>
+        <div className='animate-bounce'>
           <SearchX className='text-error-500 h-12 w-12' />
-        </motion.div>
+        </div>
 
         <h1 className='text-2xl font-semibold text-neutral-900'>
           {NOT_FOUND_CONFIG.title}
@@ -44,25 +30,12 @@ export default function NotFound() {
         </p>
 
         <div className='mt-2 flex flex-wrap justify-center gap-3'>
-          <FlipButton
-            onClick={() => router.back()}
-            frontText={NOT_FOUND_CONFIG.buttons.back}
-            backText={<ArrowLeft className='inline' size={16} />}
-            from='left'
-            frontClassName='bg-neutral-100'
-            backClassName='bg-error-500 text-white'
+          <NotFoundActions
+            backText={NOT_FOUND_CONFIG.buttons.back}
+            homeText={NOT_FOUND_CONFIG.buttons.home}
           />
-
-          <Link href='/'>
-            <FlipButton
-              frontText={NOT_FOUND_CONFIG.buttons.home}
-              backText={<Home className='inline' size={16} />}
-              frontClassName='bg-neutral-100'
-              backClassName='bg-error-500 text-white'
-            />
-          </Link>
         </div>
-      </motion.div>
+      </div>
     </ErrorLayout>
   );
 }

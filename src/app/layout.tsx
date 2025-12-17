@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   description: 'Wizard of OS – Tools, Utilities & Magic für dein System.',
 
   icons: {
-    icon: '/favicon.png',
-    apple: '/apple-icon.png',
-    shortcut: '/favicon.ico',
+    icon: '/favicon/favicon.png',
+    apple: '/favicon/apple-icon.png',
+    shortcut: '/favicon/favicon.ico',
   },
 
   openGraph: {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description: 'Wizard of OS – Tools, Utilities & Magic für dein System.',
     images: [
       {
-        url: '/og-default.jpg', // Optional: kannst du später ersetzen
+        url: '/favicon/og-default.jpg', // Optional: kannst du später ersetzen
         width: 1200,
         height: 630,
         alt: 'Wizard of OS – Open Graph Bild',
@@ -63,7 +63,7 @@ const navbar: NavbarProps = {
   darkModeToggle: true,
   loginButton: true,
   borderLine: true,
-  fixed: true,
+  fixed: false,
 };
 
 const footer: FooterProps = {

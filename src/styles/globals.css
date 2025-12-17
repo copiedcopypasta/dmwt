@@ -2,6 +2,9 @@
    GLOBALS – Next.js + Tailwind + Dein Token-System
 ===================================================== */
 
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
 /* Dein Design-System */
 @import './components.css';
 @import './theme.css';
@@ -14,7 +17,6 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
-    'navbar'
     'header'
     'main'
     'footer';
@@ -23,38 +25,9 @@ body {
   color: var(--color-default-font);
 }
 
-/* Mobile First */
-.navbar,
-main {
-  margin-block-end: 20px;
-}
-
-aside {
-  display: none;
-}
-
 /* =====================================================
    Responsive Layout (>= 768px)
 ===================================================== */
-
-@media (min-width: 768px) {
-  body {
-    grid-template-columns: 2fr 10fr;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas:
-      'header header'
-      'sidebar main'
-      'footer footer';
-  }
-
-  aside {
-    display: block;
-  }
-
-  .navbar {
-    display: none;
-  }
-}
 
 /* =====================================================
    Grid Area Mapping
@@ -62,11 +35,6 @@ aside {
 
 header {
   grid-area: header;
-}
-
-.navbar {
-  grid-area: navbar;
-  inline-size: 100%;
 }
 
 aside {

@@ -26,7 +26,6 @@ const comment = `/**
  * This file is auto-generated, do not edit manually.
  */`;
 
-// eslint-disable-next-line no-undef
 module.exports = {
   // Paths used by the generator
   paths,

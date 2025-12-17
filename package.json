@@ -29,7 +29,6 @@
     "dev:prepare": "npm run db:generate && npm run generator",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "generate:components": "npx -y tsx ./scripts/Components-Exporter.ts",
     "generate:routes": "npx -y tsx ./scripts/Routes-Exporter.ts",
     "generate:theme": "npx -y tsx ./scripts/Theme-Exporter.ts",
     "generator": "npm-run-all --parallel generate:*",

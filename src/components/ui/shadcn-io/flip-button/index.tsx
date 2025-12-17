@@ -71,7 +71,7 @@ function FlipButton({
         'relative inline-block h-10 cursor-pointer px-4 py-2 text-sm font-medium perspective-[1000px] focus:outline-none',
         className,
       )}
-      {...(props as Record<string, unknown>)}
+      {...(props as HTMLMotionProps<'button'>)}
     >
       <motion.span
         data-slot='flip-button-front'

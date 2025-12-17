@@ -1,8 +1,16 @@
 'use client';
 
 import { ReactElement, useState } from 'react';
-import Image from 'next/image';
-import Greenland from './Greenland.svg';
+import Link from 'next/link';
+import type { Links, Sozials } from '@/types/index';
+
+import Logo from '@/assets/logo.svg';
+import Banner from '@/assets/banner.svg';
+import Discord from '@/assets/discord.svg';
+import Youtube from '@/assets/youtube.svg';
+import Github from '@/assets/github.svg';
+import Greenland from '@/assets/greenland.svg';
+
 import {
   Select,
   SelectContent,
@@ -11,18 +19,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import './index.module.css';
-
-export interface Links {
-  label: string;
-  href: string;
-}
-
-export interface Sozials {
-  icon: ReactElement;
-  href: string;
-  altText: string;
-}
+import styles from './index.module.css';
 
 export interface LinkCategorys {
   resources: Links[] | null | undefined;
@@ -37,6 +34,10 @@ export interface FooterProps {
   logo: boolean | null | undefined;
   banner: boolean | null | undefined;
 }
+
+// ============================================================================
+// Utility Functions
+// ============================================================================
 
 /**
  * Checks if a value exists and is not empty
@@ -78,18 +79,49 @@ const mapLinks = (category: Links[] | null | undefined): Links[] | null => {
 };
 
 /**
- * Gets logo or returns null
+ * Gets logo display state
  */
 const getLogo = (logo: FooterProps['logo']): boolean => {
   return hasValue(logo);
 };
 
 /**
- * Gets banner or returns null
+ * Gets banner display state
  */
 const getBanner = (banner: FooterProps['banner']): boolean => {
   return hasValue(banner);
 };
+
+/**
+ * Gets the appropriate icon based on the href
+ */
+const getIcon = (href: string): ReactElement | null => {
+  if (href.includes('discord')) {
+    return <Discord className={styles.socialIcon} />;
+  }
+  if (href.includes('youtube')) {
+    return <Youtube className={styles.socialIcon} />;
+  }
+  if (href.includes('github')) {
+    return <Github className={styles.socialIcon} />;
+  }
+  return null;
+};
+
+// ============================================================================
+// Component Sections
+// ============================================================================
+
+/**
+ * Language data constant
+ */
+const LANGUAGES = [
+  { value: 'de', label: 'Deutsch', flag: '🇩🇪' },
+  { value: 'en', label: 'English', flag: '🇬🇧' },
+  { value: 'fr', label: 'Français', flag: '🇫🇷' },
+  { value: 'es', label: 'Español', flag: '🇪🇸' },
+  { value: 'it', label: 'Italiano', flag: '🇮🇹' },
+] as const;
 
 /**
  * Renders the footer info section (language, socials, logo)
@@ -104,59 +136,47 @@ const InfoSection = ({
   sozials: Sozials[];
 }): ReactElement => {
   const [selectedLanguage, setSelectedLanguage] = useState('de');
-
-  const languages = [
-    { value: 'de', label: 'Deutsch', flag: '🇩🇪' },
-    { value: 'en', label: 'English', flag: '🇬🇧' },
-    { value: 'fr', label: 'Français', flag: '🇫🇷' },
-    { value: 'es', label: 'Español', flag: '🇪🇸' },
-    { value: 'it', label: 'Italiano', flag: '🇮🇹' },
-  ];
-
-  const selectedLang = languages.find(
+  const selectedLang = LANGUAGES.find(
     (lang) => lang.value === selectedLanguage,
   );
 
   return (
-    <div className='flex flex-col items-start'>
+    <div className={styles.infoSection}>
       {/* Logo */}
       {showLogo && (
-        <div className='mb-8'>
-          <a href='/' aria-label='Home'>
-            <Image
-              src='/Icon.png'
-              alt='Logo'
-              width={125}
-              height={125}
-              className='h-25 w-25'
-            />
-          </a>
+        <div className={styles.logoWrapper}>
+          <Link href='/' aria-label='Home'>
+            <Logo className={styles.logo} />
+          </Link>
         </div>
       )}
 
       {/* Language */}
-      <div className='mb-8'>
-        <p className='mb-2 text-sm opacity-70'>Sprache</p>
-        <Select value={selectedLanguage} onValueChange={setSelectedLanguage}>
-          <SelectTrigger className='bg-success-500/20 hover:bg-success-500/30 w-fit min-w-[200px] rounded-lg border-transparent text-white'>
+      <div className={styles.languageWrapper}>
+        <p className={styles.sectionTitle}>Sprache</p>
+        <Select
+          value={selectedLanguage}
+          onValueChange={(value) => value && setSelectedLanguage(value)}
+        >
+          <SelectTrigger className={styles.selectTrigger}>
             <SelectValue>
               {selectedLang && (
-                <div className='flex items-center gap-2'>
+                <div className={styles.languageOption}>
                   <span>{selectedLang.flag}</span>
                   <span>{selectedLang.label}</span>
                 </div>
               )}
             </SelectValue>
           </SelectTrigger>
-          <SelectContent className='bg-success-500/20 border-transparent text-white backdrop-blur-sm'>
+          <SelectContent className={styles.selectContent}>
             <SelectGroup>
-              {languages.map((lang) => (
+              {LANGUAGES.map((lang) => (
                 <SelectItem
                   key={lang.value}
                   value={lang.value}
-                  className='hover:bg-success-500/30 focus:bg-success-500/30 focus:text-white'
+                  className={styles.selectItem}
                 >
-                  <div className='flex items-center gap-2'>
+                  <div className={styles.languageOption}>
                     <span>{lang.flag}</span>
                     <span>{lang.label}</span>
                   </div>
@@ -170,16 +190,16 @@ const InfoSection = ({
       {/* Sozials */}
       {hasSozials && (
         <div>
-          <p className='mb-4 text-sm opacity-70'>Soziales</p>
-          <div className='flex gap-4'>
+          <p className={styles.sectionTitle}>Soziales</p>
+          <div className={styles.socialLinks}>
             {sozials.map((social, idx) => (
               <a
                 key={idx}
                 href={social.href}
                 aria-label={social.altText}
-                className='hover:opacity-70'
+                className={styles.socialLink}
               >
-                {social.icon}
+                {social.href && getIcon(social.href)}
               </a>
             ))}
           </div>
@@ -190,39 +210,43 @@ const InfoSection = ({
 };
 
 /**
+ * Link categories configuration
+ */
+const LINK_CATEGORIES = [
+  { key: 'resources', title: 'Ressourcen' },
+  { key: 'social', title: 'Soziales' },
+  { key: 'about', title: 'Informationen' },
+  { key: 'legal', title: 'Richtlinien' },
+] as const;
+
+/**
  * Renders the footer links section
  */
-const linksSection = (mappedLinks: {
-  resources: Links[] | null;
-  legal: Links[] | null;
-  about: Links[] | null;
-  social: Links[] | null;
+const LinksSection = ({
+  mappedLinks,
+}: {
+  mappedLinks: {
+    resources: Links[] | null;
+    legal: Links[] | null;
+    about: Links[] | null;
+    social: Links[] | null;
+  };
 }): ReactElement => {
-  const categories = [
-    { key: 'resources', title: 'Ressourcen' },
-    { key: 'social', title: 'Soziales' },
-    { key: 'about', title: 'Informationen' },
-    { key: 'legal', title: 'Richtlinien' },
-  ] as const;
-
   return (
-    <div className='grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4'>
-      {categories.map(({ key, title }) => {
+    <div className={styles.linksContainer}>
+      {LINK_CATEGORIES.map(({ key, title }) => {
         const links = mappedLinks[key];
         if (!links) return null;
 
         return (
-          <div key={key}>
-            <h3 className='mb-4 text-base text-neutral-400'>{title}</h3>
-            <ul className='space-y-3'>
+          <div key={key} className={styles.linkCategory}>
+            <h3 className={styles.categoryTitle}>{title}</h3>
+            <ul className={styles.linkList}>
               {links.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className='text-base text-neutral-700 hover:underline'
-                  >
+                  <Link href={link.href} className={styles.link}>
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -236,18 +260,16 @@ const linksSection = (mappedLinks: {
 /**
  * Renders the footer banner
  */
-const bannerSection = (showBanner: boolean): ReactElement | null => {
+const BannerSection = ({
+  showBanner,
+}: {
+  showBanner: boolean;
+}): ReactElement | null => {
   if (!showBanner) return null;
 
   return (
-    <div className='col-span-2 mt-6 pt-8'>
-      <Image
-        width={0}
-        height={0}
-        src='/Banner.svg'
-        alt='Footer Banner'
-        className='h-auto w-full rounded-lg'
-      />
+    <div className={styles.bannerWrapper}>
+      <Banner aria-label='Footer Banner' className={styles.banner} />
     </div>
   );
 };
@@ -268,6 +290,7 @@ export default function Footer({
   logo,
   banner,
 }: FooterProps): ReactElement {
+  // const hasLinks = hasLinkCategory(links); - not used currently
   const hasSozials = hasValue(sozials) && Array.isArray(sozials);
   const showLogo = getLogo(logo);
   const showBanner = getBanner(banner);
@@ -281,15 +304,12 @@ export default function Footer({
 
   return (
     <footer>
-      <div className='text-brand-100 block overflow-hidden'>
-        <Greenland
-          className='block h-auto w-full'
-          style={{ marginBottom: '-3px' }}
-        />
+      <div className={styles.greenlandWrapper}>
+        <Greenland className={styles.greenland} />
       </div>
 
-      <div className='footer-container bg-brand-100 gap-8 px-16 py-8'>
-        <div className='grid grid-cols-3 gap-8'>
+      <div className={styles.footerContainer}>
+        <div className={styles.contentGrid}>
           {/* Row 1 - Left Column: Language + Sozials + Logo */}
           <InfoSection
             showLogo={showLogo}
@@ -298,11 +318,13 @@ export default function Footer({
           />
 
           {/* Row 1 - Right Column: Links (spans 2 columns) */}
-          <div className='col-span-2'>{linksSection(mappedLinks)}</div>
-        </div>
+          <div className={styles.linksWrapper}>
+            <LinksSection mappedLinks={mappedLinks} />
+          </div>
 
-        {/* Row 2 - Full Width Banner */}
-        {bannerSection(showBanner)}
+          {/* Row 2 - Full Width Banner */}
+          <BannerSection showBanner={showBanner} />
+        </div>
       </div>
     </footer>
   );

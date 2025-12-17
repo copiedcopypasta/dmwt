@@ -69,27 +69,26 @@ const navbar: NavbarProps = {
 const footer: FooterProps = {
   links: {
     resources: [
-      { label: 'Hilfe', href: '/hilfe' },
       { label: 'Quests', href: '/quests' },
       { label: 'Tests', href: '/tests' },
-      { label: 'Hochschule', href: 'https://www.reutlingen-university.de/' },
+      { label: 'FAQ', href: '/faq' },
+      { label: 'Source Code', href: 'https://github.com/copiedcopypasta/dmwt' },
     ],
     legal: [
       { label: 'Impressum', href: '/impressum' },
       { label: 'Datenschutz', href: '/datenschutz' },
       { label: 'Cookie-Einstellungen', href: '/cookie-settings' },
       { label: 'Lizenzen', href: '/lizenzen' },
-      { label: 'Barrierefreiheit', href: '/barrierefreiheit' },
+      { label: 'Nutzerbindungen', href: '/nutzerbindungen' },
     ],
     about: [
       { label: 'Über uns', href: '/about' },
-      { label: 'Informationen', href: '/informations' },
-      { label: 'Nutzerbindungen', href: '/nutzerbindungen' },
+      { label: 'Hochschule', href: 'https://www.reutlingen-university.de/' },
+      { label: 'Barrierefreiheit', href: '/barrierefreiheit' },
     ],
     social: [
       { label: 'Feedback', href: '/feedback' },
       { label: 'Kontakt', href: '/contact' },
-      { label: 'Soziales', href: '/sozials' },
     ],
   },
   sozials: [

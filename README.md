@@ -1,27 +1,23 @@
+<!-- markdownlint-disable MD033 MD041 -->
 <div align="center">
-    <br />
     <p>
         <a href="https://github.com/copiedcopypasta/dmwt">
             <img src="assets/dmwt-logo.png" title="dmwt" alt="dmwt logo" width="500" />
         </a>
     </p>
-    <br />
     <p>
-        <!-- Build Workflow -->
         <a href="https://github.com/copiedcopypasta/dmwt/actions/workflows/ci.yml">
             <img src="https://github.com/copiedcopypasta/dmwt/actions/workflows/ci.yml/badge.svg" alt="Build" />
         </a>
-        <!-- Production Workflow -->
         <a href="https://github.com/copiedcopypasta/dmwt/deployments/Production">
             <img src="https://img.shields.io/badge/deployment-Production-blue" alt="Production Deployment" />
         </a>
-        <!-- React Version -->
         <img src="https://img.shields.io/github/package-json/dependency-version/copiedcopypasta/dmwt/react" alt="React Version" />
-        <!-- Next.js Version -->
         <img src="https://img.shields.io/github/package-json/dependency-version/copiedcopypasta/dmwt/next" alt="Next.js Version" />
     </p>
-    <br />
+
 </div>
+<!-- markdownlint-enable MD033 -->
 
 ## About
 

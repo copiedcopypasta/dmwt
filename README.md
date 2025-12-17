@@ -1,8 +1,10 @@
 <!-- markdownlint-disable MD033 MD041 -->
+
 <div align="center">
     <p>
         <a href="https://github.com/copiedcopypasta/dmwt">
-            <img src="assets/dmwt-logo.png" title="dmwt" alt="dmwt logo" width="500" />
+            <img src="src/assets/logo.svg" title="dmwt" alt="dmwt logo" width="50" />
+            <img src="src/assets/banner.svg" title="dmwt" alt="dmwt logo" width="300" />
         </a>
     </p>
     <p>
@@ -25,7 +27,16 @@
 
 This project helps you make more sustainable tech decisions: reduce unnecessary device purchases, choose and compare energy‑efficient operating systems, and adopt development practices that make software run faster while using less power.
 
-> [!IMPORTANT] > **This project was created as part of a university course.**
+<div align="center">
+    <p>
+        <a href="https://github.com/copiedcopypasta/dmwt">
+            <img src="public/dmwt-logo.png" title="dmwt" alt="dmwt logo" width="300" />
+        </a>
+    </p>
+</div>
+
+> [!IMPORTANT]
+> **This project was created as part of a university course.**
 
 ## Links
 

@@ -6,10 +6,10 @@ export function proxy(request: NextRequest) {
 
   const isInternal = referer?.startsWith(url.origin);
 
-  if (!isInternal) {
+  /*if (!isInternal) {
     url.pathname = '/404';
     return NextResponse.rewrite(url);
-  }
+  }*/
 
   return NextResponse.next();
 }

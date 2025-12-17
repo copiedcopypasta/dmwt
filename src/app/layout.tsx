@@ -3,6 +3,8 @@ import { Metadata } from 'next';
 import { getSiteUrl } from '@/lib/server-utils';
 import '@/styles/globals.css';
 import Footer, { FooterProps } from '@/components/Footer';
+import Navbar, { NavbarProps } from '@/components/Navbar';
+import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
@@ -49,18 +51,33 @@ export const metadata: Metadata = {
   },
 };
 
+const navbar: NavbarProps = {
+  logo: true,
+  logoUrl: '/',
+  links: [
+    { label: 'Quests', href: '/quests' },
+    { label: 'Informations', href: '/informations' },
+    { label: 'Analytics', href: '/analytics' },
+  ],
+  searchBar: true,
+  darkModeToggle: true,
+  loginButton: true,
+  borderLine: true,
+  fixed: true,
+};
+
 const footer: FooterProps = {
   links: {
     resources: [
       { label: 'Hilfe', href: '/hilfe' },
       { label: 'Quests', href: '/quests' },
       { label: 'Tests', href: '/tests' },
-      { label: 'Hochschule', href: '/hochschule' },
+      { label: 'Hochschule', href: 'https://www.reutlingen-university.de/' },
     ],
     legal: [
       { label: 'Impressum', href: '/impressum' },
       { label: 'Datenschutz', href: '/datenschutz' },
-      { label: 'Cookie‑Einstellungen', href: '/cookie-settings' },
+      { label: 'Cookie-Einstellungen', href: '/cookie-settings' },
       { label: 'Lizenzen', href: '/lizenzen' },
       { label: 'Barrierefreiheit', href: '/barrierefreiheit' },
     ],
@@ -76,9 +93,9 @@ const footer: FooterProps = {
     ],
   },
   sozials: [
-    { icon: <>GH</>, href: 'https://github.com', altText: 'GitHub' },
-    { icon: <>TW</>, href: 'https://twitter.com', altText: 'Twitter' },
-    { icon: <>DC</>, href: 'https://discord.com', altText: 'Discord' },
+    { href: 'https://github.com', altText: 'GitHub' },
+    { href: 'https://youtube.com', altText: 'YouTube' },
+    { href: 'https://discord.com', altText: 'Discord' },
   ],
   logo: true,
   banner: true,
@@ -90,18 +107,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html style={{ height: '100vh' }} suppressHydrationWarning>
+    <html lang='de' style={{ height: '100vh' }} suppressHydrationWarning>
       <body
         className='min-h-screen'
         style={{
           display: 'flex',
           flexDirection: 'column',
           height: '100%',
-          backgroundColor: '#000000',
         }}
       >
-        {children}
-        <Footer {...footer} />
+        <ThemeProvider attribute='class' defaultTheme='system'>
+          <Navbar {...navbar} />
+          {children}
+          <Footer {...footer} />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -27,16 +27,8 @@
 
 This project helps you make more sustainable tech decisions: reduce unnecessary device purchases, choose and compare energy‑efficient operating systems, and adopt development practices that make software run faster while using less power.
 
-<div align="center">
-    <p>
-        <a href="https://github.com/copiedcopypasta/dmwt">
-            <img src="public/dmwt-logo.png" title="dmwt" alt="dmwt logo" width="300" />
-        </a>
-    </p>
-</div>
-
 > [!IMPORTANT]
-> **This project was created as part of a university course.**
+> This project is **not affiliated with any real company** and was created **solely for academic purposes as part of a university course.** The information provided may contain **inaccuracies**. Please **verify independently** before using or reproducing any content.
 
 ## Links
 

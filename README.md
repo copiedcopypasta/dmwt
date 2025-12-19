@@ -33,7 +33,14 @@ This project helps you make more sustainable tech decisions: reduce unnecessary 
 ## Links
 
 - [Website][website] (_work in progress_)
-- [API][api] (_work in progress_)
+- [Organisation][org]
+
+### Contributors
+
+- [Craemon][craemon]
+- [dev2xJJ][dev]
+- [pallepalinski][palle]
+- [2hoch1][21]
 
 ## Disclaimer
 
@@ -44,5 +51,9 @@ This project is not affiliated with a real company and was created for academic 
 This project is licensed under the [MIT License][license].
 
 [website]: https://site.ccp.2hoch1.dev
-[api]: https://api.ccp.2hoch1.dev
+[org]: https://github.com/copiedcopypasta
 [license]: LICENSE
+[craemon]: https://github.com/Craemon
+[dev]: https://github.com/dev2xJJ
+[palle]: https://github.com/pallepalinski
+[21]: https://github.com/2hoch1

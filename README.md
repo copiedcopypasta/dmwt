@@ -33,7 +33,7 @@ This project helps you make more sustainable tech decisions: reduce unnecessary 
 ## Links
 
 - [Website][website] (_work in progress_)
-- [Organisation][org]
+- [Organization][org]
 
 ### Contributors
 

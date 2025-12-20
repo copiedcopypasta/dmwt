@@ -58,19 +58,6 @@ const hasValue = (value: unknown): boolean => {
 };
 
 /**
- * Checks if links category has any items
- */
-const hasLinkCategory = (links: LinkCategorys | null | undefined): boolean => {
-  if (!links) return false;
-  return (
-    hasValue(links.resources) ||
-    hasValue(links.legal) ||
-    hasValue(links.about) ||
-    hasValue(links.social)
-  );
-};
-
-/**
  * Maps category links or returns null
  */
 const mapLinks = (category: Links[] | null | undefined): Links[] | null => {

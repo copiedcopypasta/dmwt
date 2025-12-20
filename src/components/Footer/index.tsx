@@ -9,7 +9,7 @@ import Banner from '@/assets/banner.svg';
 import Discord from '@/assets/discord.svg';
 import Youtube from '@/assets/youtube.svg';
 import Github from '@/assets/github.svg';
-import Greenland from '@/assets/greenland.svg';
+import Wave from '@/assets/wave.svg';
 
 import {
   Select,
@@ -55,19 +55,6 @@ const hasValue = (value: unknown): boolean => {
     return false;
   }
   return true;
-};
-
-/**
- * Checks if links category has any items
- */
-const hasLinkCategory = (links: LinkCategorys | null | undefined): boolean => {
-  if (!links) return false;
-  return (
-    hasValue(links.resources) ||
-    hasValue(links.legal) ||
-    hasValue(links.about) ||
-    hasValue(links.social)
-  );
 };
 
 /**
@@ -118,9 +105,6 @@ const getIcon = (href: string): ReactElement | null => {
 const LANGUAGES = [
   { value: 'de', label: 'Deutsch', flag: '🇩🇪' },
   { value: 'en', label: 'English', flag: '🇬🇧' },
-  { value: 'fr', label: 'Français', flag: '🇫🇷' },
-  { value: 'es', label: 'Español', flag: '🇪🇸' },
-  { value: 'it', label: 'Italiano', flag: '🇮🇹' },
 ] as const;
 
 /**
@@ -305,7 +289,7 @@ export default function Footer({
   return (
     <footer>
       <div className={styles.greenlandWrapper}>
-        <Greenland className={styles.greenland} />
+        <Wave className={styles.greenland} />
       </div>
 
       <div className={styles.footerContainer}>

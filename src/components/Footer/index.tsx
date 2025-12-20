@@ -105,9 +105,6 @@ const getIcon = (href: string): ReactElement | null => {
 const LANGUAGES = [
   { value: 'de', label: 'Deutsch', flag: '🇩🇪' },
   { value: 'en', label: 'English', flag: '🇬🇧' },
-  { value: 'fr', label: 'Français', flag: '🇫🇷' },
-  { value: 'es', label: 'Español', flag: '🇪🇸' },
-  { value: 'it', label: 'Italiano', flag: '🇮🇹' },
 ] as const;
 
 /**

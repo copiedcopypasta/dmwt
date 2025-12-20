@@ -9,7 +9,7 @@ import Banner from '@/assets/banner.svg';
 import Discord from '@/assets/discord.svg';
 import Youtube from '@/assets/youtube.svg';
 import Github from '@/assets/github.svg';
-import Greenland from '@/assets/greenland.svg';
+import Wave from '@/assets/wave.svg';
 
 import {
   Select,
@@ -305,7 +305,7 @@ export default function Footer({
   return (
     <footer>
       <div className={styles.greenlandWrapper}>
-        <Greenland className={styles.greenland} />
+        <Wave className={styles.greenland} />
       </div>
 
       <div className={styles.footerContainer}>

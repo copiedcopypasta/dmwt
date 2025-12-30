@@ -6,9 +6,9 @@ import type { Links, Sozials } from '@/types/index';
 
 import Logo from '@/assets/logo.svg';
 import Banner from '@/assets/banner.svg';
-import Discord from '@/assets/discord.svg';
-import Youtube from '@/assets/youtube.svg';
-import Github from '@/assets/github.svg';
+import Discord from '@/assets/icons/discord.svg';
+import Youtube from '@/assets/icons/youtube.svg';
+import Github from '@/assets/icons/github.svg';
 import Wave from '@/assets/wave.svg';
 
 import {

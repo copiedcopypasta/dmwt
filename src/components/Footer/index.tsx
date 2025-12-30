@@ -288,8 +288,8 @@ export default function Footer({
 
   return (
     <footer>
-      <div className={styles.greenlandWrapper}>
-        <Wave className={styles.greenland} />
+      <div className={styles.waveWrapper}>
+        <Wave className={styles.wave} />
       </div>
 
       <div className={styles.footerContainer}>

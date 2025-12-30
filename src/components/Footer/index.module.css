@@ -1,14 +1,14 @@
 /* ============================================================================
-   Greenland Section
+   Wave Section
    ============================================================================ */
 
-.greenlandWrapper {
+.waveWrapper {
   color: var(--color-brand-200);
   display: block;
   overflow: hidden;
 }
 
-.greenland {
+.wave {
   display: block;
   height: auto;
   width: 100%;

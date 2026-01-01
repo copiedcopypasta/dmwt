@@ -1,5 +1,4 @@
-import Link from 'next/link';
-import { SearchX, ArrowLeft, Home } from 'lucide-react';
+import { SearchX } from 'lucide-react';
 import ErrorLayout from '@/layouts/ErrorLayout';
 import NotFoundActions from '@/components/ui/base/notfound-actions';
 

@@ -196,7 +196,7 @@
    Responsive
    ============================================================================ */
 
-@media (max-width: 1140px) {
+@media (max-width: 1440px) {
   .linksContainer {
     flex-wrap: wrap;
     gap: 1.5rem;

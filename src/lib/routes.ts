@@ -3,7 +3,7 @@
  * This file is auto-generated. Any changes made here will be overwritten.
  */
 
-import path from "path";
+import path from 'path';
 
 const routes = [
   { path: path.resolve('src/app/(main)/page'), resolved: '/', priority: 1.0 },

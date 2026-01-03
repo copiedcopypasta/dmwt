@@ -1,8 +1,3 @@
-/**
- * DO NOT TOUCH THIS FILE!
- * This file is auto-generated. Any changes made here will be overwritten.
- */
-
 import path from 'path';
 
 const routes = [

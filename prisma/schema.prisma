@@ -31,7 +31,7 @@ model Feedback {
 model Rating {
   id      String  @id @default(cuid())
   site    Site
-  score   Int
+  score   Int     @default(1)
   user    User    @relation(fields: [userId], references: [id])
   context String?
   userId  BigInt

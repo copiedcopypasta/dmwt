@@ -17,33 +17,21 @@ type LastModifiedOptions = {
 
 const REVALIDATE_SECONDS = 3600;
 
-// Fetches the last modified date of a file via the GitHub commits API
-export async function getLastModified(
-  filePath: string,
-  options?: LastModifiedOptions,
-): Promise<string | null> {
-  const repo = options?.repo ?? packageUtils.getGitHubRepo();
-
-  if (!repo) {
-    console.error('getLastModified: No repository configured');
-    return null;
-  }
-
+// Builds the GitHub commits endpoint for the desired file/branch.
+const buildCommitsUrl = (repo: string, filePath: string, branch?: string) => {
   const params = new URLSearchParams({
     path: filePath,
     page: '1',
     per_page: '1',
   });
 
-  if (options?.branch) {
-    params.set('sha', options.branch);
-  }
+  if (branch) params.set('sha', branch);
+  return `https://api.github.com/repos/${repo}/commits?${params}`;
+};
 
-  const url = `https://api.github.com/repos/${repo}/commits?${params}`;
-
-  const headers: HeadersInit = {
-    Accept: 'application/vnd.github+json',
-  };
+// Adds an auth header when a token exists; falls back to anonymous rate limits.
+const buildHeaders = (): HeadersInit => {
+  const headers: HeadersInit = { Accept: 'application/vnd.github+json' };
 
   try {
     const token = getEnvSafely('GITHUB_TOKEN');
@@ -52,9 +40,31 @@ export async function getLastModified(
     // Token is optional; GitHub will use unauthenticated limits.
   }
 
+  return headers;
+};
+
+// Fetches the last modified date of a file via the GitHub commits API
+export async function getLastModified(
+  filePath: string,
+  options?: LastModifiedOptions,
+): Promise<string | null> {
+  if (!filePath) {
+    console.warn('getLastModified: Missing file path');
+    return null;
+  }
+
+  const repo = options?.repo ?? packageUtils.getGitHubRepo();
+
+  if (!repo) {
+    console.error('getLastModified: No repository configured');
+    return null;
+  }
+
+  const url = buildCommitsUrl(repo, filePath, options?.branch);
+
   try {
     const res = await fetch(url, {
-      headers,
+      headers: buildHeaders(),
       next: { revalidate: REVALIDATE_SECONDS },
       signal: options?.signal,
     });

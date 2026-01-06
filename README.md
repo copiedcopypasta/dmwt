@@ -2,7 +2,7 @@
 
 <div align="center">
     <p>
-        <a href="https://github.com/copiedcopypasta/dmwt">
+        <a href="https://site.ccp.2hoch1.dev/">
             <img src="public/Logo.png" title="dmwt" alt="woOS logo" width="80" />
             <img src="public/Banner.png" title="dmwt" alt="WoOS Banner" width="500" />
         </a>
@@ -23,12 +23,13 @@
 
 ## About
 
-**A website designed with Green IT principles, built with Next.js.**
+**A website built with Next.js, guided by Green IT principles.**
 
-This project helps you make more sustainable tech decisions: reduce unnecessary device purchases, choose and compare energy‑efficient operating systems, and adopt development practices that make software run faster while using less power.
+This project aims to empower you to make more sustainable technology choices by helping you to:
 
-> [!IMPORTANT]
-> This project is **not affiliated with any real company** and was created **solely for academic purposes as part of a university course.** The information provided may contain **inaccuracies**. Please **verify independently** before using or reproducing any content.
+- Minimize unnecessary device purchases
+- Compare and select energy-efficient operating systems
+- Adopt development techniques that make software run faster while consuming less power
 
 ## Links
 
@@ -44,7 +45,8 @@ This project helps you make more sustainable tech decisions: reduce unnecessary 
 
 ## Disclaimer
 
-This project is not affiliated with a real company and was created for academic purposes. The information may contain inaccuracies. Please verify independently before using or reproducing any content.
+> [!IMPORTANT]
+> Please note, this project is **not affiliated with any real company** and was created **solely for academic purposes as part of a university course**. The information provided may contain **inaccuracies**. Always **verify independently** before using or sharing any content.
 
 ## License
 

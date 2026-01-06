@@ -43,8 +43,7 @@ This project aims to empower you to make more sustainable technology choices by 
 
 ## Contributing
 
-At this time, **external contributions are not accepted**.  
-To ensure a fair and consistent evaluation, contributions from third parties are **not permitted before January 30 of this year**, as the project is currently in its pre-submission phase.
+At this time, contributions from third parties are **not permitted before January 30 of this year**, as the project is currently in its pre-submission phase.
 
 ### Contributors
 

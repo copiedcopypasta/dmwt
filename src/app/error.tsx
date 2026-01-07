@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import Link from 'next/link';
-import { AlertTriangle, RotateCw, Home } from 'lucide-react';
+import { HomeSolid, SpinnerSolid, ExclaimationSolid } from 'pixel-icon-library';
 import ErrorLayout from '@/layouts/ErrorLayout';
 import { FlipButton } from '@/components/ui/shadcn-io/flip-button';
 
@@ -31,7 +31,7 @@ export default function GlobalError({
     <ErrorLayout>
       <div className='animate-fade-in flex flex-col items-center gap-4 text-center'>
         <div className='animate-float'>
-          <AlertTriangle className='text-error-500 h-12 w-12' />
+          <ExclaimationSolid className='text-error-500 h-12 w-12' />
         </div>
 
         <h1 className='text-2xl font-semibold text-neutral-900'>
@@ -44,7 +44,7 @@ export default function GlobalError({
           <FlipButton
             onClick={() => reset()}
             frontText={ERROR_CONFIG.buttons.retry}
-            backText={<RotateCw className='inline' size={16} />}
+            backText={<SpinnerSolid className='inline' size={16} />}
             from='left'
             frontClassName='bg-neutral-100'
             backClassName='bg-error-500 text-white'
@@ -53,7 +53,7 @@ export default function GlobalError({
           <Link href='/'>
             <FlipButton
               frontText={ERROR_CONFIG.buttons.home}
-              backText={<Home className='inline' size={16} />}
+              backText={<HomeSolid className='inline' size={16} />}
               frontClassName='bg-neutral-100'
               backClassName='bg-error-500 text-white'
             />

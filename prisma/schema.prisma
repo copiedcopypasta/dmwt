@@ -16,7 +16,8 @@ model User {
   accent_color Int?
   verified     Boolean    @default(false)
   role         Role       @default(USER)
-  locale       Locale     @default(DE)
+  locale_sys   Locale     @default(EN)
+  locale_pref  Locale?
   feedback     Feedback[]
   ratings      Rating[]
   settings     Settings?

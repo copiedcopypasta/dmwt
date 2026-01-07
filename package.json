@@ -21,6 +21,7 @@
     "prebuild": "npm run typecheck",
     "build": "next build",
     "commitlint": "commitlint",
+    "db:format": "prisma format",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
     "db:push": "prisma db push",

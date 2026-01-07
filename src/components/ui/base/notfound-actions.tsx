@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { ArrowLeftSolid, HomeSolid } from 'pixel-icon-library';
+import { ArrowLeftSolid, HomeSolid } from '@2hoch1/pixel-icon-library-react';
 import { FlipButton } from '@/components/ui/shadcn-io/flip-button';
 
 export default function NotFoundActions({

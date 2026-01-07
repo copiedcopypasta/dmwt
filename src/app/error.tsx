@@ -2,7 +2,11 @@
 
 import { useEffect } from 'react';
 import Link from 'next/link';
-import { HomeSolid, SpinnerSolid, ExclaimationSolid } from 'pixel-icon-library';
+import {
+  HomeSolid,
+  SpinnerSolid,
+  ExclaimationSolid,
+} from '@2hoch1/pixel-icon-library-react';
 import ErrorLayout from '@/layouts/ErrorLayout';
 import { FlipButton } from '@/components/ui/shadcn-io/flip-button';
 

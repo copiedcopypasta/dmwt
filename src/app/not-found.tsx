@@ -1,4 +1,4 @@
-import { SearchSolid } from 'pixel-icon-library';
+import { SearchSolid } from '@2hoch1/pixel-icon-library-react';
 import ErrorLayout from '@/layouts/ErrorLayout';
 import NotFoundActions from '@/components/ui/base/notfound-actions';
 

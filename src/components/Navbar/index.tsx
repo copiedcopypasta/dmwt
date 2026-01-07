@@ -2,7 +2,7 @@ import { ReactElement, Fragment } from 'react';
 import type { Links } from '@/types/index';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ExternalLinkSolid, UserSolid } from 'pixel-icon-library';
+import { ExternalLinkSolid, UserSolid } from '@2hoch1/pixel-icon-library-react';
 
 import LogoSvg from '@/assets/logo.svg';
 import BannerSvg from '@/assets/banner.svg';

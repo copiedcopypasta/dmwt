@@ -2,7 +2,11 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { LockSolid, ArrowLeftSolid, HomeSolid } from 'pixel-icon-library';
+import {
+  LockSolid,
+  ArrowLeftSolid,
+  HomeSolid,
+} from '@2hoch1/pixel-icon-library-react';
 import ErrorLayout from '@/layouts/ErrorLayout';
 import { FlipButton } from '@/components/ui/shadcn-io/flip-button';
 

@@ -1,24 +1,18 @@
 .keyart {
   position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
   z-index: 10;
-}
-
-.layer {
-  background-position: bottom center;
-  background-size: auto 1038px;
-  background-repeat: repeat-x;
   width: 100%;
+  height: 1000px;
+}
+
+.keyart_layer {
   position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 3200 / 1038;
 }
 
-.layer.parallax {
+.keyart_layer.parallax {
   position: fixed;
-}
-
-.content {
-  background: #1a1a1a;
-  min-height: 200vh;
 }

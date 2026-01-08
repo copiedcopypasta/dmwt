@@ -4,7 +4,7 @@ name: Dependabot Auto-merge
 # Automatically merges minor and patch version updates
 # Only runs for PRs created by dependabot[bot]
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, synchronize]
 
 permissions:
@@ -27,7 +27,12 @@ jobs:
       # Enable auto-merge for safe updates (minor/patch only)
       # Major updates require manual review
       - name: Enable auto-merge for minor/patch updates
-        if: steps.metadata.outputs.update-type == 'version-update:semver-minor' || steps.metadata.outputs.update-type == 'version-update:semver-patch'
+        if: |
+          github.actor == 'dependabot[bot]' &&
+          (steps.metadata.outputs.update-type ==
+            'version-update:semver-minor' ||
+           steps.metadata.outputs.update-type ==
+            'version-update:semver-patch')
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}

@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import fs from 'node:fs';
 import path from 'node:path';
-import { defineConfig, env } from 'prisma/config';
+import { defineConfig } from 'prisma/config';
 
 const root = path.resolve(__dirname);
 const envPaths = ['.env', '.env.local', '.env.development.local'];
@@ -30,8 +30,10 @@ export default defineConfig({
   datasource: {
     // Use a dummy URL if PRISMA_DATABASE_URL is not set (e.g., in CI)
     // This is fine for `prisma generate` which only reads the schema
+    // Important: do NOT use prisma/config env() here because it throws
+    // when the variable is missing. We want a safe fallback for CI.
     url:
-      env('PRISMA_DATABASE_URL') ||
+      process.env.PRISMA_DATABASE_URL ||
       'postgresql://dummy:dummy@localhost:5432/dummy',
   },
 });

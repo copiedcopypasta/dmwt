@@ -1,24 +1,29 @@
 name: PR Validation
 
 # Trigger: Runs on PR open, edit, reopen, and sync
-# Validates PR title format and applies labels automatically
+# Title validation runs on pull_request (safer - untrusted code)
+# Auto-labeling runs on pull_request_target (needs write access)
 on:
   pull_request_target:
     types:
       - opened
-      - edited
       - reopened
       - synchronize
+  pull_request:
+    types:
+      - opened
+      - edited
+      - reopened
 
 permissions:
   contents: read
   pull-requests: write
 
 jobs:
-  # Auto-label PRs based on changed files
+  # Auto-label PRs based on changed files (needs pull_request_target for write access)
   auto-label:
     name: Auto-label
-    if: github.event.action != 'edited'
+    if: github.event_name == 'pull_request_target'
     runs-on: ubuntu-latest
     steps:
       - name: Apply labels based on changed files
@@ -29,10 +34,13 @@ jobs:
           dot: true
           sync-labels: true
 
-  # Validate PR title follows conventional commit format
+  # Validate PR title follows conventional commit format (runs on pull_request for security)
   validate-title:
     name: Validate title
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Check conventional commit format
         env:

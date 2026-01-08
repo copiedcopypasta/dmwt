@@ -9,6 +9,10 @@ on:
   pull_request:
     types: [opened, reopened, synchronize]
 
+# Read-only permissions for security (no write access needed)
+permissions:
+  contents: read
+
 jobs:
   build:
     name: Build / Lint / Typecheck

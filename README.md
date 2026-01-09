@@ -44,11 +44,16 @@ Built with **Next.js**, this website aims to help users make more informed techn
 
 This project was developed as part of a **university exercise**, focusing on:
 
-- Planning and structuring a modern web application
-- Applying sustainable and performance-aware design concepts
-- Evaluating technical decisions critically
+1. `Plan`: Plan and structure a modern web application  
+2. `Storyline`: Create a story line for your website  
+3. `Components`: Plan a components overview  
+4. `Design`: Choose a theme and fonts  
+5. `Concepts`: Create concepts for your website  
+6. `Sustainability`: Apply sustainable and performance-aware design concepts  
+7. `Evaluation`: Evaluate technical decisions critically  
+8. `Presentation`: The project will be presented at the end of **January 19**.
 
-### Progress
+## Progress
 
 - Base project setup completed
 - Application deployable via **Vercel**

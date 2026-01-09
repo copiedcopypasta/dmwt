@@ -44,13 +44,13 @@ Built with **Next.js**, this website aims to help users make more informed techn
 
 This project was developed as part of a **university exercise**, focusing on:
 
-1. `Plan`: Plan and structure a modern web application  
-2. `Storyline`: Create a story line for your website  
-3. `Components`: Plan a components overview  
-4. `Design`: Choose a theme and fonts  
-5. `Concepts`: Create concepts for your website  
-6. `Sustainability`: Apply sustainable and performance-aware design concepts  
-7. `Evaluation`: Evaluate technical decisions critically  
+1. `Plan`: Plan and structure a modern web application
+2. `Storyline`: Create a story line for your website
+3. `Components`: Plan a components overview
+4. `Design`: Choose a theme and fonts
+5. `Concepts`: Create concepts for your website
+6. `Sustainability`: Apply sustainable and performance-aware design concepts
+7. `Evaluation`: Evaluate technical decisions critically
 8. `Presentation`: The project will be presented at the end of **January 19**.
 
 ## Progress
@@ -67,6 +67,8 @@ This project was developed as part of a **university exercise**, focusing on:
 - Core components implemented
 - Landing page created
 - Page layout structure established
+
+> For a full and technical changelog, you can find it under the [Changelog][changelog].
 
 ## Tools We Use
 
@@ -92,22 +94,28 @@ To support the use of **pixel-style icons**, we created a dedicated **React libr
 
 ```tsx
 import React from 'react';
-import { AlertTriangle, RotateCw, Home, AlertTriangleSolid, HomeBrands } from '@2hoch1/pixel-icon-library-react';
+import {
+  AlertTriangle,
+  RotateCw,
+  Home,
+  AlertTriangleSolid,
+  HomeBrands,
+} from '@2hoch1/pixel-icon-library-react';
 
 export function MyComponent() {
   return (
     <div>
       {/* Regular variant (default) */}
-      <AlertTriangle size={24} color="currentColor" />
-      
+      <AlertTriangle size={24} color='currentColor' />
+
       {/* Solid variant */}
       <AlertTriangleSolid size={24} />
-      
+
       {/* Brands variant */}
       <HomeBrands size={24} />
-      
+
       {/* Custom size and color */}
-      <RotateCw size={32} color="blue" strokeWidth={2} />
+      <RotateCw size={32} color='blue' strokeWidth={2} />
     </div>
   );
 }
@@ -131,6 +139,7 @@ This project is licensed under the [MIT License][license].
 [website]: https://site.ccp.2hoch1.dev
 [org]: https://github.com/copiedcopypasta
 [license]: LICENSE
+[changelog]: CHANGELOG.md
 [craemon]: https://github.com/Craemon
 [dev]: https://github.com/dev2xJJ
 [palle]: https://github.com/pallepalinski

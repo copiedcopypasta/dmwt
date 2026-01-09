@@ -92,34 +92,32 @@ To support the use of **pixel-style icons**, we created a dedicated **React libr
 
 ### Usage
 
+<!-- prettier-ignore-start -->
+
 ```tsx
 import React from 'react';
-import {
-  AlertTriangle,
-  RotateCw,
-  Home,
-  AlertTriangleSolid,
-  HomeBrands,
-} from '@2hoch1/pixel-icon-library-react';
+import { AlertTriangle, RotateCw, Home, AlertTriangleSolid, HomeBrands } from '@2hoch1/pixel-icon-library-react';
 
 export function MyComponent() {
   return (
     <div>
       {/* Regular variant (default) */}
-      <AlertTriangle size={24} color='currentColor' />
-
+      <AlertTriangle size={24} color="currentColor" />
+      
       {/* Solid variant */}
       <AlertTriangleSolid size={24} />
-
+      
       {/* Brands variant */}
       <HomeBrands size={24} />
-
+      
       {/* Custom size and color */}
-      <RotateCw size={32} color='blue' strokeWidth={2} />
+      <RotateCw size={32} color="blue" strokeWidth={2} />
     </div>
   );
 }
 ```
+
+<!-- prettier-ignore-end -->
 
 ## Contributing
 

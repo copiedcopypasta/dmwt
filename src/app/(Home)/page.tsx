@@ -6,7 +6,7 @@ import {
   ThumbsupSolid,
   ThumbsdownSolid,
 } from '@2hoch1/pixel-icon-library-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { useEffect, useState } from 'react';
 import {
   Carousel,
   CarouselContent,
@@ -17,28 +17,86 @@ import {
 import Autoplay from 'embla-carousel-autoplay';
 import { FeedbackCard } from '@/components/ui/base/feedback-card';
 
+function useScrollPosition() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return scrollY;
+}
+
+function ParallaxLayer({ children }: { children: React.ReactNode }) {
+  const scrollY = useScrollPosition();
+
+  return (
+    <>
+      {React.Children.map(children, (child) => {
+        if (!React.isValidElement(child)) return child;
+
+        const element = child as React.ReactElement<{
+          style?: React.CSSProperties;
+          'data-speed'?: string;
+        }>;
+
+        const speed = Number(element.props['data-speed'] ?? 1);
+        const translateY = scrollY * (speed / 100);
+
+        return React.cloneElement(element, {
+          style: {
+            ...(element.props.style ?? {}),
+            transform: `translateY(${translateY}px)`,
+          },
+        });
+      })}
+    </>
+  );
+}
+
 const layer_1 = (
-  <div className="fixed -z-10 block h-[1000px] w-full bg-[#161A24] bg-[url('/keyart/index-0.png')] bg-[length:auto_1038px] bg-bottom bg-center bg-repeat-x" />
+  <div
+    data-speed='5'
+    className="fixed block h-[1000px] w-full bg-white bg-[url('/keyart/index-0.png')] bg-[length:auto_1038px] bg-bottom bg-center bg-repeat-x"
+  />
 );
 
 const layer_2 = (
-  <div className="absolute block h-[1000px] w-full bg-[url('/keyart/index-1.png')] bg-[length:auto_1038px] bg-bottom bg-center bg-repeat-x" />
+  <div
+    data-speed='10'
+    className="absolute block h-[1000px] w-full bg-[url('/keyart/index-1.png')] bg-[length:auto_1038px] bg-bottom bg-center bg-repeat-x"
+  />
 );
 
 const layer_3 = (
-  <div className="absolute block h-[1000px] w-full bg-[url('/keyart/index-2.png')] bg-[length:auto_1038px] bg-bottom bg-center bg-repeat-x" />
+  <div
+    data-speed='15'
+    className="absolute block h-[1000px] w-full bg-[url('/keyart/index-2.png')] bg-[length:auto_1038px] bg-bottom bg-center bg-repeat-x"
+  />
 );
 
 const layer_4 = (
-  <div className="absolute block h-[1000px] w-full bg-[url('/keyart/index-3.png')] bg-[length:auto_1038px] bg-bottom bg-center bg-repeat-x" />
+  <div
+    data-speed='21'
+    className="absolute block h-[1000px] w-full bg-[url('/keyart/index-3.png')] bg-[length:auto_1038px] bg-bottom bg-center bg-repeat-x"
+  />
 );
 
 const layer_5 = (
-  <div className="absolute block h-[1000px] w-full bg-[url('/keyart/index-4.png')] bg-[length:auto_1038px] bg-bottom bg-center bg-repeat-x" />
+  <div
+    data-speed='31'
+    className="absolute block h-[1000px] w-full bg-[url('/keyart/index-4.png')] bg-[length:auto_1038px] bg-bottom bg-center bg-repeat-x"
+  />
 );
 
 const layer_6 = (
-  <div className="absolute block h-[1000px] w-full bg-[url('/keyart/index-5.png')] bg-[length:auto_1038px] bg-bottom bg-center bg-repeat-x" />
+  <div
+    data-speed='42'
+    className="absolute block h-[1000px] w-full bg-[url('/keyart/index-5.png')] bg-[length:auto_1038px] bg-bottom bg-center bg-repeat-x"
+  />
 );
 
 const layer_7 = (
@@ -180,15 +238,12 @@ function CarouselPlugin() {
 export default function Page() {
   return (
     <>
-      <div className='block'>
-        <div className='relative block h-[1000px]'>
+      <div className='block overflow-hidden'>
+        <div className='relative -z-10 block h-[1000px]'>
           {/* Keyart Section */}
-          {layer_1}
-          {layer_2}
-          {layer_3}
-          {layer_4}
-          {layer_5}
-          {layer_6}
+          <ParallaxLayer>
+            {layer_1} {layer_2} {layer_3} {layer_4} {layer_5} {layer_6}
+          </ParallaxLayer>
           {layer_7}
         </div>
         <div className='relative z-20 grid grid-cols-1 place-items-center gap-8 bg-black p-8'>

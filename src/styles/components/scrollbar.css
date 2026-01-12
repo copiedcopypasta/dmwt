@@ -1,0 +1,72 @@
+/* Modern slim scrollbar styles (light + dark) */
+:root {
+  --sb-size: 8px;
+}
+
+:root[data-theme='light'] {
+  --sb-track: rgba(0, 0, 0, 0.04);
+  --sb-thumb: rgba(0, 0, 0, 0.2);
+  --sb-thumb-hover: rgba(0, 0, 0, 0.32);
+}
+
+:root[data-theme='dark'] {
+  --sb-track: rgba(255, 255, 255, 0.04);
+  --sb-thumb: rgba(255, 255, 255, 0.12);
+  --sb-thumb-hover: rgba(255, 255, 255, 0.22);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--sb-thumb) transparent;
+}
+
+/* WebKit */
+*::-webkit-scrollbar {
+  width: var(--sb-size);
+  height: var(--sb-size);
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--sb-thumb);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  min-height: 20px;
+  transition:
+    background-color 160ms linear,
+    transform 120ms ease;
+}
+
+*::-webkit-scrollbar-thumb:hover,
+*::-webkit-scrollbar-thumb:active {
+  background-color: var(--sb-thumb-hover);
+  transform: scale(1.08);
+}
+
+/* Focused elements get a slightly larger thumb for visibility */
+*:focus::-webkit-scrollbar-thumb {
+  transform: scale(1.12);
+}
+
+/* Improve hit area on touch devices */
+@media (pointer: coarse) {
+  :root {
+    --sb-size: 12px;
+  }
+}
+
+/* Optional: allow scoping if needed via a class */
+.no-custom-scrollbar *::-webkit-scrollbar,
+.no-custom-scrollbar * {
+  scrollbar-width: auto;
+  scrollbar-color: initial;
+}

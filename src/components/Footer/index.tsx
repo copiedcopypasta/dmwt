@@ -288,7 +288,7 @@ export default function Footer({
 
   return (
     <footer>
-      <div className={styles.waveWrapper}>
+      <div className={`${styles.waveWrapper} bg-black`}>
         <Wave className={styles.wave} />
       </div>
 

@@ -20,8 +20,6 @@ body {
     'header'
     'main'
     'footer';
-  gap: 1.5rem;
-  background: var(--color-default-background);
   color: var(--color-default-font);
 }
 
@@ -189,4 +187,12 @@ footer {
 .flip-button-horizontal-reverse:hover .flip-button-back {
   transform: rotateY(0deg) translateX(0);
   opacity: 1;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  min-height: 100vh;
 }

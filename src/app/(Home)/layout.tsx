@@ -10,11 +10,11 @@ const navbar: NavbarProps = {
     { label: 'Informations', href: '/informations' },
     { label: 'Documentation', href: '/documentation' },
   ],
-  searchBar: true,
+  searchBar: false,
   darkModeToggle: true,
   loginButton: true,
-  borderLine: true,
   fixed: false,
+  backgroundColor: false
 };
 
 const footer: FooterProps = {
@@ -51,12 +51,16 @@ const footer: FooterProps = {
   banner: true,
 };
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <>
       <Navbar {...navbar} />
       <main>{children}</main>
-      <Footer {...footer} />
+      <Footer {...footer}/>
     </>
   );
 }

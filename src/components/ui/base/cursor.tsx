@@ -253,7 +253,7 @@ export function CustomCursor({
         sparkles.map((sparkle) => (
           <div
             key={sparkle.id}
-            className='pointer-events-none fixed z-[9998] animate-ping opacity-70'
+            className='dmwt-custom-cursor pointer-events-none fixed z-[2147483646] animate-ping opacity-70'
             style={{
               left: sparkle.x,
               top: sparkle.y,
@@ -268,7 +268,7 @@ export function CustomCursor({
           />
         ))}
       <span
-        className='pointer-events-none fixed z-[9999] drop-shadow-lg'
+        className='dmwt-custom-cursor pointer-events-none fixed z-[2147483647] drop-shadow-lg'
         style={{
           left: position.x,
           top: position.y,

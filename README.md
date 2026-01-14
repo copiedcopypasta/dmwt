@@ -118,10 +118,10 @@ At this time, contributions from third parties are **not permitted before Januar
 
 ### Contributors
 
-- [Craemon][craemon]
-- [dev2xJJ][dev]
-- [pallepalinski][palle]
-- [2hoch1][21]
+- [@Craemon][craemon]
+- [@dev2xJJ][dev]
+- [@pallepalinski][palle]
+- [@2hoch1 (2^1)][21]
 
 ## License
 

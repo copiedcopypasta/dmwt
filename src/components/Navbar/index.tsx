@@ -1,13 +1,13 @@
-import { ReactElement, Fragment } from 'react';
-import type { Links } from '@/types/index';
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import type { Links } from '@/types/index';
 import { ExternalLink, UserSolid } from '@2hoch1/pixel-icon-library-react';
+import Link from 'next/link';
+import { Fragment, ReactElement } from 'react';
 
-import LogoSvg from '@/assets/logo.svg';
 import BannerSvg from '@/assets/banner.svg';
-import { ThemeToggle } from '@/components/ui/base/theme-toggle';
+import LogoSvg from '@/assets/logo.svg';
 import { SearchBarToggle } from '@/components/ui/base/searchbar-toggle';
+import { ThemeToggle } from '@/components/ui/base/theme-toggle';
 
 import styles from './index.module.css';
 

@@ -1,6 +1,6 @@
-import React from 'react';
 import Footer, { FooterProps } from '@/components/Footer';
 import Navbar, { NavbarProps } from '@/components/Navbar';
+import React from 'react';
 
 const navbar: NavbarProps = {
   logo: true,

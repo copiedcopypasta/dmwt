@@ -1,10 +1,10 @@
 'use client';
 
+import { Button } from '@/components/ui/button';
+import ErrorLayout from '@/layouts/ErrorLayout';
+import { ExclamationTriangleSolid } from '@2hoch1/pixel-icon-library-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import ErrorLayout from '@/layouts/ErrorLayout';
-import { Button } from '@/components/ui/button';
-import { ExclamationTriangleSolid } from '@2hoch1/pixel-icon-library-react';
 
 const FORBIDDEN_CONFIG = {
   title: 'Zugriff verweigert',

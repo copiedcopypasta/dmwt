@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
 import type { RouteEntry } from '@/lib/content';
 import type { TableOfContents } from '@/lib/markdown';
+import { ReactNode } from 'react';
 
 function generateSidebarContent(routes: RouteEntry[] | undefined) {
   if (!routes?.length) {

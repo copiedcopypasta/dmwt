@@ -1,4 +1,4 @@
-import { Pixelify_Sans, Jersey_10, Geist } from 'next/font/google';
+import { Geist, Jersey_10, Pixelify_Sans } from 'next/font/google';
 
 export const geist = Geist({
   subsets: ['latin'],

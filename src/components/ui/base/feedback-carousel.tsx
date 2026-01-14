@@ -1,11 +1,6 @@
 'use client';
 
-import * as React from 'react';
-import { BadgeCheckIcon } from 'lucide-react';
-import {
-  ThumbsupSolid,
-  ThumbsdownSolid,
-} from '@2hoch1/pixel-icon-library-react';
+import { FeedbackCard } from '@/components/ui/base/feedback-card';
 import {
   Carousel,
   CarouselContent,
@@ -13,8 +8,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import {
+  ThumbsdownSolid,
+  ThumbsupSolid,
+} from '@2hoch1/pixel-icon-library-react';
 import Autoplay from 'embla-carousel-autoplay';
-import { FeedbackCard } from '@/components/ui/base/feedback-card';
+import { BadgeCheckIcon } from 'lucide-react';
+import * as React from 'react';
 
 const verifiedBadge = {
   label: (

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function useCursorPosition() {
   const [position, setPosition] = useState({ x: 0, y: 0 });

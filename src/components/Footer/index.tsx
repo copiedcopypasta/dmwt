@@ -1,14 +1,14 @@
 'use client';
 
-import { ReactElement, useState } from 'react';
-import Link from 'next/link';
 import type { Links, Sozials } from '@/types/index';
+import Link from 'next/link';
+import { ReactElement, useState } from 'react';
 
-import Logo from '@/assets/logo.svg';
 import Banner from '@/assets/banner.svg';
 import Discord from '@/assets/icons/discord.svg';
-import Youtube from '@/assets/icons/youtube.svg';
 import Github from '@/assets/icons/github.svg';
+import Youtube from '@/assets/icons/youtube.svg';
+import Logo from '@/assets/logo.svg';
 import Wave from '@/assets/wave.svg';
 
 import {

@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
-import styles from './ErrorLayout.module.css';
 import Footer, { FooterProps } from '@/components/Footer';
 import Navbar, { NavbarProps } from '@/components/Navbar';
+import { ReactNode } from 'react';
+import styles from './ErrorLayout.module.css';
 
 const navbar: NavbarProps = {
   logo: true,

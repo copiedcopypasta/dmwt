@@ -1,10 +1,10 @@
 'use client';
 
+import { Button } from '@/components/ui/button';
+import ErrorLayout from '@/layouts/ErrorLayout';
+import { LockSolid } from '@2hoch1/pixel-icon-library-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { LockSolid } from '@2hoch1/pixel-icon-library-react';
-import ErrorLayout from '@/layouts/ErrorLayout';
-import { Button } from '@/components/ui/button';
 
 const UNAUTHORIZED_CONFIG = {
   title: 'Zugriff verweigert',

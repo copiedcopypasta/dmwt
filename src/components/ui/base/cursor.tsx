@@ -1,10 +1,9 @@
 'use client';
 
-import Image from 'next/image';
-import { useTheme } from 'next-themes';
-import { useEffect, useMemo, useState } from 'react';
-import { type StaticImageData } from 'next/image';
 import CursorSparkels from '@/components/ui/base/cursor-sparkels';
+import { useTheme } from 'next-themes';
+import Image, { type StaticImageData } from 'next/image';
+import { useEffect, useMemo, useState } from 'react';
 
 import CrystalScepterOne from '@/assets/cursor/Crystal_Scepter_stage_1.png';
 import CrystalScepterTwo from '@/assets/cursor/Crystal_Scepter_stage_2.png';

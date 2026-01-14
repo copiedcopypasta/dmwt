@@ -1,7 +1,7 @@
 'use client';
 
+import { CircleForm, StarShape } from '@/components/ui/base/shapes';
 import { useEffect, useState } from 'react';
-import { StarShape, CircleForm } from '@/components/ui/base/shapes';
 
 interface Sparkle {
   id: number;

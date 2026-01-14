@@ -1,7 +1,7 @@
 'use client';
 
-import * as React from 'react';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
+import * as React from 'react';
 
 function ParallaxLayer({ children }: { children: React.ReactNode }) {
   const scrollY = useScrollPosition();

@@ -1,11 +1,11 @@
-import React from 'react';
-import { Metadata } from 'next';
-import { getSiteUrl } from '@/lib/server-utils';
-import { ThemeProvider } from '@/components/theme-provider';
 import { SmoothScrollProvider } from '@/components/scroll-provider';
+import { ThemeProvider } from '@/components/theme-provider';
 import { CustomCursor } from '@/components/ui/base/cursor';
-import { pixelifySans, geist, jersey10 } from './fonts';
+import { getSiteUrl } from '@/lib/server-utils';
 import '@/styles/globals.css';
+import { Metadata } from 'next';
+import React from 'react';
+import { geist, jersey10, pixelifySans } from './fonts';
 
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),

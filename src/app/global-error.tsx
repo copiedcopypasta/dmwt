@@ -1,10 +1,10 @@
 'use client';
 
-import { useEffect } from 'react';
-import Link from 'next/link';
-import { ExclaimationSolid } from '@2hoch1/pixel-icon-library-react';
-import ErrorLayout from '@/layouts/ErrorLayout';
 import { Button } from '@/components/ui/button';
+import ErrorLayout from '@/layouts/ErrorLayout';
+import { ExclaimationSolid } from '@2hoch1/pixel-icon-library-react';
+import Link from 'next/link';
+import { useEffect } from 'react';
 
 const ERROR_CONFIG = {
   title: 'Etwas ist schiefgelaufen',

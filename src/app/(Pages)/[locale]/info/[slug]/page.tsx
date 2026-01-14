@@ -1,7 +1,7 @@
-import { notFound } from 'next/navigation';
 import InfoLayout from '@/layouts/InfoLayout';
-import { compileMdx } from '@/lib/markdown';
 import { getAllRoutes, getContent, getPageRoute } from '@/lib/content';
+import { compileMdx } from '@/lib/markdown';
+import { notFound } from 'next/navigation';
 
 export default async function Page({
   params,

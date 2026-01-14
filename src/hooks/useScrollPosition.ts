@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function useScrollPosition() {
   const [scrollY, setScrollY] = useState(0);

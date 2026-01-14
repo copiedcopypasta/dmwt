@@ -1,6 +1,6 @@
-import { SearchSolid } from '@2hoch1/pixel-icon-library-react';
-import ErrorLayout from '@/layouts/ErrorLayout';
 import NotFoundActions from '@/components/ui/base/notfound-actions';
+import ErrorLayout from '@/layouts/ErrorLayout';
+import { SearchSolid } from '@2hoch1/pixel-icon-library-react';
 
 const NOT_FOUND_CONFIG = {
   title: 'Seite nicht gefunden',

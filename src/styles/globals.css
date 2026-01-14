@@ -1,43 +1,7 @@
 @import './theme.css';
 
-/* =====================================================
-   Layout Grid (modern, CSS Grid)
-===================================================== */
-
-body {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas:
-    'header'
-    'main'
-    'footer';
-  color: var(--color-default-font);
-}
-
+html,
+body,
 * {
   cursor: none;
-}
-
-/* =====================================================
-   Responsive Layout (>= 768px)
-===================================================== */
-
-/* =====================================================
-   Grid Area Mapping
-===================================================== */
-
-header {
-  grid-area: header;
-}
-
-aside {
-  grid-area: sidebar;
-}
-
-main {
-  grid-area: main;
-}
-
-footer {
-  grid-area: footer;
 }

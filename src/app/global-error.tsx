@@ -2,13 +2,9 @@
 
 import { useEffect } from 'react';
 import Link from 'next/link';
-import {
-  HomeSolid,
-  SpinnerSolid,
-  ExclaimationSolid,
-} from '@2hoch1/pixel-icon-library-react';
+import { ExclaimationSolid } from '@2hoch1/pixel-icon-library-react';
 import ErrorLayout from '@/layouts/ErrorLayout';
-import { FlipButton } from '@/components/ui/shadcn-io/flip-button';
+import { Button } from '@/components/ui/button';
 
 const ERROR_CONFIG = {
   title: 'Etwas ist schiefgelaufen',
@@ -45,22 +41,10 @@ export default function GlobalError({
         <p className='max-w-sm text-neutral-500'>{ERROR_CONFIG.description}</p>
 
         <div className='mt-2 flex flex-wrap justify-center gap-3'>
-          <FlipButton
-            onClick={() => reset()}
-            frontText={ERROR_CONFIG.buttons.retry}
-            backText={<SpinnerSolid className='inline' size={16} />}
-            from='left'
-            frontClassName='bg-neutral-100'
-            backClassName='bg-error-500 text-white'
-          />
+          <Button onClick={() => reset()}>{ERROR_CONFIG.buttons.retry}</Button>
 
           <Link href='/'>
-            <FlipButton
-              frontText={ERROR_CONFIG.buttons.home}
-              backText={<HomeSolid className='inline' size={16} />}
-              frontClassName='bg-neutral-100'
-              backClassName='bg-error-500 text-white'
-            />
+            <Button>{ERROR_CONFIG.buttons.home}</Button>
           </Link>
         </div>
       </div>

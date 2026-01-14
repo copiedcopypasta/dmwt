@@ -2,7 +2,9 @@ import React from 'react';
 import { Metadata } from 'next';
 import { getSiteUrl } from '@/lib/server-utils';
 import { ThemeProvider } from '@/components/theme-provider';
+import { SmoothScrollProvider } from '@/components/scroll-provider';
 import { CustomCursor } from '@/components/ui/base/cursor';
+import { pixelifySans, geist, jersey10 } from './fonts';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
@@ -57,10 +59,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang='de' suppressHydrationWarning>
-      <body className='min-h-screen'>
+      <body
+        className={`min-h-screen ${geist.variable} ${pixelifySans.variable} ${jersey10.variable}`}
+      >
         <CustomCursor />
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
-          {children}
+          <SmoothScrollProvider>{children}</SmoothScrollProvider>
         </ThemeProvider>
       </body>
     </html>

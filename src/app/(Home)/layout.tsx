@@ -14,7 +14,7 @@ const navbar: NavbarProps = {
   darkModeToggle: true,
   loginButton: true,
   fixed: false,
-  backgroundColor: false
+  backgroundColor: '#161A24',
 };
 
 const footer: FooterProps = {
@@ -51,16 +51,12 @@ const footer: FooterProps = {
   banner: true,
 };
 
-export default function Layout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Navbar {...navbar} />
       <main>{children}</main>
-      <Footer {...footer}/>
+      <Footer {...footer} />
     </>
   );
 }

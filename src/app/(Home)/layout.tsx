@@ -20,7 +20,10 @@ const navbar: NavbarProps = {
 const footer: FooterProps = {
   links: {
     resources: [
-      { label: 'Tests', href: '/tests' },
+      {
+        label: 'Tests',
+        href: 'https://github.com/copiedcopypasta/dmwt_WoOS/deployments',
+      },
       { label: 'Analytics', href: '/analytics' },
       { label: 'Source Code', href: 'https://github.com/copiedcopypasta/dmwt' },
     ],

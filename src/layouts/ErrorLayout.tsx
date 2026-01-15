@@ -1,7 +1,6 @@
 import Footer, { FooterProps } from '@/components/Footer';
 import Navbar, { NavbarProps } from '@/components/Navbar';
 import { ReactNode } from 'react';
-import styles from './ErrorLayout.module.css';
 
 const navbar: NavbarProps = {
   logo: true,
@@ -61,7 +60,9 @@ const ErrorLayout = ({
     <>
       <Navbar {...navbar} />
       <main>
-        <div className={styles.errorLayout}>{children}</div>
+        <div className='flex min-h-screen w-full flex-1 items-center justify-center'>
+          {children}
+        </div>
       </main>
       <Footer {...footer} />
     </>

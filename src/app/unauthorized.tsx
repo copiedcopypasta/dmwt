@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import SystemLayout from '@/layouts/SystemLayout';
+import { SystemLayout } from '@/layouts/SystemLayout';
 import { LockSolid } from '@2hoch1/pixel-icon-library-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';

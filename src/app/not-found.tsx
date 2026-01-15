@@ -1,5 +1,5 @@
 import NotFoundActions from '@/components/ui/base/notfound-actions';
-import SystemLayout from '@/layouts/SystemLayout';
+import { SystemLayout } from '@/layouts/SystemLayout';
 import { SearchSolid } from '@2hoch1/pixel-icon-library-react';
 
 const NOT_FOUND_CONFIG = {

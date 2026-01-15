@@ -1,7 +1,7 @@
 'use client';
 
 import { Spinner } from '@/components/ui/spinner';
-import SystemLayout from '@/layouts/SystemLayout';
+import { SystemLayout } from '@/layouts/SystemLayout';
 
 const LOADING_CONFIG = {
   message: 'Wird geladen…',

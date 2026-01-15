@@ -1,4 +1,4 @@
-import InfoLayout from '@/layouts/InfoLayout';
+import { InfoLayout } from '@/layouts/InfoLayout';
 import { getAllRoutes, getContent, getPageRoute } from '@/lib/content';
 import { compileMdx } from '@/lib/markdown';
 import { notFound } from 'next/navigation';

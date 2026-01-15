@@ -69,4 +69,4 @@ const SystemLayout = ({
   );
 };
 
-export default SystemLayout;
+export { SystemLayout };

@@ -55,12 +55,7 @@ interface InfoLayoutProps {
   title?: string;
 }
 
-export default function InfoLayout({
-  routes,
-  content,
-  toc,
-  title,
-}: InfoLayoutProps) {
+function InfoLayout({ routes, content, toc, title }: InfoLayoutProps) {
   return (
     <div className='grid h-screen w-screen grid-cols-[2fr_5fr_2fr] gap-4'>
       <div
@@ -101,3 +96,5 @@ export default function InfoLayout({
     </div>
   );
 }
+
+export { InfoLayout };

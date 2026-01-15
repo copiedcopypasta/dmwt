@@ -1,7 +1,7 @@
 'use client';
 
 import FeedbackCarousel from '@/components/ui/base/feedback-carousel';
-import ParallaxWindow from '@/components/ui/base/parallax-window';
+import { ParallaxWindow } from '@/components/ui/base/parallax-window';
 import Image from 'next/image';
 
 export default function Page() {

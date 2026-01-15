@@ -30,60 +30,61 @@ function ParallaxLayer({ children }: { children: React.ReactNode }) {
   );
 }
 
-const layer_1 = (
-  <div
-    data-speed='5'
-    className="fixed block h-[1000px] w-full bg-[#161A24] bg-[url('/keyart/index-0.png')] bg-[length:auto_1038px] bg-bottom bg-center bg-repeat-x"
-  />
-);
+const PARALLAX_LAYERS = [
+  {
+    speed: '5',
+    image: '/keyart/index-0.png',
+    className:
+      'fixed block h-[1000px] w-full bg-[#161A24] bg-[length:auto_800px] bg-bottom bg-center bg-repeat-x',
+  },
+  {
+    speed: '10',
+    image: '/keyart/index-1.png',
+    className:
+      'absolute block h-[1000px] w-full bg-[length:auto_800px] bg-bottom bg-center bg-repeat-x',
+  },
+  {
+    speed: '15',
+    image: '/keyart/index-2.png',
+    className:
+      'absolute block h-[1000px] w-full bg-[length:auto_800px] bg-bottom bg-center bg-repeat-x',
+  },
+  {
+    speed: '21',
+    image: '/keyart/index-3.png',
+    className:
+      'absolute block h-[1000px] w-full bg-[length:auto_800px] bg-bottom bg-center bg-repeat-x',
+  },
+  {
+    speed: '31',
+    image: '/keyart/index-4.png',
+    className:
+      'absolute block h-[1000px] w-full bg-[length:auto_800px] bg-bottom bg-center bg-repeat-x',
+  },
+  {
+    speed: '42',
+    image: '/keyart/index-5.png',
+    className:
+      'absolute block h-[1000px] w-full bg-[length:auto_800px] bg-bottom bg-center bg-repeat-x',
+  },
+];
 
-const layer_2 = (
-  <div
-    data-speed='10'
-    className="absolute block h-[1000px] w-full bg-[url('/keyart/index-1.png')] bg-[length:auto_1038px] bg-bottom bg-center bg-repeat-x"
-  />
-);
-
-const layer_3 = (
-  <div
-    data-speed='15'
-    className="absolute block h-[1000px] w-full bg-[url('/keyart/index-2.png')] bg-[length:auto_1038px] bg-bottom bg-center bg-repeat-x"
-  />
-);
-
-const layer_4 = (
-  <div
-    data-speed='21'
-    className="absolute block h-[1000px] w-full bg-[url('/keyart/index-3.png')] bg-[length:auto_1038px] bg-bottom bg-center bg-repeat-x"
-  />
-);
-
-const layer_5 = (
-  <div
-    data-speed='31'
-    className="absolute block h-[1000px] w-full bg-[url('/keyart/index-4.png')] bg-[length:auto_1038px] bg-bottom bg-center bg-repeat-x"
-  />
-);
-
-const layer_6 = (
-  <div
-    data-speed='42'
-    className="absolute block h-[1000px] w-full bg-[url('/keyart/index-5.png')] bg-[length:auto_1038px] bg-bottom bg-center bg-repeat-x"
-  />
-);
-
-const layer_7 = (
-  <div className="absolute block h-[1000px] w-full bg-[url('/keyart/index-6.png')] bg-[length:auto_1038px] bg-bottom bg-center bg-repeat-x" />
-);
-
-export default function ParallaxWindow() {
+function ParallaxWindow() {
   return (
-    <div className='relative -z-10 block h-[1000px]'>
-      {/* Keyart Section */}
+    <div className='relative -z-10 block h-[900px]'>
       <ParallaxLayer>
-        {layer_1} {layer_2} {layer_3} {layer_4} {layer_5} {layer_6}
+        {PARALLAX_LAYERS.map((layer, index) => (
+          <div
+            key={index}
+            data-speed={layer.speed}
+            className={layer.className}
+            style={{ backgroundImage: `url('${layer.image}')` }}
+          />
+        ))}
       </ParallaxLayer>
-      {layer_7}
+      <div className="absolute block h-[1000px] w-full bg-[url('/keyart/index-6.png')] bg-[length:auto_800px] bg-bottom bg-center bg-repeat-x" />
     </div>
   );
 }
+
+export { ParallaxWindow };

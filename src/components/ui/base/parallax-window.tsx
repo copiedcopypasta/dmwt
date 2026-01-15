@@ -32,46 +32,46 @@ function ParallaxLayer({ children }: { children: React.ReactNode }) {
 
 const PARALLAX_LAYERS = [
   {
-    speed: '5',
+    speed: '2',
     image: '/keyart/index-0.png',
     className:
-      'fixed block h-[1000px] w-full bg-[#161A24] bg-[length:auto_800px] bg-bottom bg-center bg-repeat-x',
+      'fixed block h-[800px] w-full bg-[#161A24] bg-[length:auto_700px] bg-bottom bg-center bg-repeat-x',
   },
   {
-    speed: '10',
+    speed: '7',
     image: '/keyart/index-1.png',
     className:
-      'absolute block h-[1000px] w-full bg-[length:auto_800px] bg-bottom bg-center bg-repeat-x',
+      'absolute block h-[850px] w-full bg-[length:auto_700px] bg-bottom bg-center bg-repeat-x',
   },
   {
-    speed: '15',
+    speed: '12',
     image: '/keyart/index-2.png',
     className:
-      'absolute block h-[1000px] w-full bg-[length:auto_800px] bg-bottom bg-center bg-repeat-x',
+      'absolute block h-[900px] w-full bg-[length:auto_700px] bg-bottom bg-center bg-repeat-x',
+  },
+  {
+    speed: '17',
+    image: '/keyart/index-3.png',
+    className:
+      'absolute block h-[900px] w-full bg-[length:auto_700px] bg-bottom bg-center bg-repeat-x',
   },
   {
     speed: '21',
-    image: '/keyart/index-3.png',
-    className:
-      'absolute block h-[1000px] w-full bg-[length:auto_800px] bg-bottom bg-center bg-repeat-x',
-  },
-  {
-    speed: '31',
     image: '/keyart/index-4.png',
     className:
-      'absolute block h-[1000px] w-full bg-[length:auto_800px] bg-bottom bg-center bg-repeat-x',
+      'absolute block h-[900px] w-full bg-[length:auto_700px] bg-bottom bg-center bg-repeat-x',
   },
   {
-    speed: '42',
+    speed: '30',
     image: '/keyart/index-5.png',
     className:
-      'absolute block h-[1000px] w-full bg-[length:auto_800px] bg-bottom bg-center bg-repeat-x',
+      'absolute block h-[900px] w-full bg-[length:auto_700px] bg-bottom bg-center bg-repeat-x',
   },
 ];
 
 function ParallaxWindow() {
   return (
-    <div className='relative -z-10 block h-[900px]'>
+    <div className='relative -z-10 block h-[800px]'>
       <ParallaxLayer>
         {PARALLAX_LAYERS.map((layer, index) => (
           <div
@@ -82,7 +82,7 @@ function ParallaxWindow() {
           />
         ))}
       </ParallaxLayer>
-      <div className="absolute block h-[1000px] w-full bg-[url('/keyart/index-6.png')] bg-[length:auto_800px] bg-bottom bg-center bg-repeat-x" />
+      <div className="absolute block h-[900px] w-full bg-[url('/keyart/index-6.png')] bg-[length:auto_700px] bg-bottom bg-center bg-repeat-x" />
     </div>
   );
 }

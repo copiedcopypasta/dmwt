@@ -1,5 +1,6 @@
 'use client';
 
+import Wave from '@/assets/wave.svg';
 import {
   FeedbackCarousel,
   negativeBadge,
@@ -62,8 +63,9 @@ export default function Page() {
     <>
       <div className='block overflow-hidden'>
         <ParallaxWindow />
-        <div className='relative z-20 grid grid-cols-1 place-items-center gap-8 bg-black p-8'>
-          <div className='h-100'>
+        <div className='relative z-20 grid grid-cols-1 place-items-center gap-8 bg-black'>
+          <div id='deadSpaceBuffer' className='h-25 bg-black'></div>
+          <div className='h-100 p-8'>
             <h1 className='text-center text-4xl font-bold text-white md:text-5xl lg:text-6xl'>
               <Image
                 src='/Banner.png'
@@ -73,20 +75,33 @@ export default function Page() {
                 className='mx-auto'
               />
             </h1>
-            <h2 className='text-muted-foreground text-center text-xl'>
-              Sehr ausgefaller Text steht hier. Genau hier. Wirklich.
+            <h2 className='font-pixelify mx-auto max-w-xl pt-4 text-center text-2xl'>
+              is an interactive platform for learning the fundamentals of
+              operating systems.
             </h2>
           </div>
-          <FeedbackCarousel feedbackData={feedbackData} />
-          <div className='text-muted-foreground mx-auto max-w-4xl text-lg leading-7'>
-            <p>
-              Willkommen auf der offiziellen Website von DM-WT – Ihrem digitalen
-              Begleiter für das Wizard of OS Projekt! Hier finden Sie alle
-              Informationen, Neuigkeiten und Ressourcen rund um das spannende
-              Vorhaben, die Zukunft der Betriebssysteme zu gestalten.
-            </p>
+          <div className='w-full py-8'>
+            {/* Top Wave */}
+            <div className='overflow-hidden bg-black'>
+              <Wave className='w-full' style={{ color: '#2b542b' }} />
+            </div>
+
+            {/* Content Section */}
+            <div className='bg-[#2b542b] px-8 py-12'>
+              {/* Add content here */}
+            </div>
+
+            {/* Bottom Wave - Rotated 180 degrees */}
+            <div className='overflow-hidden bg-black'>
+              <Wave
+                className='w-full rotate-180 transform'
+                style={{ color: '#2b542b' }}
+              />
+            </div>
           </div>
-          <div></div>
+          <div className='p-30'>
+            <FeedbackCarousel feedbackData={feedbackData} />
+          </div>
         </div>
       </div>
     </>

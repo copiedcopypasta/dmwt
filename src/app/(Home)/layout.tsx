@@ -56,10 +56,10 @@ const footer: FooterProps = {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <>
+    <div className='bg-[#161a24]'>
       <Navbar {...navbar} />
       <main>{children}</main>
       <Footer {...footer} />
-    </>
+    </div>
   );
 }

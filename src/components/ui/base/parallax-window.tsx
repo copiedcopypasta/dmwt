@@ -71,7 +71,7 @@ const PARALLAX_LAYERS = [
 
 function ParallaxWindow() {
   return (
-    <div className='relative -z-10 block h-[800px]'>
+    <div className='relative z-0 block h-[800px]'>
       <ParallaxLayer>
         {PARALLAX_LAYERS.map((layer, index) => (
           <div

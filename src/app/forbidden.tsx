@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import ErrorLayout from '@/layouts/ErrorLayout';
+import SystemLayout from '@/layouts/SystemLayout';
 import { ExclamationTriangleSolid } from '@2hoch1/pixel-icon-library-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -19,7 +19,7 @@ export default function Forbidden() {
   const router = useRouter();
 
   return (
-    <ErrorLayout>
+    <SystemLayout>
       <div className='animate-fade-in flex flex-col items-center gap-4 text-center'>
         <div className='animate-float'>
           <ExclamationTriangleSolid className='text-error-500 h-12 w-12' />
@@ -43,6 +43,6 @@ export default function Forbidden() {
           </Link>
         </div>
       </div>
-    </ErrorLayout>
+    </SystemLayout>
   );
 }

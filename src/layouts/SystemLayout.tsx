@@ -51,7 +51,7 @@ const footer: FooterProps = {
   banner: true,
 };
 
-const ErrorLayout = ({
+const SystemLayout = ({
   children,
 }: Readonly<{
   children: ReactNode;
@@ -69,4 +69,4 @@ const ErrorLayout = ({
   );
 };
 
-export default ErrorLayout;
+export default SystemLayout;

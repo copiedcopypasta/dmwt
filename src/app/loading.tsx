@@ -1,7 +1,7 @@
 'use client';
 
 import { Spinner } from '@/components/ui/spinner';
-import LoadingLayout from '@/layouts/LoadingLayout';
+import SystemLayout from '@/layouts/SystemLayout';
 
 const LOADING_CONFIG = {
   message: 'Wird geladen…',
@@ -9,7 +9,7 @@ const LOADING_CONFIG = {
 
 export default function Loading() {
   return (
-    <LoadingLayout>
+    <SystemLayout>
       <div className='animate-scale-in flex flex-col items-center gap-4'>
         <Spinner />
 
@@ -17,6 +17,6 @@ export default function Loading() {
           {LOADING_CONFIG.message}
         </p>
       </div>
-    </LoadingLayout>
+    </SystemLayout>
   );
 }

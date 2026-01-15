@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import ErrorLayout from '@/layouts/ErrorLayout';
+import SystemLayout from '@/layouts/SystemLayout';
 import { ExclaimationSolid } from '@2hoch1/pixel-icon-library-react';
 import Link from 'next/link';
 import { useEffect } from 'react';
@@ -28,7 +28,7 @@ export default function GlobalError({
   }, [error]);
 
   return (
-    <ErrorLayout>
+    <SystemLayout>
       <div className='animate-fade-in flex flex-col items-center gap-4 text-center'>
         <div className='animate-float'>
           <ExclaimationSolid className='text-error-500 h-12 w-12' />
@@ -48,6 +48,6 @@ export default function GlobalError({
           </Link>
         </div>
       </div>
-    </ErrorLayout>
+    </SystemLayout>
   );
 }

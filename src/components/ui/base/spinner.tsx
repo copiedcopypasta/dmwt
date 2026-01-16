@@ -2,19 +2,9 @@
 
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
 
 export function Spinner() {
   const { theme, systemTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
 
   const currentTheme = theme === 'system' ? systemTheme : theme;
   const spinnerSrc =

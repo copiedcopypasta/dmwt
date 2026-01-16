@@ -1,19 +1,37 @@
+// proxy.ts
 import { NextRequest, NextResponse } from 'next/server';
 
-export function proxy(request: NextRequest) {
-  const url = request.nextUrl.clone();
-  const referer = request.headers.get('referer');
+const locales = ['en', 'de'];
+const defaultLocale = ['en'];
 
-  const isInternal = referer?.startsWith(url.origin);
+export function proxy(request: NextRequest) {   // <-- type added here
+  const { pathname } = request.nextUrl;
 
-  /*if (!isInternal) {
-    url.pathname = '/404';
-    return NextResponse.rewrite(url);
-  }*/
+  // Skip internal and file asset requests
+  if (
+    pathname.startsWith('/_next') ||
+    pathname.startsWith('/api') ||
+    pathname.includes('.')
+  ) {
+    return NextResponse.next();
+  }
 
-  return NextResponse.next();
+  // If localized already, just continue
+  const hasLocale = locales.some(
+    (locale) =>
+      pathname === `/${locale}` ||
+      pathname.startsWith(`/${locale}/`)
+  );
+
+  if (hasLocale) {
+    return NextResponse.next();
+  }
+
+  // Redirect to default locale
+  request.nextUrl.pathname = `/${defaultLocale}${pathname}`;
+  return NextResponse.redirect(request.nextUrl);
 }
 
 export const config = {
-  matcher: ['/api/:path*', '/api'],
+  matcher: ['/((?!_next|api|favicon.ico).*)'],
 };

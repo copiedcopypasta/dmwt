@@ -1,12 +1,14 @@
 'use client';
 
 import Wave from '@/assets/wave.svg';
+import { ActionCallButton } from '@/components/ui/base/action-call-button';
 import {
   FeedbackCarousel,
   negativeBadge,
   positiveBadge,
   verifiedBadge,
 } from '@/components/ui/base/feedback-carousel';
+import { InformationBlockArea } from '@/components/ui/base/information-block-area';
 import { ParallaxWindow } from '@/components/ui/base/parallax-window';
 import Image from 'next/image';
 
@@ -65,31 +67,37 @@ export default function Page() {
         <ParallaxWindow />
         <div className='relative z-20 grid grid-cols-1 place-items-center gap-8 bg-black'>
           <div id='deadSpaceBuffer' className='h-25 bg-black'></div>
-          <div className='h-100 p-8'>
-            <h1 className='text-center text-4xl font-bold text-white md:text-5xl lg:text-6xl'>
-              <Image
-                src='/Banner.png'
-                alt='DM-WT Logo'
-                width={700}
-                height={100}
-                className='mx-auto'
-              />
-            </h1>
-            <h2 className='font-pixelify mx-auto max-w-xl pt-4 text-center text-2xl'>
-              is an interactive platform for learning the fundamentals of
-              operating systems.
-            </h2>
+          <div id='content-section-1' className='mx-80'>
+            <div className='h-100 p-8'>
+              <h1 className='text-center text-4xl font-bold text-white md:text-5xl lg:text-6xl'>
+                <Image
+                  src='/Banner.png'
+                  alt='DM-WT Logo'
+                  width={700}
+                  height={100}
+                  className='mx-auto'
+                />
+              </h1>
+              <h2 className='font-pixelify mx-auto max-w-xl pt-4 text-center text-2xl'>
+                is an interactive platform for learning the fundamentals of
+                operating systems.
+              </h2>
+            </div>
+            <div>
+              <ActionCallButton />
+            </div>
+            <div>
+              <InformationBlockArea />
+            </div>
           </div>
-          <div className='w-full py-8'>
+          <div id='content-section-2' className='w-full py-8'>
             {/* Top Wave */}
             <div className='overflow-hidden bg-black'>
               <Wave className='w-full' style={{ color: '#2b542b' }} />
             </div>
 
             {/* Content Section */}
-            <div className='bg-[#2b542b] px-8 py-12'>
-              {/* Add content here */}
-            </div>
+            <div className='bg-[#2b542b] px-8 py-12'></div>
 
             {/* Bottom Wave - Rotated 180 degrees */}
             <div className='overflow-hidden bg-black'>
@@ -99,8 +107,10 @@ export default function Page() {
               />
             </div>
           </div>
-          <div className='p-30'>
-            <FeedbackCarousel feedbackData={feedbackData} />
+          <div id='content-section-3'>
+            <div className='p-30'>
+              <FeedbackCarousel feedbackData={feedbackData} />
+            </div>
           </div>
         </div>
       </div>

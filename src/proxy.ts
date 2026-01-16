@@ -1,19 +1,32 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { auth } from '@/auth';
+import { NextResponse } from 'next/server';
 
-export function proxy(request: NextRequest) {
-  const url = request.nextUrl.clone();
-  const referer = request.headers.get('referer');
+// Protected routes that require authentication
+const protectedRoutes = ['/quests', '/feedback'];
 
-  const isInternal = referer?.startsWith(url.origin);
+export default auth((req) => {
+  const isAuthenticated = !!req.auth;
+  const { pathname } = req.nextUrl;
 
-  /*if (!isInternal) {
-    url.pathname = '/404';
-    return NextResponse.rewrite(url);
-  }*/
+  // Skip auth logic for NextAuth routes to avoid redirect loops
+  if (pathname.startsWith('/api/auth')) {
+    return NextResponse.next();
+  }
+
+  // Check if route is protected
+  const isProtectedRoute = protectedRoutes.some((route) =>
+    pathname.startsWith(route),
+  );
+
+  if (isProtectedRoute && !isAuthenticated) {
+    const loginUrl = new URL('/api/auth/signin', req.url);
+    loginUrl.searchParams.set('callbackUrl', pathname);
+    return NextResponse.redirect(loginUrl);
+  }
 
   return NextResponse.next();
-}
+});
 
 export const config = {
-  matcher: ['/api/:path*', '/api'],
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
 };

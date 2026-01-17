@@ -2,18 +2,11 @@
 
 <div align="center">
     <p>
-        <a href="https://site.ccp.2hoch1.dev/">
-            <img src="public/Logo.png" alt="WoOS logo" width="80" />
-            <img src="public/Banner.png" alt="WoOS banner" width="500" />
-        </a>
+        <a href="https://site.ccp.2hoch1.dev/"><img src="public/Logo.png" alt="WoOS logo" width="80" /><img src="public/Banner.png" alt="WoOS banner" width="500" /></a>
     </p>
     <p>
-        <a href="https://github.com/copiedcopypasta/dmwt_WoOS/actions/workflows/ci.yml">
-            <img src="https://github.com/copiedcopypasta/dmwt_WoOS/actions/workflows/ci.yml/badge.svg" alt="Build" />
-        </a>
-        <a href="https://github.com/copiedcopypasta/dmwt_WoOS/deployments/Production">
-            <img src="https://img.shields.io/badge/deployment-Production-blue" alt="Production Deployment" />
-        </a>
+        <a href="https://github.com/copiedcopypasta/dmwt_WoOS/actions/workflows/ci.yml"><img src="https://github.com/copiedcopypasta/dmwt_WoOS/actions/workflows/ci.yml/badge.svg" alt="Build" /></a>
+        <a href="https://github.com/copiedcopypasta/dmwt_WoOS/deployments/Production"><img src="https://img.shields.io/badge/deployment-Production-blue" alt="Production Deployment" /></a>
         <img src="https://img.shields.io/github/package-json/dependency-version/copiedcopypasta/dmwt_WoOS/react" alt="React Version" />
         <img src="https://img.shields.io/github/package-json/dependency-version/copiedcopypasta/dmwt_WoOS/next" alt="Next.js Version" />
     </p>
@@ -125,10 +118,10 @@ At this time, contributions from third parties are **not permitted before Januar
 
 ### Contributors
 
-- [Craemon][craemon]
-- [dev2xJJ][dev]
-- [pallepalinski][palle]
-- [2hoch1][21]
+- [@Craemon][craemon]
+- [@dev2xJJ][dev]
+- [@pallepalinski][palle]
+- [@2hoch1 (2^1)][21]
 
 ## License
 

@@ -1,13 +1,11 @@
-// proxy.ts
 import { NextRequest, NextResponse } from 'next/server';
 
 const locales = ['en', 'de'];
 const defaultLocale = ['en'];
 
-export function proxy(request: NextRequest) {   // <-- type added here
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Skip internal and file asset requests
   if (
     pathname.startsWith('/_next') ||
     pathname.startsWith('/api') ||
@@ -16,7 +14,6 @@ export function proxy(request: NextRequest) {   // <-- type added here
     return NextResponse.next();
   }
 
-  // If localized already, just continue
   const hasLocale = locales.some(
     (locale) =>
       pathname === `/${locale}` ||
@@ -27,7 +24,6 @@ export function proxy(request: NextRequest) {   // <-- type added here
     return NextResponse.next();
   }
 
-  // Redirect to default locale
   request.nextUrl.pathname = `/${defaultLocale}${pathname}`;
   return NextResponse.redirect(request.nextUrl);
 }

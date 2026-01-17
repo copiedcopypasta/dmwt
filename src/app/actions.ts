@@ -1,9 +1,9 @@
 'use server';
 
 function calcAnalytics() {
-  const pointsWindows = getPointsWindows();
-  const pointsLinux = getPointsLinux();
-  const pointsMacos = getPointsMacOS();
+  const pointsWindows = getPointsFromDatabase('Windows');
+  const pointsLinux = getPointsFromDatabase('Linux');
+  const pointsMacos = getPointsFromDatabase('MacOS');
 
   const totalPoints = pointsWindows + pointsLinux + pointsMacos;
   const safeTotalPoints = totalPoints > 0 ? totalPoints : 1;
@@ -17,16 +17,12 @@ function calcAnalytics() {
   savePercentToDatabase('MacOS', percentMacos);
 }
 
-function getPointsWindows() {
-  return 25;
-}
-
-function getPointsLinux() {
-  return 50;
-}
-
-function getPointsMacOS() {
-  return 25;
+function getPointsFromDatabase(os: string): number {
+  //datenbank access logic hier?
+  if (os === 'Windows') return 25;
+  if (os === 'Linux') return 50;
+  if (os === 'MacOS') return 25;
+  return 0;
 }
 
 function savePercentToDatabase(os: string, percent: number) {

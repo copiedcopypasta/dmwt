@@ -1,0 +1,51 @@
+{
+  "thema_X": {
+    "analysis_questions": {
+      "1": {
+        "_title": "Analysis Question 1",
+        "options": {
+          "_a": "result for Option A",
+          "_b": "result for Option B",
+          "_c": "result for Option C",
+          "_d": "result for Option D",
+          "_e": "result for Option E",
+          "a": "Analysis Option A",
+          "b": "Analysis Option B",
+          "c": "Analysis Option C",
+          "d": "Analysis Option D",
+          "e": "Analysis Option E"
+        }
+      },
+      "2": {
+        "_title": "Analysis Question 2",
+        "options": {
+          "_a": "result for Option A",
+          "_b": "result for Option B",
+          "_c": "result for Option C",
+          "_d": "result for Option D",
+          "_e": "result for Option E",
+          "a": "Analysis Option A",
+          "b": "Analysis Option B",
+          "c": "Analysis Option C",
+          "d": "Analysis Option D",
+          "e": "Analysis Option E"
+        }
+      },
+      "3": {
+        "_title": "Analysis Question 3",
+        "options": {
+          "_a": "result for Option A",
+          "_b": "result for Option B",
+          "_c": "result for Option C",
+          "_d": "result for Option D",
+          "_e": "result for Option E",
+          "a": "Analysis Option A",
+          "b": "Analysis Option B",
+          "c": "Analysis Option C",
+          "d": "Analysis Option D",
+          "e": "Analysis Option E"
+        }
+      }
+    }
+  }
+}

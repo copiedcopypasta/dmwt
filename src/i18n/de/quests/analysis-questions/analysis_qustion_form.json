@@ -1,0 +1,51 @@
+{
+  "thema_X": {
+    "analysis_questions": {
+      "1": {
+        "_title": "Analyse Frage 1",
+        "options": {
+          "_a": "auswerung durch Option A",
+          "_b": "auswerung durch Option B",
+          "_c": "auswerung durch Option C",
+          "_d": "auswerung durch Option D",
+          "_e": "auswerung durch Option E",
+          "a": "Analyse Option A",
+          "b": "Analyse Option B",
+          "c": "Analyse Option C",
+          "d": "Analyse Option D",
+          "e": "Analyse Option E"
+        }
+      },
+      "2": {
+        "_title": "Analyse Frage 2",
+        "options": {
+          "_a": "auswerung durch Option A",
+          "_b": "auswerung durch Option B",
+          "_c": "auswerung durch Option C",
+          "_d": "auswerung durch Option D",
+          "_e": "auswerung durch Option E",
+          "a": "Analyse Option A",
+          "b": "Analyse Option B",
+          "c": "Analyse Option C",
+          "d": "Analyse Option D",
+          "e": "Analyse Option E"
+        }
+      },
+      "3": {
+        "_title": "Analyse Frage 3",
+        "options": {
+          "_a": "auswerung durch Option A",
+          "_b": "auswerung durch Option B",
+          "_c": "auswerung durch Option C",
+          "_d": "auswerung durch Option D",
+          "_e": "auswerung durch Option E",
+          "a": "Analyse Option A",
+          "b": "Analyse Option B",
+          "c": "Analyse Option C",
+          "d": "Analyse Option D",
+          "e": "Analyse Option E"
+        }
+      }
+    }
+  }
+}

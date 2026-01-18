@@ -4,7 +4,10 @@
     "options": {
       "a": "Because they consume more power than turning off the screen",
       "b": "Because they don't turn off the screen",
-      "c": "Because they don't affect power consumption"
+      "c": "Because they don't affect power consumption",
+      "_a": "61",
+      "_b": "62",
+      "_c": "63"
     }
   },
   "2": {
@@ -12,7 +15,10 @@
     "options": {
       "a": "Negatively, as they use resources in the background",
       "b": "Not at all",
-      "c": "Positively, as they make the computer faster"
+      "c": "Positively, as they make the computer faster",
+      "_a": "64",
+      "_b": "65",
+      "_c": "66"
     }
   },
   "3": {
@@ -20,7 +26,10 @@
     "options": {
       "a": "Performance loss during use",
       "b": "Too low electricity bill",
-      "c": "Hardware damage"
+      "c": "Hardware damage",
+      "_a": "67",
+      "_b": "68",
+      "_c": "69"
     }
   },
   "4": {
@@ -28,7 +37,10 @@
     "options": {
       "a": "To save power in battery operation",
       "b": "To maximize performance",
-      "c": "To increase screen brightness"
+      "c": "To increase screen brightness",
+      "_a": "70",
+      "_b": "71",
+      "_c": "72"
     }
   },
   "5": {
@@ -36,7 +48,10 @@
     "options": {
       "a": "Reduce screen brightness",
       "b": "Throttle processor performance",
-      "c": "Turn off unused hardware components"
+      "c": "Turn off unused hardware components",
+      "_a": "73",
+      "_b": "74",
+      "_c": "75"
     }
   }
 }

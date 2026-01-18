@@ -4,7 +4,7 @@
     "options": {
       "a": "Windows",
       "b": "Linux",
-      "c": "MAC OS",
+      "c": "MacOS",
       "_a": "16",
       "_b": "17",
       "_c": "18"
@@ -15,7 +15,7 @@
     "options": {
       "a": "Windows",
       "b": "Linux",
-      "c": "MAC OS",
+      "c": "MacOS",
       "_a": "19",
       "_b": "20",
       "_c": "21"
@@ -37,7 +37,7 @@
     "options": {
       "a": "Windows",
       "b": "Linux",
-      "c": "MAC OS",
+      "c": "MacOS",
       "_a": "25",
       "_b": "26",
       "_c": "27"

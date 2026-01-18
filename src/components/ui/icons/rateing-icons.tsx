@@ -6,10 +6,10 @@ import NotHappy from '@assets/emojis/not-happy.svg';
 import Okay from '@assets/emojis/okay.svg';
 import { useState } from 'react';
 
-import AlrightFilled from '@assets/emojis/alright.svg';
-import HappyFilled from '@assets/emojis/happy.svg';
-import NotHappyFilled from '@assets/emojis/not-happy.svg';
-import OkayFilled from '@assets/emojis/okay.svg';
+import AlrightFilled from '@assets/emojis/alright_filled.svg';
+import HappyFilled from '@assets/emojis/happy_filled.svg';
+import NotHappyFilled from '@assets/emojis/not-happy_filled.svg';
+import OkayFilled from '@assets/emojis/okay_filled.svg';
 
 export function HappyRateing() {
   const [isHovered, setIsHovered] = useState(false);

@@ -5,28 +5,28 @@
     "docs": "Dokumentation"
   },
   "footer": {
-    "resourcesTitle": "Ressourcen",
     "resources": {
+      "title": "Ressourcen",
       "tests": "Tests",
       "analytics": "Analysen",
       "source": "Quellcode"
     },
-    "legalTitle": "Rechtliches",
     "legal": {
+      "title": "Rechtliches",
       "imprint": "Impressum",
       "privacy": "Datenschutz",
       "cookies": "Cookie-Einstellungen",
       "licenses": "Lizenzen",
       "bindings": "Nutzerbindungen"
     },
-    "aboutTitle": "Über",
     "about": {
+      "title": "Über",
       "us": "Über uns",
       "university": "Hochschule",
       "accessibility": "Barrierefreiheit"
     },
-    "socialTitle": "Sozial",
     "social": {
+      "title": "Sozial",
       "feedback": "Feedback",
       "contact": "Kontakt",
       "faq": "FAQ"

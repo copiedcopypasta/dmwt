@@ -6,11 +6,13 @@
   },
   "footer": {
     "resources": {
+      "title": "Resources",
       "tests": "Tests",
       "analytics": "Analytics",
       "source": "Source Code"
     },
     "legal": {
+      "title": "Legal",
       "imprint": "Imprint",
       "privacy": "Privacy Policy",
       "cookies": "Cookie Settings",
@@ -18,18 +20,21 @@
       "bindings": "User Agreements"
     },
     "about": {
+      "title": "About",
       "us": "About us",
       "university": "University",
       "accessibility": "Accessibility"
     },
     "social": {
+      "title": "Social",
       "feedback": "Feedback",
       "contact": "Contact",
       "faq": "FAQ"
     }
   },
   "home": {
-    "title": "Welcome",
+    "title": "Welcome to the DMWT",
+    "subtitle": "Your gateway to quests and knowledge",
     "description": "This is the English version"
   }
 }

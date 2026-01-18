@@ -37,7 +37,7 @@ export default async function Layout({
         },
         {
           label: dict.footer.resources.analytics,
-          href: `/${lang}/analytics`,
+          href: `/${lang}/analyze`,
         },
         {
           label: dict.footer.resources.source,
@@ -47,7 +47,7 @@ export default async function Layout({
       legal: [
         { label: dict.footer.legal.imprint, href: `/${lang}/impressum` },
         { label: dict.footer.legal.privacy, href: `/${lang}/datenschutz` },
-        { label: dict.footer.legal.cookies, href: `/${lang}/cookie-settings` },
+        //{ label: dict.footer.legal.cookies, href: `/${lang}/cookie-settings` },
         { label: dict.footer.legal.licenses, href: `/${lang}/lizenzen` },
         { label: dict.footer.legal.bindings, href: `/${lang}/nutzerbindungen` },
       ],

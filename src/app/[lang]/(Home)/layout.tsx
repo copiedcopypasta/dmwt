@@ -80,7 +80,9 @@ export default async function Layout({
       { key: 'social', title: dict.footer.social.title },
       { key: 'about', title: dict.footer.about.title },
       { key: 'legal', title: dict.footer.legal.title },
-    ]
+    ],
+    socialsText: { key: 'socialText', title: dict.other.socialText },
+    languageText: { key: 'languageText', title: dict.other.languageText }
   };
 
   return (

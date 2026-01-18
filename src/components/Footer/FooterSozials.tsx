@@ -2,7 +2,8 @@
 
 import type { Sozials } from '@/types/index';
 import Link from 'next/link';
-import { ReactElement, useState } from 'react';
+import { ReactElement, use, useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 
 import Discord from '@/assets/icons/discord.svg';
 import Github from '@/assets/icons/github.svg';
@@ -22,6 +23,8 @@ import styles from './index.module.css';
 interface FooterSozialsProps {
   logo?: boolean;
   sozials?: Sozials[];
+  socialText?: { key: string; title: string};
+  languageText?: { key: string; title: string};
 }
 
 /**
@@ -54,11 +57,26 @@ const LANGUAGES = [
 export default function FooterSozials({
   logo,
   sozials,
+  socialText,
+  languageText,
 }: FooterSozialsProps): ReactElement {
-  const [selectedLanguage, setSelectedLanguage] = useState('de');
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const initialLang = pathname.split('/')[1] || 'en';
+  const [selectedLanguage, setSelectedLanguage] = useState(initialLang);
+
   const selectedLang = LANGUAGES.find(
     (lang) => lang.value === selectedLanguage,
   );
+
+  const handleLanguageChange = (value: string | null) => {
+    if (value == null) return;
+    setSelectedLanguage(value);
+    const parts = window.location.pathname.split('/');
+    parts[1] = value;
+    router.push(parts.join('/'))
+  };
 
   return (
     <div className={styles.infoSection}>
@@ -73,10 +91,10 @@ export default function FooterSozials({
 
       {/* Language */}
       <div className={styles.languageWrapper}>
-        <p className={styles.sectionTitle}>Sprache</p>
+        <p className={styles.sectionTitle}>{languageText?.title}</p>
         <Select
           value={selectedLanguage}
-          onValueChange={(value) => value && setSelectedLanguage(value)}
+          onValueChange={handleLanguageChange}
         >
           <SelectTrigger className={styles.selectTrigger}>
             <SelectValue>
@@ -110,7 +128,7 @@ export default function FooterSozials({
       {/* Sozials */}
       {sozials && sozials.length > 0 && (
         <div>
-          <p className={styles.sectionTitle}>Soziales</p>
+          <p className={styles.sectionTitle}>{socialText?.title}</p>
           <div className={styles.socialLinks}>
             {sozials.map((social, idx) => (
               <a

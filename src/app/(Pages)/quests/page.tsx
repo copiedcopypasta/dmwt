@@ -152,7 +152,7 @@ export default async function Page() {
         borderLine
       />
       <ParallaxWindow />
-      <div className='z-80 mt-10 w-full bg-black'>
+      <div className='relative z-[100] w-full bg-black'>
         <div className='flex flex-col items-center gap-10 px-6 py-12'>
           {/* Page header with title and description */}
           <div className='flex max-w-3xl flex-col items-center gap-3 text-center'>

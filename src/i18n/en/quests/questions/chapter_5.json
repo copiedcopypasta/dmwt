@@ -1,0 +1,42 @@
+{
+  "1": {
+    "_title": "Why are screensavers problematic from an energy perspective?",
+    "options": {
+      "a": "Because they consume more power than turning off the screen",
+      "b": "Because they don't turn off the screen",
+      "c": "Because they don't affect power consumption"
+    }
+  },
+  "2": {
+    "_title": "How do autostart programs affect power consumption?",
+    "options": {
+      "a": "Negatively, as they use resources in the background",
+      "b": "Not at all",
+      "c": "Positively, as they make the computer faster"
+    }
+  },
+  "3": {
+    "_title": "What disadvantages can overly aggressive energy-saving settings have?",
+    "options": {
+      "a": "Performance loss during use",
+      "b": "Too low electricity bill",
+      "c": "Hardware damage"
+    }
+  },
+  "4": {
+    "_title": "Why do laptops have different power modes depending on the power source?",
+    "options": {
+      "a": "To save power in battery operation",
+      "b": "To maximize performance",
+      "c": "To increase screen brightness"
+    }
+  },
+  "5": {
+    "_title": "What do power saving modes in the operating system do concretely?",
+    "options": {
+      "a": "Reduce screen brightness",
+      "b": "Throttle processor performance",
+      "c": "Turn off unused hardware components"
+    }
+  }
+}

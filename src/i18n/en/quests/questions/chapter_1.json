@@ -1,0 +1,42 @@
+{
+  "1": {
+    "_title": "Which PC component consumes the most power under load?",
+    "options": {
+      "a": "RAM",
+      "b": "Graphics card",
+      "c": "Processor"
+    }
+  },
+  "2": {
+    "_title": "What can be concluded from the number of cores of a processor?",
+    "options": {
+      "a": "Possible multitasking performance",
+      "b": "Clock frequency",
+      "c": "Graphics performance"
+    }
+  },
+  "3": {
+    "_title": "What is meant by the full load of a graphics card?",
+    "options": {
+      "a": "Brightest possible color display",
+      "b": "Maximum power consumption at high load",
+      "c": "Maximum resolution"
+    }
+  },
+  "4": {
+    "_title": "Why is the CPU often a more relevant factor for a PC's power consumption despite its lower wattage?",
+    "options": {
+      "a": "Because it works constantly",
+      "b": "Because it has more cores",
+      "c": "Because it's more expensive"
+    }
+  },
+  "5": {
+    "_title": "Why are older components often less efficient than modern models with similar performance?",
+    "options": {
+      "a": "Different manufacturing technologies",
+      "b": "Higher price",
+      "c": "Modern designs"
+    }
+  }
+}

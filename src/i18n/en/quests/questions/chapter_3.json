@@ -1,0 +1,42 @@
+{
+  "1": {
+    "_title": "What are the advantages of having more RAM slots than needed?",
+    "options": {
+      "a": "More flexibility when upgrading",
+      "b": "Better cooling of RAM",
+      "c": "Lower latency times"
+    }
+  },
+  "2": {
+    "_title": "What is a disadvantage of soldered batteries in notebooks?",
+    "options": {
+      "a": "Not replaceable",
+      "b": "Higher weight",
+      "c": "Lower capacity"
+    }
+  },
+  "3": {
+    "_title": "What is an advantage of a large PC case?",
+    "options": {
+      "a": "More potential for upgrades",
+      "b": "Better cooling of components",
+      "c": "Lower noise levels"
+    }
+  },
+  "4": {
+    "_title": "What makes a system maintainable and long-lasting?",
+    "options": {
+      "a": "Modular components",
+      "b": "High-quality materials",
+      "c": "RGB lighting"
+    }
+  },
+  "5": {
+    "_title": "Why do older PCs often work well with Linux but not with Windows 11?",
+    "options": {
+      "a": "Lower hardware requirements",
+      "b": "Because Linux is poorly optimized",
+      "c": "Because Microsoft is a greedy company"
+    }
+  }
+}

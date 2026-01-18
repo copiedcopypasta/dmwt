@@ -1,0 +1,42 @@
+{
+  "1": {
+    "_title": "Which OS is not installed by the user?",
+    "options": {
+      "a": "Windows",
+      "b": "Linux",
+      "c": "macOS"
+    }
+  },
+  "2": {
+    "_title": "Which OS has the lowest minimum requirements?",
+    "options": {
+      "a": "Windows",
+      "b": "Linux",
+      "c": "macOS"
+    }
+  },
+  "3": {
+    "_title": "When do you need many cores on your CPU?",
+    "options": {
+      "a": "For multitasking and parallel processing",
+      "b": "For high clock frequencies",
+      "c": "For better graphics performance"
+    }
+  },
+  "4": {
+    "_title": "Which operating systems have relatively high GPU requirements?",
+    "options": {
+      "a": "Windows",
+      "b": "Linux",
+      "c": "macOS"
+    }
+  },
+  "5": {
+    "_title": "Which factors are relevant for memory performance?",
+    "options": {
+      "a": "Clock frequency and latency",
+      "b": "Write speed and capacity",
+      "c": "Distance to CPU"
+    }
+  }
+}

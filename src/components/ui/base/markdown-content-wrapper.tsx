@@ -9,8 +9,11 @@ interface MarkdownContentWrapperProps {
   badges?: string[];
   children: ReactNode;
   className?: string;
-  prevUrl: string;
-  nextUrl: string;
+  prevUrl?: string;
+  nextUrl?: string;
+  showHeader?: boolean;
+  showInfo?: boolean;
+  showFooter?: boolean;
 }
 
 export function MarkdownContentWrapper({
@@ -21,6 +24,9 @@ export function MarkdownContentWrapper({
   className,
   prevUrl,
   nextUrl,
+  showHeader,
+  showInfo,
+  showFooter,
 }: MarkdownContentWrapperProps) {
   return (
     <MarkdownContent
@@ -29,6 +35,9 @@ export function MarkdownContentWrapper({
       badges={badges}
       prevUrl={prevUrl}
       nextUrl={nextUrl}
+      showHeader={showHeader}
+      showInfo={showInfo}
+      showFooter={showFooter}
       className={className}
     >
       {children}

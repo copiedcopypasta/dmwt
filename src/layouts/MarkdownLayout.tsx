@@ -14,18 +14,37 @@ function MarkdownLayout({
   rightSidebar,
   className = '',
 }: MarkdownLayoutProps) {
+  const hasLeft = Boolean(leftSidebar);
+  const hasRight = Boolean(rightSidebar);
+  const hasSidebars = hasLeft || hasRight;
+
+  const gridTemplateColumns = hasSidebars
+    ? hasLeft && hasRight
+      ? '1fr minmax(0, 3fr) 1fr'
+      : hasLeft
+        ? '1fr minmax(0, 3fr)'
+        : 'minmax(0, 3fr) 1fr'
+    : '1fr';
+
   return (
     <div
       className={`grid gap-20 px-60 py-20 ${className}`}
-      style={{ gridTemplateColumns: '1fr 3fr 1fr' }}
+      style={{
+        gridTemplateColumns,
+        justifyItems: hasSidebars ? undefined : 'center',
+      }}
     >
-      {leftSidebar && (
+      {hasLeft && (
         <MarkdownSidebar className='sticky top-20 h-fit'>
           {leftSidebar}
         </MarkdownSidebar>
       )}
-      {content}
-      {rightSidebar && (
+      {hasSidebars ? (
+        content
+      ) : (
+        <div className='w-full max-w-4xl'>{content}</div>
+      )}
+      {hasRight && (
         <MarkdownSidebar className='sticky top-20 h-fit'>
           {rightSidebar}
         </MarkdownSidebar>

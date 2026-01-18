@@ -22,6 +22,9 @@ interface MarkdownContentProps {
   className?: string;
   prevUrl?: string;
   nextUrl?: string;
+  showHeader?: boolean;
+  showInfo?: boolean;
+  showFooter?: boolean;
   onBack?: () => void;
   onForward?: () => void;
 }
@@ -34,88 +37,98 @@ export function MarkdownContent({
   className = '',
   prevUrl,
   nextUrl,
+  showHeader = true,
+  showInfo = true,
+  showFooter = true,
   onBack,
   onForward,
 }: MarkdownContentProps) {
   return (
     <div className={`flex w-full min-w-0 flex-col gap-5 p-5 ${className}`}>
-      {/* Header: Breadcrumb + Navigation */}
-      <div className='flex items-center justify-between'>
-        <Breadcrumb>
-          <BreadcrumbList className='text-base'>
-            <BreadcrumbItem>
-              <BreadcrumbLink>
-                <Link href='/'>Home</Link>
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbLink>
-                <Link href='/de/info/chapter_1'>Information</Link>
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage
-                className='font-medium'
-                style={{ color: '#00a63e' }}
-              >
-                {title}
-              </BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
-        <div className='flex gap-2'>
-          {prevUrl && (
-            <Link href={prevUrl}>
-              <Button variant='outline' size='sm'>
+      {showHeader && (
+        <div className='flex items-center justify-between'>
+          <Breadcrumb>
+            <BreadcrumbList className='text-base'>
+              <BreadcrumbItem>
+                <BreadcrumbLink>
+                  <Link href='/'>Home</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink>
+                  <Link href='/de/info/chapter_1'>Information</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage
+                  className='font-medium'
+                  style={{ color: '#00a63e' }}
+                >
+                  {title}
+                </BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+          <div className='flex gap-2'>
+            {prevUrl && (
+              <Link href={prevUrl}>
+                <Button variant='outline' size='sm'>
+                  <AngleLeft />
+                </Button>
+              </Link>
+            )}
+            {!prevUrl && (
+              <Button onClick={onBack} variant='outline' size='sm'>
                 <AngleLeft />
               </Button>
-            </Link>
-          )}
-          {!prevUrl && (
-            <Button onClick={onBack} variant='outline' size='sm'>
-              <AngleLeft />
-            </Button>
-          )}
-          {nextUrl && (
-            <Link href={nextUrl}>
-              <Button variant='outline' size='sm'>
+            )}
+            {nextUrl && (
+              <Link href={nextUrl}>
+                <Button variant='outline' size='sm'>
+                  <AngleRight />
+                </Button>
+              </Link>
+            )}
+            {!nextUrl && (
+              <Button onClick={onForward} variant='outline' size='sm'>
                 <AngleRight />
               </Button>
-            </Link>
-          )}
-          {!nextUrl && (
-            <Button onClick={onForward} variant='outline' size='sm'>
-              <AngleRight />
-            </Button>
-          )}
-        </div>
-      </div>
-
-      {/* Info: Title, Badges, Description */}
-      <div className='py-10'>
-        <h1 className='mb-3 text-4xl font-bold' style={{ color: '#00a63e' }}>
-          {title}
-        </h1>
-        {badges.length > 0 && (
-          <div className='mb-3 flex gap-2'>
-            {badges.map((badge) => (
-              <span
-                key={badge}
-                className='inline-block rounded-full bg-blue-900 px-3 py-1 text-sm text-blue-100'
-              >
-                {badge}
-              </span>
-            ))}
+            )}
           </div>
-        )}
-        {description && (
-          <p className='text-muted-foreground text-sm'>{description}</p>
-        )}
-      </div>
+        </div>
+      )}
 
-      <Separator />
+      {showInfo && (
+        <>
+          <div className='py-10'>
+            <h1
+              className='mb-3 text-4xl font-bold'
+              style={{ color: '#00a63e' }}
+            >
+              {title}
+            </h1>
+            {badges.length > 0 && (
+              <div className='mb-3 flex gap-2'>
+                {badges.map((badge) => (
+                  <span
+                    key={badge}
+                    className='inline-block rounded-full bg-blue-900 px-3 py-1 text-sm text-blue-100'
+                  >
+                    {badge}
+                  </span>
+                ))}
+              </div>
+            )}
+            {description && (
+              <p className='text-muted-foreground text-sm'>{description}</p>
+            )}
+          </div>
+
+          <Separator />
+        </>
+      )}
 
       {/* Content: Markdown + Rating */}
       <div className='flex flex-col gap-5 py-10'>
@@ -125,43 +138,46 @@ export function MarkdownContent({
         </div>
       </div>
 
-      <Separator />
+      {showFooter && (
+        <>
+          <Separator />
 
-      {/* Footer: Navigation Buttons */}
-      <div className='flex gap-5 pt-10'>
-        {prevUrl ? (
-          <Link
-            href={prevUrl}
-            className='border-input bg-background hover:bg-accent hover:text-accent-foreground flex h-12 flex-1 items-center justify-center rounded-md border text-base'
-          >
-            ← Back
-          </Link>
-        ) : (
-          <button
-            onClick={onBack}
-            className='border-input bg-background hover:bg-accent hover:text-accent-foreground flex h-12 flex-1 items-center justify-center rounded-md border text-base'
-            disabled={!onBack}
-          >
-            ← Back
-          </button>
-        )}
-        {nextUrl ? (
-          <Link
-            href={nextUrl}
-            className='border-input bg-background hover:bg-accent hover:text-accent-foreground flex h-12 flex-1 items-center justify-center rounded-md border text-base'
-          >
-            Forward →
-          </Link>
-        ) : (
-          <button
-            onClick={onForward}
-            className='border-input bg-background hover:bg-accent hover:text-accent-foreground flex h-12 flex-1 items-center justify-center rounded-md border text-base'
-            disabled={!onForward}
-          >
-            Forward →
-          </button>
-        )}
-      </div>
+          <div className='flex gap-5 pt-10'>
+            {prevUrl ? (
+              <Link
+                href={prevUrl}
+                className='border-input bg-background hover:bg-accent hover:text-accent-foreground flex h-12 flex-1 items-center justify-center rounded-md border text-base'
+              >
+                ← Back
+              </Link>
+            ) : (
+              <button
+                onClick={onBack}
+                className='border-input bg-background hover:bg-accent hover:text-accent-foreground flex h-12 flex-1 items-center justify-center rounded-md border text-base'
+                disabled={!onBack}
+              >
+                ← Back
+              </button>
+            )}
+            {nextUrl ? (
+              <Link
+                href={nextUrl}
+                className='border-input bg-background hover:bg-accent hover:text-accent-foreground flex h-12 flex-1 items-center justify-center rounded-md border text-base'
+              >
+                Forward →
+              </Link>
+            ) : (
+              <button
+                onClick={onForward}
+                className='border-input bg-background hover:bg-accent hover:text-accent-foreground flex h-12 flex-1 items-center justify-center rounded-md border text-base'
+                disabled={!onForward}
+              >
+                Forward →
+              </button>
+            )}
+          </div>
+        </>
+      )}
     </div>
   );
 }

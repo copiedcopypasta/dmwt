@@ -3,6 +3,7 @@
 import type { Sozials } from '@/types/index';
 import Link from 'next/link';
 import { ReactElement, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 import Discord from '@/assets/icons/discord.svg';
 import Github from '@/assets/icons/github.svg';
@@ -59,10 +60,20 @@ export default function FooterSozials({
   socialText,
   languageText,
 }: FooterSozialsProps): ReactElement {
+  const router = useRouter();
   const [selectedLanguage, setSelectedLanguage] = useState('en');
+
   const selectedLang = LANGUAGES.find(
     (lang) => lang.value === selectedLanguage,
   );
+
+  const handleLanguageChange = (value: string | null) => {
+    if (value == null) return;
+    setSelectedLanguage(value);
+    const parts = window.location.pathname.split('/');
+    parts[1] = value;
+    router.push(parts.join('/'))
+  };
 
   return (
     <div className={styles.infoSection}>
@@ -80,7 +91,7 @@ export default function FooterSozials({
         <p className={styles.sectionTitle}>{languageText?.title}</p>
         <Select
           value={selectedLanguage}
-          onValueChange={(value) => value && setSelectedLanguage(value)}
+          onValueChange={handleLanguageChange}
         >
           <SelectTrigger className={styles.selectTrigger}>
             <SelectValue>

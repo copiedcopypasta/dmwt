@@ -2,8 +2,8 @@
 
 import type { Sozials } from '@/types/index';
 import Link from 'next/link';
-import { ReactElement, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { ReactElement, use, useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 
 import Discord from '@/assets/icons/discord.svg';
 import Github from '@/assets/icons/github.svg';
@@ -61,7 +61,10 @@ export default function FooterSozials({
   languageText,
 }: FooterSozialsProps): ReactElement {
   const router = useRouter();
-  const [selectedLanguage, setSelectedLanguage] = useState('en');
+  const pathname = usePathname();
+
+  const initialLang = pathname.split('/')[1] || 'en';
+  const [selectedLanguage, setSelectedLanguage] = useState(initialLang);
 
   const selectedLang = LANGUAGES.find(
     (lang) => lang.value === selectedLanguage,

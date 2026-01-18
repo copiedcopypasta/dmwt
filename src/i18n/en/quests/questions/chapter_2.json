@@ -4,7 +4,10 @@
     "options": {
       "a": "Windows",
       "b": "Linux",
-      "c": "macOS"
+      "c": "MacOS",
+      "_a": "16",
+      "_b": "17",
+      "_c": "18"
     }
   },
   "2": {
@@ -12,7 +15,10 @@
     "options": {
       "a": "Windows",
       "b": "Linux",
-      "c": "macOS"
+      "c": "MacOS",
+      "_a": "19",
+      "_b": "20",
+      "_c": "21"
     }
   },
   "3": {
@@ -20,7 +26,10 @@
     "options": {
       "a": "For multitasking and parallel processing",
       "b": "For high clock frequencies",
-      "c": "For better graphics performance"
+      "c": "For better graphics performance",
+      "_a": "22",
+      "_b": "23",
+      "_c": "24"
     }
   },
   "4": {
@@ -28,7 +37,10 @@
     "options": {
       "a": "Windows",
       "b": "Linux",
-      "c": "macOS"
+      "c": "MacOS",
+      "_a": "25",
+      "_b": "26",
+      "_c": "27"
     }
   },
   "5": {
@@ -36,7 +48,10 @@
     "options": {
       "a": "Clock frequency and latency",
       "b": "Write speed and capacity",
-      "c": "Distance to CPU"
+      "c": "Distance to CPU",
+      "_a": "28",
+      "_b": "29",
+      "_c": "30"
     }
   }
 }

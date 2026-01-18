@@ -10,14 +10,6 @@ export type RouteEntry = {
 
 const CONTENT_DIR = path.join(process.cwd(), 'content');
 
-function resolveContentPath(
-  locale: string,
-  section: 'info' | 'docs',
-  slug: string,
-) {
-  return path.join(CONTENT_DIR, locale, section, `${slug}.mdx`);
-}
-
 function readFrontmatterFilename(filePath: string): string | undefined {
   const raw = fs.readFileSync(filePath, 'utf8');
   const match = raw.match(/^---\s*\n([\s\S]*?)\n---\s*\n?/);
@@ -61,6 +53,34 @@ function listContentFiles(locale: string, section: 'info' | 'docs') {
     .readdirSync(dirPath)
     .filter((file) => file.endsWith('.mdx'))
     .map((file) => path.join(dirPath, file));
+}
+
+function listRootContentFiles(locale: string) {
+  const dirPath = path.join(CONTENT_DIR, locale);
+  if (!fs.existsSync(dirPath)) return [] as string[];
+  return fs
+    .readdirSync(dirPath)
+    .filter((file) => file.endsWith('.mdx'))
+    .map((file) => path.join(dirPath, file));
+}
+
+export function getRootContent(locale: string, slug: string) {
+  const files = listRootContentFiles(locale);
+  const match = files.find((file) => {
+    const fmName = readFrontmatterFilename(file);
+    const fallbackSlug = path.basename(file, '.mdx');
+    return (
+      fmName?.toLowerCase() === slug.toLowerCase() || fallbackSlug === slug
+    );
+  });
+
+  if (!match) {
+    throw new Error('Content not found');
+  }
+
+  const source = fs.readFileSync(match, 'utf8');
+
+  return { source, filePath: match } as const;
 }
 
 export function getContent(

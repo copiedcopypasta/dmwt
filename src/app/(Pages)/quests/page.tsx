@@ -121,18 +121,14 @@ export default async function Page() {
 
   /**
    * Build the quizzes array with routing information
-   * ROUTING CHANGE: To change button destinations, modify the 'href' property here
-   * Currently routes to: /{locale}/info/chapter_{number}
-   * Examples of alternatives:
-   * - External URL: href: 'https://example.com/quiz' + index
-   * - Query params: href: `/quizzes?chapter=${index + 1}`
-   * - Different page: href: `/learn/${chapter.slug}`
+   * Routes to: /quiz?chapter={number} to match quiz page query parameter expectations
+   * The quiz page uses searchParams.get('chapter') to determine which chapter's questions to load
    */
   const quizzes: Quiz[] = chaptersData.map((chapter, index) => ({
     id: index + 1,
     title: chapter.title,
-    // *** CHANGE THIS LINE TO MODIFY BUTTON ROUTING ***
-    href: `/${locale}/info/chapter_${index + 1}`,
+    // Routes to quiz page with chapter as query parameter
+    href: `/quiz?chapter=${index + 1}`,
     blurb: chapter.description,
     slug: `chapter_${index + 1}`,
   }));

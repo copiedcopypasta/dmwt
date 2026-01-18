@@ -15,28 +15,21 @@ interface LinkCategorys {
 
 interface FooterLinksProps {
   links?: LinkCategorys;
+  categories?: { key: string; title: string}[];
 }
-
-/**
- * Link categories configuration
- */
-const LINK_CATEGORIES = [
-  { key: 'resources', title: 'Ressourcen' },
-  { key: 'social', title: 'Soziales' },
-  { key: 'about', title: 'Informationen' },
-  { key: 'legal', title: 'Richtlinien' },
-] as const;
 
 /**
  * Renders the footer links section
  */
-export default function FooterLinks({ links }: FooterLinksProps): ReactElement {
+export default function FooterLinks({ links, categories }: FooterLinksProps): ReactElement {
   if (!links) return <div className={styles.linksContainer} />;
+  if (!categories) return <div className={styles.linksContainer} />;
 
+  const linkCategories = categories;
   return (
     <div className={styles.linksContainer}>
-      {LINK_CATEGORIES.map(({ key, title }) => {
-        const categoryLinks = links[key];
+      {linkCategories.map(({ key, title }) => {
+        const categoryLinks = links[key as keyof LinkCategorys];
         if (!categoryLinks || categoryLinks.length === 0) return null;
 
         return (

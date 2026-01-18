@@ -36,5 +36,9 @@
     "title": "Welcome to the DMWT",
     "subtitle": "Your gateway to quests and knowledge",
     "description": "This is the English version"
+  },
+  "other": {
+    "socialText": "Socials",
+    "languageText": "Language"
   }
 }

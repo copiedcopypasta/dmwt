@@ -4,7 +4,10 @@
     "options": {
       "a": "mehr Flexibilität beim Aufrüsten",
       "b": "bessere Kühlung des Rams",
-      "c": "geringere Latenzzeiten"
+      "c": "geringere Latenzzeiten",
+      "_a": "31",
+      "_b": "32",
+      "_c": "33"
     }
   },
   "2": {
@@ -12,7 +15,10 @@
     "options": {
       "a": "nicht austauschbar",
       "b": "höheres Gewicht",
-      "c": "geringere Kapazität"
+      "c": "geringere Kapazität",
+      "_a": "34",
+      "_b": "35",
+      "_c": "36"
     }
   },
   "3": {
@@ -20,7 +26,10 @@
     "options": {
       "a": "mehr potenzial für Erweiterungen",
       "b": "bessere Kühlung der Komponenten",
-      "c": "geringere Geräuschentwicklung"
+      "c": "geringere Geräuschentwicklung",
+      "_a": "37",
+      "_b": "38",
+      "_c": "39"
     }
   },
   "4": {
@@ -28,7 +37,10 @@
     "options": {
       "a": "modulare Komponenten",
       "b": "hochwertige Materialien",
-      "c": "RGB Beleuchtung"
+      "c": "RGB Beleuchtung",
+      "_a": "40",
+      "_b": "41",
+      "_c": "42"
     }
   },
   "5": {
@@ -36,7 +48,10 @@
     "options": {
       "a": "weniger Hardwareanforderungen",
       "b": "weil Linux schlechter optimiert ist",
-      "c": "weil Microsoft eine Geldgierige Firma ist"
+      "c": "weil Microsoft eine Geldgierige Firma ist",
+      "_a": "43",
+      "_b": "44",
+      "_c": "45"
     }
   }
 }

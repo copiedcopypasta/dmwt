@@ -4,7 +4,10 @@
     "options": {
       "a": "RAM",
       "b": "Grafikkarte",
-      "c": "Prozessor"
+      "c": "Prozessor",
+      "_a": "1",
+      "_b": "2",
+      "_c": "3"
     }
   },
   "2": {
@@ -12,7 +15,10 @@
     "options": {
       "a": "Mögliche Multitasking Leistung",
       "b": "Taktfrequenz",
-      "c": "Grafikleistung"
+      "c": "Grafikleistung",
+      "_a": "4",
+      "_b": "5",
+      "_c": "6"
     }
   },
   "3": {
@@ -20,7 +26,10 @@
     "options": {
       "a": "hellste mögliche Farbdarstellung",
       "b": "maximaler Stromverbrauch bei hoher Auslastung",
-      "c": "maximale Auflösung"
+      "c": "maximale Auflösung",
+      "_a": "7",
+      "_b": "8",
+      "_c": "9"
     }
   },
   "4": {
@@ -28,7 +37,10 @@
     "options": {
       "a": "Weil sie ständig arbeitet",
       "b": "Weil sie mehr Kerne hat",
-      "c": "Weil sie teurer ist"
+      "c": "Weil sie teurer ist",
+      "_a": "10",
+      "_b": "11",
+      "_c": "12"
     }
   },
   "5": {
@@ -36,7 +48,10 @@
     "options": {
       "a": "Andere Fertigungstechnologien",
       "b": "Höherer Preis",
-      "c": "moderne Designs"
+      "c": "moderne Designs",
+      "_a": "13",
+      "_b": "14",
+      "_c": "15"
     }
   }
 }

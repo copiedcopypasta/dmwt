@@ -4,7 +4,10 @@
     "options": {
       "a": "Wide distribution and compatibility",
       "b": "User-friendliness",
-      "c": "High resource consumption"
+      "c": "High resource consumption",
+      "_a": "76",
+      "_b": "77",
+      "_c": "78"
     }
   },
   "2": {
@@ -12,7 +15,10 @@
     "options": {
       "a": "Open source and adaptability",
       "b": "Stability and security",
-      "c": "Large community and support"
+      "c": "Large community and support",
+      "_a": "79",
+      "_b": "80",
+      "_c": "81"
     }
   },
   "3": {
@@ -20,7 +26,10 @@
     "options": {
       "a": "Seamless integration and optimization",
       "b": "High security and data protection",
-      "c": "User-friendly interface"
+      "c": "User-friendly interface",
+      "_a": "82",
+      "_b": "83",
+      "_c": "84"
     }
   },
   "4": {
@@ -28,7 +37,10 @@
     "options": {
       "a": "Availability of applications",
       "b": "Hardware support",
-      "c": "Integration with other systems"
+      "c": "Integration with other systems",
+      "_a": "85",
+      "_b": "86",
+      "_c": "87"
     }
   },
   "5": {
@@ -36,7 +48,10 @@
     "options": {
       "a": "Windows typically has higher resource consumption",
       "b": "Linux is often more resource-efficient",
-      "c": "macOS is optimized for Apple hardware"
+      "c": "macOS is optimized for Apple hardware",
+      "_a": "88",
+      "_b": "89",
+      "_c": "90"
     }
   }
 }

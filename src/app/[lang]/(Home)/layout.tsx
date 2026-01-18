@@ -75,6 +75,12 @@ export default async function Layout({
     ],
     logo: true,
     banner: true,
+    categories: [
+      { key: 'resources', title: dict.footer.resources.title },
+      { key: 'social', title: dict.footer.social.title },
+      { key: 'about', title: dict.footer.about.title },
+      { key: 'legal', title: dict.footer.legal.title },
+    ]
   };
 
   return (

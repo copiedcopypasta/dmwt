@@ -1,0 +1,35 @@
+{
+  "nav": {
+    "quests": "Quests",
+    "info": "Information",
+    "docs": "Documentation"
+  },
+  "footer": {
+    "resources": {
+      "tests": "Tests",
+      "analytics": "Analytics",
+      "source": "Source Code"
+    },
+    "legal": {
+      "imprint": "Imprint",
+      "privacy": "Privacy Policy",
+      "cookies": "Cookie Settings",
+      "licenses": "Licenses",
+      "bindings": "User Agreements"
+    },
+    "about": {
+      "us": "About us",
+      "university": "University",
+      "accessibility": "Accessibility"
+    },
+    "social": {
+      "feedback": "Feedback",
+      "contact": "Contact",
+      "faq": "FAQ"
+    }
+  },
+  "home": {
+    "title": "Welcome",
+    "description": "This is the English version"
+  }
+}

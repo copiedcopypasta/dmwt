@@ -1,10 +1,13 @@
-﻿import { cookies } from 'next/headers';
+﻿import { ParallaxWindow } from '@/components/ui/base/parallax-window';
+import { cookies } from 'next/headers';
 import Link from 'next/link';
 
+import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
 import { getContent } from '@/lib/content';
 import { compileMdx } from '@/lib/markdown';
 import { cn } from '@/lib/utils';
+import type { Links } from '@/types/index';
 
 /**
  * Type definition for a quiz/chapter button
@@ -39,7 +42,7 @@ type ChapterFrontmatter = {
  */
 async function getUserQuizProgress(): Promise<{ completedCount: number }> {
   // Example implementation for now; wire this to your user/quiz progress table
-  return { completedCount: 0 };
+  return { completedCount: 2 };
 }
 
 /**
@@ -104,6 +107,13 @@ export default async function Page() {
   // Load translated UI text
   const t = await getTranslations(locale);
 
+  // Navbar links (adjust labels/hrefs as needed)
+  const navLinks: Links[] = [
+    { label: 'Home', href: '/' },
+    { label: 'Quests', href: '/quests' },
+    { label: 'Info', href: `/${locale}/info/chapter_1` },
+  ];
+
   // Load chapter metadata (title and description) from all 6 chapter files
   const chaptersData = await Promise.all(
     [1, 2, 3, 4, 5, 6].map((num) => getChapterMetadata(locale, num)),
@@ -135,109 +145,122 @@ export default async function Page() {
   const lastUnlocked = quizzes[Math.max(unlockedCount - 1, 0)];
 
   return (
-    <div className='flex flex-col items-center gap-10 px-6 py-12'>
-      {/* Page header with title and description */}
-      <div className='flex max-w-3xl flex-col items-center gap-3 text-center'>
-        <h1 className='text-4xl font-bold tracking-tight'>{t.title}</h1>
-        <p className='text-muted-foreground'>{t.description}</p>
-      </div>
+    <>
+      <Navbar
+        logo
+        logoUrl='/'
+        links={navLinks}
+        searchBar={false}
+        darkModeToggle
+        loginButton
+        borderLine
+      />
+      <ParallaxWindow />
+      <div className='z-80 mt-10 w-full bg-black'>
+        <div className='flex flex-col items-center gap-10 px-6 py-12'>
+          {/* Page header with title and description */}
+          <div className='flex max-w-3xl flex-col items-center gap-3 text-center'>
+            <h1 className='text-4xl font-bold tracking-tight'>{t.title}</h1>
+            <p className='text-muted-foreground'>{t.description}</p>
+          </div>
 
-      {/* Main content container with timeline layout */}
-      <div className='w-full max-w-4xl'>
-        <div className='relative flex flex-col gap-10'>
-          {/* Vertical center line connecting all buttons */}
-          <div className='from-primary/30 via-muted-foreground/30 to-primary/30 absolute top-0 left-1/2 h-full w-px -translate-x-1/2 bg-gradient-to-b' />
+          {/* Main content container with timeline layout */}
+          <div className='w-full max-w-4xl'>
+            <div className='relative flex flex-col gap-10'>
+              {/* Vertical center line connecting all buttons */}
+              <div className='from-primary/30 via-muted-foreground/30 to-primary/30 absolute top-0 left-1/2 h-full w-px -translate-x-1/2 bg-gradient-to-b' />
 
-          {/* Map through all 6 chapters and render buttons */}
-          {quizzes.map((quiz, index) => {
-            // Determine unlock state: chapters unlock sequentially
-            const isUnlocked = index < unlockedCount;
-            const isCompleted = index < completedCount;
-            // Highlight the next available chapter
-            const isNext = index === unlockedCount - 1 && !isCompleted;
-            // Alternate button positions (left/right) for visual interest
-            const alignRight = index % 2 === 1;
+              {/* Map through all 6 chapters and render buttons */}
+              {quizzes.map((quiz, index) => {
+                // Determine unlock state: chapters unlock sequentially
+                const isUnlocked = index < unlockedCount;
+                const isCompleted = index < completedCount;
+                // Highlight the next available chapter
+                const isNext = index === unlockedCount - 1 && !isCompleted;
+                // Alternate button positions (left/right) for visual interest
+                const alignRight = index % 2 === 1;
 
-            return (
-              <div
-                key={quiz.id}
-                className={cn(
-                  'flex w-full items-center gap-6',
-                  alignRight ? 'justify-end pr-10' : 'justify-start pl-10',
-                )}
-              >
-                {/* Connector line from left button to center timeline */}
-                {!alignRight && (
-                  <div className='relative max-w-[50%] flex-1 text-right'>
-                    <div className='border-muted-foreground/40 absolute top-1/2 right-[-0.6rem] h-px w-10 -translate-y-1/2 border-t border-dashed' />
-                  </div>
-                )}
-
-                {/* Chapter button */}
-                <div className='relative z-10'>
-                  <Button
-                    asChild
-                    // Style changes based on unlock state
-                    variant={isUnlocked ? 'default' : 'outline'}
-                    size='lg'
-                    disabled={!isUnlocked}
+                return (
+                  <div
+                    key={quiz.id}
                     className={cn(
-                      'h-auto w-[340px] flex-col items-start gap-0 px-5 py-4 text-left shadow-sm transition-transform',
-                      isUnlocked && 'hover:-translate-y-0.5 hover:shadow-md',
-                      isNext && 'ring-primary/60 ring-2 ring-offset-2',
+                      'flex w-full items-center gap-6',
+                      alignRight ? 'justify-end pr-10' : 'justify-start pl-10',
                     )}
                   >
-                    {/* Link with routing - CHANGE href ABOVE to modify destinations */}
-                    <Link
-                      href={quiz.href}
-                      prefetch={false}
-                      className='flex w-full flex-col gap-0'
-                    >
-                      {/* Chapter title (wraps to multiple lines if too long) */}
-                      <span className='text-base leading-tight font-semibold break-words whitespace-normal'>
-                        {quiz.title}
-                      </span>
-                      {/* Chapter description - only visible when unlocked */}
-                      {isUnlocked && (
-                        <span className='text-muted-foreground mt-2 text-xs leading-relaxed break-words whitespace-normal'>
-                          {quiz.blurb}
-                        </span>
-                      )}
-                      {/* Status badge showing completion state */}
-                      <span className='mt-3 inline-flex items-center gap-2 text-xs font-medium'>
-                        {isCompleted && t.status.completed}
-                        {!isCompleted && isUnlocked && t.status.ready}
-                        {!isUnlocked && t.status.locked}
-                      </span>
-                    </Link>
-                  </Button>
-                </div>
+                    {/* Connector line from left button to center timeline */}
+                    {!alignRight && (
+                      <div className='relative max-w-[50%] flex-1 text-right'>
+                        <div className='border-muted-foreground/40 absolute top-1/2 right-[-0.6rem] h-px w-10 -translate-y-1/2 border-t border-dashed' />
+                      </div>
+                    )}
 
-                {/* Connector line from right button to center timeline */}
-                {alignRight && (
-                  <div className='relative max-w-[50%] flex-1 text-left'>
-                    <div className='border-muted-foreground/40 absolute top-1/2 left-[-0.6rem] h-px w-10 -translate-y-1/2 border-t border-dashed' />
+                    {/* Chapter button */}
+                    <div className='relative z-10'>
+                      <Button
+                        // Style changes based on unlock state
+                        variant={isUnlocked ? 'default' : 'outline'}
+                        size='lg'
+                        disabled={!isUnlocked}
+                        className={cn(
+                          'h-auto w-[340px] flex-col items-start gap-0 px-5 py-4 text-left shadow-sm transition-transform',
+                          isUnlocked &&
+                            'hover:-translate-y-0.5 hover:shadow-md',
+                          isNext && 'ring-primary/60 ring-2 ring-offset-2',
+                        )}
+                      >
+                        {/* Link with routing - CHANGE href ABOVE to modify destinations */}
+                        <Link
+                          href={quiz.href}
+                          prefetch={false}
+                          className='flex w-full flex-col gap-0'
+                        >
+                          {/* Chapter title (wraps to multiple lines if too long) */}
+                          <span className='text-base leading-tight font-semibold break-words whitespace-normal'>
+                            {quiz.title}
+                          </span>
+                          {/* Chapter description - only visible when unlocked */}
+                          {isUnlocked && (
+                            <span className='text-muted-foreground mt-2 text-xs leading-relaxed break-words whitespace-normal'>
+                              {quiz.blurb}
+                            </span>
+                          )}
+                          {/* Status badge showing completion state */}
+                          <span className='mt-3 inline-flex items-center gap-2 text-xs font-medium'>
+                            {isCompleted && t.status.completed}
+                            {!isCompleted && isUnlocked && t.status.ready}
+                            {!isUnlocked && t.status.locked}
+                          </span>
+                        </Link>
+                      </Button>
+                    </div>
+
+                    {/* Connector line from right button to center timeline */}
+                    {alignRight && (
+                      <div className='relative max-w-[50%] flex-1 text-left'>
+                        <div className='border-muted-foreground/40 absolute top-1/2 left-[-0.6rem] h-px w-10 -translate-y-1/2 border-t border-dashed' />
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
-            );
-          })}
+                );
+              })}
+            </div>
+          </div>
+
+          {/* "Continue to latest" button - takes user to the most recently unlocked chapter */}
+          <div className='w-full max-w-3xl pt-2'>
+            <Button
+              size='lg'
+              className='h-14 w-full text-base font-semibold shadow-md'
+            >
+              {/* Also uses the href routing configured above */}
+              <Link href={lastUnlocked.href} prefetch={false}>
+                {t.continue}: {lastUnlocked.title}
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
-
-      {/* "Continue to latest" button - takes user to the most recently unlocked chapter */}
-      <div className='w-full max-w-3xl pt-2'>
-        <Button
-          asChild
-          size='lg'
-          className='h-14 w-full text-base font-semibold shadow-md'
-        >
-          {/* Also uses the href routing configured above */}
-          <Link href={lastUnlocked.href} prefetch={false}>
-            {t.continue}: {lastUnlocked.title}
-          </Link>
-        </Button>
-      </div>
-    </div>
+    </>
   );
 }

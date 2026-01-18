@@ -4,7 +4,10 @@
     "options": {
       "a": "More flexibility when upgrading",
       "b": "Better cooling of RAM",
-      "c": "Lower latency times"
+      "c": "Lower latency times",
+      "_a": "31",
+      "_b": "32",
+      "_c": "33"
     }
   },
   "2": {
@@ -12,7 +15,10 @@
     "options": {
       "a": "Not replaceable",
       "b": "Higher weight",
-      "c": "Lower capacity"
+      "c": "Lower capacity",
+      "_a": "34",
+      "_b": "35",
+      "_c": "36"
     }
   },
   "3": {
@@ -20,7 +26,10 @@
     "options": {
       "a": "More potential for upgrades",
       "b": "Better cooling of components",
-      "c": "Lower noise levels"
+      "c": "Lower noise levels",
+      "_a": "37",
+      "_b": "38",
+      "_c": "39"
     }
   },
   "4": {
@@ -28,7 +37,10 @@
     "options": {
       "a": "Modular components",
       "b": "High-quality materials",
-      "c": "RGB lighting"
+      "c": "RGB lighting",
+      "_a": "40",
+      "_b": "41",
+      "_c": "42"
     }
   },
   "5": {
@@ -36,7 +48,10 @@
     "options": {
       "a": "Lower hardware requirements",
       "b": "Because Linux is poorly optimized",
-      "c": "Because Microsoft is a greedy company"
+      "c": "Because Microsoft is a greedy company",
+      "_a": "43",
+      "_b": "44",
+      "_c": "45"
     }
   }
 }

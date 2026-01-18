@@ -4,7 +4,10 @@
     "options": {
       "a": "weil sie mehr Strom verbrauchen als den bildschirm auszuschalten",
       "b": "weil sie den Bildschirm nicht ausschalten",
-      "c": "weil sie den Stromverbrauch nicht beeinflussen"
+      "c": "weil sie den Stromverbrauch nicht beeinflussen",
+      "_a": "61",
+      "_b": "62",
+      "_c": "63"
     }
   },
   "2": {
@@ -12,7 +15,10 @@
     "options": {
       "a": "Negativ, da sie Ressourcen im Hintergrund nutzen",
       "b": "gar nicht",
-      "c": "positiv, da sie den Computer schneller machen"
+      "c": "positiv, da sie den Computer schneller machen",
+      "_a": "64",
+      "_b": "65",
+      "_c": "66"
     }
   },
   "3": {
@@ -20,7 +26,10 @@
     "options": {
       "a": "leistungsabfall bei Nutzung",
       "b": "zu geringe Stromrechnung",
-      "c": "schäden der Hardware"
+      "c": "schäden der Hardware",
+      "_a": "67",
+      "_b": "68",
+      "_c": "69"
     }
   },
   "4": {
@@ -28,7 +37,10 @@
     "options": {
       "a": "um im Akkubetrieb Strom zu sparen",
       "b": "um die Leistung zu maximieren",
-      "c": "um die Bildschirmhelligkeit zu erhöhen"
+      "c": "um die Bildschirmhelligkeit zu erhöhen",
+      "_a": "70",
+      "_b": "71",
+      "_c": "72"
     }
   },
   "5": {
@@ -36,7 +48,10 @@
     "options": {
       "a": "Reduzieren die Bildschirmhelligkeit",
       "b": "Drosseln die Prozessorleistung",
-      "c": "Schalten nicht benötigte Hardwarekomponenten ab"
+      "c": "Schalten nicht benötigte Hardwarekomponenten ab",
+      "_a": "73",
+      "_b": "74",
+      "_c": "75"
     }
   }
 }

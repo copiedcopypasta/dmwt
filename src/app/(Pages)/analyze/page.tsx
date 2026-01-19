@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { AnalyzeChart } from '@/components/ui/base/analyze-chart';
+import RadarMultiple from '@/components/ui/base/os-chart';
 import {
   QuestAnswers,
   type QuestAnswer,
@@ -69,6 +70,8 @@ export default function Page() {
         linuxPercentage={30}
         macosPercentage={20}
       />
+
+      <RadarMultiple />
       <QuestAnswers answers={questAnswersData} />
       <p className='text-muted-foreground max-w-2xl text-xs'>
         This data is calculated based on your answers.

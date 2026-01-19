@@ -15,13 +15,16 @@ interface LinkCategorys {
 
 interface FooterLinksProps {
   links?: LinkCategorys;
-  categories?: { key: string; title: string}[];
+  categories?: { key: string; title: string }[];
 }
 
 /**
  * Renders the footer links section
  */
-export default function FooterLinks({ links, categories }: FooterLinksProps): ReactElement {
+export default function FooterLinks({
+  links,
+  categories,
+}: FooterLinksProps): ReactElement {
   if (!links) return <div className={styles.linksContainer} />;
   if (!categories) return <div className={styles.linksContainer} />;
 
@@ -37,7 +40,7 @@ export default function FooterLinks({ links, categories }: FooterLinksProps): Re
             <h3 className={styles.categoryTitle}>{title}</h3>
             <ul className={styles.linkList}>
               {categoryLinks.map((link) => (
-                <li key={link.href}>
+                <li key={`${key}-${link.label}`}>
                   <Link href={link.href} className={styles.link}>
                     {link.label}
                   </Link>

@@ -10,7 +10,7 @@ export default async function Layout({
   children: React.ReactNode;
   params: { lang: string };
 }) {
-  const { lang } = params;
+  const { lang } = await params;
   const dict = await getDictionary(lang);
 
   const navbar: NavbarProps = {

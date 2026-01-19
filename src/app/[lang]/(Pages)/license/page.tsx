@@ -28,7 +28,6 @@ export default async function Page({ params }: PageProps) {
     body: Content,
     frontmatter,
     header,
-    toc,
   } = await compileMdx({
     source,
     filePath,

@@ -8,7 +8,7 @@ export default async function Layout({
   params,
 }: {
   children: React.ReactNode;
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);

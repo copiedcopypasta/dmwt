@@ -52,14 +52,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params?: { lang?: string };
+  params: Promise<Record<string, never>>;
 }) {
-  const lang = params?.lang || 'en';
+  await params;
+  const lang = 'en';
 
   return (
     <html lang={lang} suppressHydrationWarning>

@@ -45,10 +45,6 @@ const questAnswersData: QuestAnswer[] = [
   },
 ];
 
-const TEXT_CONFIG = {
-  title: 'Analysis & Insights',
-} as const;
-
 export default function Page() {
   return (
     <div className='flex flex-col items-center gap-8 py-12'>

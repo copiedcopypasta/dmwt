@@ -18,8 +18,8 @@ export default async function Layout({
     logoUrl: `/${lang}`,
     links: [
       { label: dict.nav.quests, href: `/${lang}/quests` },
-      { label: dict.nav.info, href: `/${lang}/informations` },
-      { label: dict.nav.docs, href: `/${lang}/documentation` },
+      { label: dict.nav.info, href: `/${lang}/info/chapter_1` },
+      { label: dict.nav.docs, href: `https://github.com/copiedcopypasta/dmwt_WoOS/blob/main/README.md` },
     ],
     searchBar: false,
     darkModeToggle: true,
@@ -45,27 +45,26 @@ export default async function Layout({
         },
       ],
       legal: [
-        { label: dict.footer.legal.imprint, href: `/${lang}/impressum` },
-        { label: dict.footer.legal.privacy, href: `/${lang}/datenschutz` },
-        //{ label: dict.footer.legal.cookies, href: `/${lang}/cookie-settings` },
-        { label: dict.footer.legal.licenses, href: `/${lang}/lizenzen` },
-        { label: dict.footer.legal.bindings, href: `/${lang}/nutzerbindungen` },
+        { label: dict.footer.legal.imprint, href: `/${lang}/info/legal` },
+        { label: dict.footer.legal.privacy, href: `/${lang}/info/legal` },
+        { label: dict.footer.legal.licenses, href: `/${lang}/info/license` },
+        { label: dict.footer.legal.bindings, href: `/${lang}/info/legal` },
       ],
       about: [
-        { label: dict.footer.about.us, href: `/${lang}/about` },
+        { label: dict.footer.about.us, href: `https://github.com/copiedcopypasta/dmwt` },
         {
           label: dict.footer.about.university,
           href: 'https://www.reutlingen-university.de/',
         },
         {
           label: dict.footer.about.accessibility,
-          href: `/${lang}/barrierefreiheit`,
+          href: `/${lang}/info/legal`,
         },
       ],
       social: [
         { label: dict.footer.social.feedback, href: `/${lang}/feedback` },
-        { label: dict.footer.social.contact, href: `/${lang}/contact` },
-        { label: dict.footer.social.faq, href: `/${lang}/faq` },
+        { label: dict.footer.social.contact, href: `/${lang}/info/legal` },
+        { label: dict.footer.social.faq, href: `/${lang}/info/faq` },
       ],
     },
     sozials: [

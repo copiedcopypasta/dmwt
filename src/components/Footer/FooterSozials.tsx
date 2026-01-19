@@ -1,9 +1,10 @@
 'use client';
 
+import { setLanguageCookie } from '@/app/actions';
 import type { Sozials } from '@/types/index';
 import Link from 'next/link';
-import { ReactElement, use, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
+import { ReactElement, useState } from 'react';
 
 import Discord from '@/assets/icons/discord.svg';
 import Github from '@/assets/icons/github.svg';
@@ -23,8 +24,8 @@ import styles from './index.module.css';
 interface FooterSozialsProps {
   logo?: boolean;
   sozials?: Sozials[];
-  socialText?: { key: string; title: string};
-  languageText?: { key: string; title: string};
+  socialText?: { key: string; title: string };
+  languageText?: { key: string; title: string };
 }
 
 /**
@@ -70,12 +71,16 @@ export default function FooterSozials({
     (lang) => lang.value === selectedLanguage,
   );
 
-  const handleLanguageChange = (value: string | null) => {
+  const handleLanguageChange = async (value: string | null) => {
     if (value == null) return;
     setSelectedLanguage(value);
+
+    // Set the cookie server-side
+    await setLanguageCookie(value);
+
     const parts = window.location.pathname.split('/');
     parts[1] = value;
-    router.push(parts.join('/'))
+    router.push(parts.join('/'));
   };
 
   return (
@@ -92,10 +97,7 @@ export default function FooterSozials({
       {/* Language */}
       <div className={styles.languageWrapper}>
         <p className={styles.sectionTitle}>{languageText?.title}</p>
-        <Select
-          value={selectedLanguage}
-          onValueChange={handleLanguageChange}
-        >
+        <Select value={selectedLanguage} onValueChange={handleLanguageChange}>
           <SelectTrigger className={styles.selectTrigger}>
             <SelectValue>
               {selectedLang && (

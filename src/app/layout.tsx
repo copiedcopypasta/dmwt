@@ -1,3 +1,4 @@
+import { PreloadProvider } from '@/components/PreloadProvider';
 import { SmoothScrollProvider } from '@/components/scroll-provider';
 import { ThemeProvider } from '@/components/theme-provider';
 import { CustomCursor } from '@/components/ui/base/cursor';
@@ -52,19 +53,26 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ lang?: string }>;
 }) {
+  const { lang: paramLang } = await params;
+  const lang = paramLang || 'en';
+
   return (
-    <html lang='de' suppressHydrationWarning>
+    <html lang={lang} suppressHydrationWarning>
       <body
-        className={`min-h-screen ${geist.variable} ${pixelifySans.variable} ${jersey10.variable}`}
+        className={`${geist.variable} ${pixelifySans.variable} ${jersey10.variable}`}
       >
         <CustomCursor />
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
-          <SmoothScrollProvider>{children}</SmoothScrollProvider>
+          <SmoothScrollProvider>
+            <PreloadProvider>{children}</PreloadProvider>
+          </SmoothScrollProvider>
         </ThemeProvider>
       </body>
     </html>

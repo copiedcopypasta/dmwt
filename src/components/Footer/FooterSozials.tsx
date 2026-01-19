@@ -1,7 +1,10 @@
 'use client';
 
+import { setLanguageCookie } from '@/lib/i18n';
+import { extractLanguageFromPathname, SupportedLanguage } from '@/lib/language';
 import type { Sozials } from '@/types/index';
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 import { ReactElement, useState } from 'react';
 
 import Discord from '@/assets/icons/discord.svg';
@@ -22,6 +25,8 @@ import styles from './index.module.css';
 interface FooterSozialsProps {
   logo?: boolean;
   sozials?: Sozials[];
+  socialText?: { key: string; title: string };
+  languageText?: { key: string; title: string };
 }
 
 /**
@@ -44,8 +49,8 @@ const getIcon = (href: string): ReactElement | null => {
  * Language data constant
  */
 const LANGUAGES = [
-  { value: 'de', label: 'Deutsch', flag: '🇩🇪' },
-  { value: 'en', label: 'English', flag: '🇬🇧' },
+  { value: 'de' as const, label: 'Deutsch', flag: '🇩🇪' },
+  { value: 'en' as const, label: 'English', flag: '🇬🇧' },
 ] as const;
 
 /**
@@ -54,11 +59,31 @@ const LANGUAGES = [
 export default function FooterSozials({
   logo,
   sozials,
+  socialText,
+  languageText,
 }: FooterSozialsProps): ReactElement {
-  const [selectedLanguage, setSelectedLanguage] = useState('de');
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const initialLang = extractLanguageFromPathname(pathname);
+  const [selectedLanguage, setSelectedLanguage] =
+    useState<SupportedLanguage>(initialLang);
+
   const selectedLang = LANGUAGES.find(
     (lang) => lang.value === selectedLanguage,
   );
+
+  const handleLanguageChange = async (value: string | null) => {
+    if (value == null || !['en', 'de'].includes(value)) return;
+    setSelectedLanguage(value as SupportedLanguage);
+
+    // Set the cookie server-side
+    await setLanguageCookie(value);
+
+    const parts = window.location.pathname.split('/');
+    parts[1] = value;
+    router.push(parts.join('/'));
+  };
 
   return (
     <div className={styles.infoSection}>
@@ -73,11 +98,8 @@ export default function FooterSozials({
 
       {/* Language */}
       <div className={styles.languageWrapper}>
-        <p className={styles.sectionTitle}>Sprache</p>
-        <Select
-          value={selectedLanguage}
-          onValueChange={(value) => value && setSelectedLanguage(value)}
-        >
+        <p className={styles.sectionTitle}>{languageText?.title}</p>
+        <Select value={selectedLanguage} onValueChange={handleLanguageChange}>
           <SelectTrigger className={styles.selectTrigger}>
             <SelectValue>
               {selectedLang && (
@@ -110,7 +132,7 @@ export default function FooterSozials({
       {/* Sozials */}
       {sozials && sozials.length > 0 && (
         <div>
-          <p className={styles.sectionTitle}>Soziales</p>
+          <p className={styles.sectionTitle}>{socialText?.title}</p>
           <div className={styles.socialLinks}>
             {sozials.map((social, idx) => (
               <a

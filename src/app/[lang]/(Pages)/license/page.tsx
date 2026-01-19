@@ -1,5 +1,4 @@
 import { MarkdownContentWrapper } from '@/components/ui/base/markdown-content-wrapper';
-import { MarkdownToc } from '@/components/ui/base/markdown-toc';
 import { MarkdownLayout } from '@/layouts/MarkdownLayout';
 import { getRootContent } from '@/lib/content';
 import { compileMdx } from '@/lib/markdown';
@@ -11,7 +10,7 @@ interface PageProps {
 
 export default async function Page({ params }: PageProps) {
   const { lang } = await params;
-  const slug = 'faq';
+  const slug = 'license';
 
   let source: string;
   let filePath: string;
@@ -56,7 +55,7 @@ export default async function Page({ params }: PageProps) {
           {Content}
         </MarkdownContentWrapper>
       }
-      rightSidebar={<MarkdownToc toc={toc} />}
+      rightSidebar={' '}
     />
   );
 }

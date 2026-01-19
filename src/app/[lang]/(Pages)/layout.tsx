@@ -8,9 +8,9 @@ export default async function Layout({
   params,
 }: {
   children: React.ReactNode;
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }) {
-  const { lang } = params;
+  const { lang } = await params;
   const dict = await getDictionary(lang);
 
   const navbar: NavbarProps = {
@@ -28,7 +28,6 @@ export default async function Layout({
     darkModeToggle: true,
     loginButton: true,
     fixed: false,
-    backgroundColor: '#161A24',
   };
 
   const footer: FooterProps = {
@@ -91,7 +90,7 @@ export default async function Layout({
   };
 
   return (
-    <div className='bg-[#161a24]'>
+    <div>
       <Navbar {...navbar} />
       <main>{children}</main>
       <Footer {...footer} />

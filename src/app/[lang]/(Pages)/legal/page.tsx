@@ -11,7 +11,7 @@ interface PageProps {
 
 export default async function Page({ params }: PageProps) {
   const { lang } = await params;
-  const slug = 'faq';
+  const slug = 'legal';
 
   let source: string;
   let filePath: string;

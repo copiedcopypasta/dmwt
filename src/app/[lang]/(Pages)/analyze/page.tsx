@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { AnalyzeChart } from '@/components/ui/base/analyze-chart';
+import RadarMultiple from '@/components/ui/base/os-chart';
 import {
   QuestAnswers,
   type QuestAnswer,
@@ -73,6 +74,7 @@ export default function Page() {
       <p className='text-muted-foreground max-w-2xl text-xs'>
         This data is calculated based on your answers.
       </p>
+      <RadarMultiple />
       <h2>Narratives of Users</h2>
       <Accordion className='w-full max-w-2xl'>
         <AccordionItem value='windows'>

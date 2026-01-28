@@ -14,6 +14,10 @@
 
 <!-- markdownlint-enable MD033 -->
 
+> [!NOTE]
+> This project is no longer maintained and remains unfinished.  
+> We were not able to complete it before the deadline.
+
 ## About
 
 Built with **Next.js**, this website aims to help users make more informed technology decisions by:
@@ -24,7 +28,7 @@ Built with **Next.js**, this website aims to help users make more informed techn
 
 ### Links
 
-- [Website][website] (_work in progress_)
+- [Website][website]
 - [Organization][org]
 
 ### Disclaimer
@@ -114,7 +118,7 @@ export function MyComponent() {
 
 ## Contributing
 
-At this time, contributions from third parties are **not permitted before January 30 of this year**, as the project is currently in its pre-submission phase. After that date, you are free to copy, fork, modify, and use this project in accordance with the license.
+You are free to copy, fork, modify, and use this project in accordance with the license.
 
 ### Contributors
 
